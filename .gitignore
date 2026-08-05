@@ -22,3 +22,8 @@ auto_patch_work/
 font_candidates/
 __pycache__/
 *.pyc
+
+# 중간 버전 산출물은 저장소에 두지 않음 (GitHub Releases로 배포)
+# 최종 패치만 루트에 유지
+DIAG*.xdelta
+*_source.zip
