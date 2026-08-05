@@ -27,3 +27,6 @@ __pycache__/
 # 최종 패치만 루트에 유지
 DIAG*.xdelta
 *_source.zip
+# 구버전 패치는 추적하지 않음(GitHub Releases로 배포). 최신본만 예외.
+SDGundamGashaponWars_KR_v*.xdelta
+!SDGundamGashaponWars_KR_v2.9.xdelta
