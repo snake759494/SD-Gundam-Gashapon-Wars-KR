@@ -1,0 +1,227 @@
+[
+ {
+  "row": 3,
+  "jp_title": "『コア・ブースター４機撃墜』",
+  "jp_cond": "コア・ブースターを４機撃墜せよ",
+  "jp_desc": "コア・ブースターを４機撃墜せよ！",
+  "title_budget": 44,
+  "cond_budget": 30,
+  "desc_budget": 48
+ },
+ {
+  "row": 7,
+  "jp_title": "『ラゴゥを倒せ！』",
+  "jp_cond": "ラゴゥを倒せ",
+  "jp_desc": "ラゴゥを倒せ！",
+  "title_budget": 25,
+  "cond_budget": 19,
+  "desc_budget": 21
+ },
+ {
+  "row": 11,
+  "jp_title": "『サンダー！サンダー！』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "サンダーがたくさん落ちてくる！",
+  "title_budget": 24,
+  "cond_budget": 14,
+  "desc_budget": 35
+ },
+ {
+  "row": 15,
+  "jp_title": "『Ｚ ＶＳ ＳＥＥＤチーム』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵チームを撃破せよ！",
+  "title_budget": 26,
+  "cond_budget": 14,
+  "desc_budget": 39
+ },
+ {
+  "row": 19,
+  "jp_title": "『アムロ専用バトル』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "アムロ搭乗機によるバトルロイヤル",
+  "title_budget": 31,
+  "cond_budget": 14,
+  "desc_budget": 47
+ },
+ {
+  "row": 23,
+  "jp_title": "『勝ち抜け！ ００７９ ＶＳ Ｚ』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "５人抜きの勝ち抜き戦",
+  "title_budget": 41,
+  "cond_budget": 14,
+  "desc_budget": 49
+ },
+ {
+  "row": 27,
+  "jp_title": "『ボールを倒せ！』",
+  "jp_cond": "ボールをたおせ",
+  "jp_desc": "ボールだけを倒せ！",
+  "title_budget": 25,
+  "cond_budget": 14,
+  "desc_budget": 25
+ },
+ {
+  "row": 31,
+  "jp_title": "『宇宙をかける』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵を全滅させろ！",
+  "title_budget": 26,
+  "cond_budget": 14,
+  "desc_budget": 34
+ },
+ {
+  "row": 35,
+  "jp_title": "『水中バトルロイヤル』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "水中ユニットのバトルロイヤル",
+  "title_budget": 35,
+  "cond_budget": 14,
+  "desc_budget": 41
+ },
+ {
+  "row": 39,
+  "jp_title": "『シャア専用バトル』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "シャア専用機同士のバトルロイヤル",
+  "title_budget": 31,
+  "cond_budget": 14,
+  "desc_budget": 60
+ },
+ {
+  "row": 43,
+  "jp_title": "『時間よ止まれ！』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "タイムストップがたくさん落ちてくる！",
+  "title_budget": 32,
+  "cond_budget": 14,
+  "desc_budget": 41
+ },
+ {
+  "row": 47,
+  "jp_title": "『ガシャポン・ロイヤル（２）』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "最終的に生き残れば勝ち！",
+  "title_budget": 30,
+  "cond_budget": 14,
+  "desc_budget": 58
+ },
+ {
+  "row": 51,
+  "jp_title": "『アスラン ＶＳ キラ』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "キラと対決！",
+  "title_budget": 22,
+  "cond_budget": 14,
+  "desc_budget": 23
+ },
+ {
+  "row": 55,
+  "jp_title": "『ひたすらジェリド』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "次々に出てくる、敵を撃破せよ！",
+  "title_budget": 20,
+  "cond_budget": 14,
+  "desc_budget": 65
+ },
+ {
+  "row": 59,
+  "jp_title": "『ガンダム隊に突撃！』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "ガンダム隊を撃破せよ！",
+  "title_budget": 40,
+  "cond_budget": 14,
+  "desc_budget": 41
+ },
+ {
+  "row": 63,
+  "jp_title": "『ガンダムＭｋ－Ⅱを守れ！』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵の攻撃から、ガンダムＭｋ－Ⅱを守れ！",
+  "title_budget": 35,
+  "cond_budget": 14,
+  "desc_budget": 63
+ },
+ {
+  "row": 67,
+  "jp_title": "『ドム隊を倒せ！』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "ドム隊を撃破せよ！",
+  "title_budget": 32,
+  "cond_budget": 14,
+  "desc_budget": 37
+ },
+ {
+  "row": 71,
+  "jp_title": "『指定武器で倒せ！』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "指定された武器で戦うこと！",
+  "title_budget": 49,
+  "cond_budget": 14,
+  "desc_budget": 57
+ },
+ {
+  "row": 75,
+  "jp_title": "『ナイト VS 武者』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵を全滅させろ！",
+  "title_budget": 30,
+  "cond_budget": 14,
+  "desc_budget": 34
+ },
+ {
+  "row": 79,
+  "jp_title": "『ホワイトベース隊を倒せ！』",
+  "jp_cond": "ホワイトベース隊を倒せ",
+  "jp_desc": "ホワイトベース隊を撃破せよ！",
+  "title_budget": 42,
+  "cond_budget": 29,
+  "desc_budget": 47
+ },
+ {
+  "row": 83,
+  "jp_title": "『砂漠の虎』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "スカイグラスパー隊を全滅させろ！",
+  "title_budget": 31,
+  "cond_budget": 14,
+  "desc_budget": 50
+ },
+ {
+  "row": 87,
+  "jp_title": "『クイン・マンサを倒せ！』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "クイン・マンサを撃破せよ！",
+  "title_budget": 33,
+  "cond_budget": 14,
+  "desc_budget": 38
+ },
+ {
+  "row": 91,
+  "jp_title": "『星屑の戦場』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵を撃破せよ！",
+  "title_budget": 38,
+  "cond_budget": 14,
+  "desc_budget": 33
+ },
+ {
+  "row": 95,
+  "jp_title": "『ガシャポン軍団を倒せ！』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "デスティニーチームでガシャポン軍団を倒せ！",
+  "title_budget": 44,
+  "cond_budget": 14,
+  "desc_budget": 60
+ },
+ {
+  "row": 99,
+  "jp_title": "『ガシャポン・ファイト（２）』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "やられる前に全滅させろ！",
+  "title_budget": 30,
+  "cond_budget": 14,
+  "desc_budget": 42
+ }
+]

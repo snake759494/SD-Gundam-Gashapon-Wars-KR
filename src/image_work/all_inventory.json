@@ -1,0 +1,4279 @@
+[
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 0,
+"off": 1573344,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 1,
+"off": 1575488,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 2,
+"off": 1577632,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 3,
+"off": 1579776,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 4,
+"off": 1581920,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 5,
+"off": 1584064,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 6,
+"off": 1586208,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 7,
+"off": 1588352,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 8,
+"off": 1590496,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 9,
+"off": 1592640,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 10,
+"off": 1594784,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 11,
+"off": 1596928,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 12,
+"off": 1599072,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 13,
+"off": 1601216,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 14,
+"off": 1603360,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 15,
+"off": 1605504,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 16,
+"off": 1607648,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 17,
+"off": 1609792,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 18,
+"off": 1611936,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 19,
+"off": 1614080,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 20,
+"off": 1616224,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 21,
+"off": 1618368,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank0.arc",
+"idx": 22,
+"off": 1620512,
+"w": 334,
+"h": 182
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 0,
+"off": 1444768,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 1,
+"off": 1446912,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 2,
+"off": 1449056,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 3,
+"off": 1451200,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 4,
+"off": 1453344,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 5,
+"off": 1455488,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 6,
+"off": 1457632,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 7,
+"off": 1459776,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 8,
+"off": 1461920,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 9,
+"off": 1464064,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 10,
+"off": 1466208,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 11,
+"off": 1468352,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 12,
+"off": 1470496,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 13,
+"off": 1472640,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 14,
+"off": 1474784,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 15,
+"off": 1476928,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 16,
+"off": 1479072,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 17,
+"off": 1481216,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 18,
+"off": 1483360,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 19,
+"off": 1485504,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 20,
+"off": 1487648,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 21,
+"off": 1489792,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank1.arc",
+"idx": 22,
+"off": 1491936,
+"w": 334,
+"h": 182
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 0,
+"off": 1452480,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 1,
+"off": 1454624,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 2,
+"off": 1456768,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 3,
+"off": 1458912,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 4,
+"off": 1461056,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 5,
+"off": 1463200,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 6,
+"off": 1465344,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 7,
+"off": 1467488,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 8,
+"off": 1469632,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 9,
+"off": 1471776,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 10,
+"off": 1473920,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 11,
+"off": 1476064,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 12,
+"off": 1478208,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 13,
+"off": 1480352,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 14,
+"off": 1482496,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 15,
+"off": 1484640,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 16,
+"off": 1486784,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 17,
+"off": 1488928,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 18,
+"off": 1491072,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 19,
+"off": 1493216,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 20,
+"off": 1495360,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 21,
+"off": 1497504,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank2.arc",
+"idx": 22,
+"off": 1499648,
+"w": 334,
+"h": 182
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 0,
+"off": 49504,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 1,
+"off": 51648,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 2,
+"off": 53792,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 3,
+"off": 55936,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 4,
+"off": 58080,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 5,
+"off": 60224,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 6,
+"off": 62368,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 7,
+"off": 64512,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 8,
+"off": 66656,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 9,
+"off": 68800,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 10,
+"off": 70944,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 11,
+"off": 73088,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 12,
+"off": 75232,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 13,
+"off": 77376,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 14,
+"off": 79520,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 15,
+"off": 81664,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 16,
+"off": 83808,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 17,
+"off": 85952,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 18,
+"off": 88096,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 19,
+"off": 90240,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 20,
+"off": 92384,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/Arc/bank9.arc",
+"idx": 21,
+"off": 94528,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 0,
+"off": 1621120,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 1,
+"off": 1623264,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 2,
+"off": 1625408,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 3,
+"off": 1627552,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 4,
+"off": 1629696,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 5,
+"off": 1631840,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 6,
+"off": 1633984,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 7,
+"off": 1636128,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 8,
+"off": 1638272,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 9,
+"off": 1640416,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 10,
+"off": 1642560,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 11,
+"off": 1644704,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 12,
+"off": 1646848,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 13,
+"off": 1648992,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 14,
+"off": 1651136,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 15,
+"off": 1653280,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 16,
+"off": 1655424,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 17,
+"off": 1657568,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 18,
+"off": 1659712,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 19,
+"off": 1661856,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 20,
+"off": 1664000,
+"w": 64,
+"h": 64
+},
+{
+"file": "Effect/bank0.arc",
+"idx": 21,
+"off": 1666144,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 0,
+"off": 576,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 1,
+"off": 800,
+"w": 12,
+"h": 20
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 2,
+"off": 1088,
+"w": 12,
+"h": 20
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 3,
+"off": 1376,
+"w": 12,
+"h": 20
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 4,
+"off": 1664,
+"w": 12,
+"h": 20
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 5,
+"off": 1952,
+"w": 12,
+"h": 20
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 6,
+"off": 2240,
+"w": 12,
+"h": 20
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 7,
+"off": 2528,
+"w": 12,
+"h": 20
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 8,
+"off": 2816,
+"w": 12,
+"h": 20
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 9,
+"off": 3104,
+"w": 12,
+"h": 20
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 10,
+"off": 3392,
+"w": 12,
+"h": 20
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 11,
+"off": 3680,
+"w": 12,
+"h": 20
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 12,
+"off": 3968,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 13,
+"off": 4192,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 14,
+"off": 4416,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 15,
+"off": 4640,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 16,
+"off": 4864,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 17,
+"off": 5088,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 18,
+"off": 5312,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 19,
+"off": 5536,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 20,
+"off": 5760,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 21,
+"off": 5984,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 22,
+"off": 6208,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 23,
+"off": 6432,
+"w": 20,
+"h": 20
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 24,
+"off": 6816,
+"w": 20,
+"h": 20
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 25,
+"off": 7200,
+"w": 20,
+"h": 20
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 26,
+"off": 7584,
+"w": 20,
+"h": 20
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 27,
+"off": 7968,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 28,
+"off": 8192,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 29,
+"off": 8416,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 30,
+"off": 8640,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 31,
+"off": 8864,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 32,
+"off": 9088,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 33,
+"off": 9312,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 34,
+"off": 9536,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 35,
+"off": 9760,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 36,
+"off": 9984,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 37,
+"off": 10208,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 38,
+"off": 10432,
+"w": 32,
+"h": 17
+},
+{
+"file": "Info/arc/bank101.arc",
+"idx": 39,
+"off": 10912,
+"w": 62,
+"h": 17
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 0,
+"off": 672,
+"w": 4,
+"h": 4
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 1,
+"off": 800,
+"w": 4,
+"h": 4
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 2,
+"off": 928,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 3,
+"off": 3072,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 4,
+"off": 5216,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 5,
+"off": 7360,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 6,
+"off": 9504,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 7,
+"off": 11648,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 8,
+"off": 13792,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 9,
+"off": 15936,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 10,
+"off": 18080,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 11,
+"off": 20224,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 12,
+"off": 22368,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 13,
+"off": 24512,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 14,
+"off": 26656,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 15,
+"off": 28800,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 16,
+"off": 30944,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 17,
+"off": 33088,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 18,
+"off": 35232,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 19,
+"off": 37376,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 20,
+"off": 39520,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 21,
+"off": 41664,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 22,
+"off": 43808,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 23,
+"off": 199072,
+"w": 316,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 24,
+"off": 224832,
+"w": 316,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 25,
+"off": 250592,
+"w": 316,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 26,
+"off": 276352,
+"w": 316,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 27,
+"off": 304032,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 28,
+"off": 333632,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 29,
+"off": 363232,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 30,
+"off": 392832,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 31,
+"off": 422432,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 32,
+"off": 452032,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 33,
+"off": 481632,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 34,
+"off": 511232,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 35,
+"off": 540832,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 36,
+"off": 570432,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 37,
+"off": 600032,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 38,
+"off": 629632,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 39,
+"off": 659232,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 40,
+"off": 688832,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 41,
+"off": 703648,
+"w": 82,
+"h": 50
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 42,
+"off": 706208,
+"w": 160,
+"h": 52
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 43,
+"off": 710784,
+"w": 160,
+"h": 52
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 44,
+"off": 715360,
+"w": 160,
+"h": 52
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 45,
+"off": 719936,
+"w": 160,
+"h": 52
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 46,
+"off": 724512,
+"w": 160,
+"h": 52
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 47,
+"off": 729088,
+"w": 160,
+"h": 52
+},
+{
+"file": "Info/arc/bank102.arc",
+"idx": 48,
+"off": 733664,
+"w": 160,
+"h": 52
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 0,
+"off": 448,
+"w": 4,
+"h": 4
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 1,
+"off": 576,
+"w": 4,
+"h": 4
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 2,
+"off": 704,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 3,
+"off": 1088,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 4,
+"off": 1472,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 5,
+"off": 1856,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 6,
+"off": 2240,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 7,
+"off": 2624,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 8,
+"off": 3008,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 9,
+"off": 3392,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 10,
+"off": 3776,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 11,
+"off": 4160,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 12,
+"off": 9120,
+"w": 48,
+"h": 24
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 13,
+"off": 9792,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 14,
+"off": 29088,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 15,
+"off": 88640,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 16,
+"off": 88800,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 17,
+"off": 88960,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 18,
+"off": 89120,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank103.arc",
+"idx": 19,
+"off": 89504,
+"w": 26,
+"h": 26
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 0,
+"off": 480,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 1,
+"off": 704,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 2,
+"off": 928,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 3,
+"off": 1152,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 4,
+"off": 1376,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 5,
+"off": 1600,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 6,
+"off": 1824,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 7,
+"off": 2048,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 8,
+"off": 2272,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 9,
+"off": 2496,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 10,
+"off": 2720,
+"w": 18,
+"h": 20
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 11,
+"off": 3104,
+"w": 18,
+"h": 20
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 12,
+"off": 3488,
+"w": 18,
+"h": 20
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 13,
+"off": 3872,
+"w": 18,
+"h": 20
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 14,
+"off": 4256,
+"w": 18,
+"h": 20
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 15,
+"off": 4640,
+"w": 18,
+"h": 20
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 16,
+"off": 5024,
+"w": 18,
+"h": 20
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 17,
+"off": 5408,
+"w": 18,
+"h": 20
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 18,
+"off": 5792,
+"w": 18,
+"h": 20
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 19,
+"off": 6176,
+"w": 18,
+"h": 20
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 20,
+"off": 6560,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 21,
+"off": 25856,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 22,
+"off": 85408,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 23,
+"off": 85568,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank104.arc",
+"idx": 24,
+"off": 85728,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 0,
+"off": 736,
+"w": 4,
+"h": 4
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 1,
+"off": 864,
+"w": 4,
+"h": 4
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 2,
+"off": 992,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 3,
+"off": 1376,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 4,
+"off": 1760,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 5,
+"off": 2144,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 6,
+"off": 2528,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 7,
+"off": 2912,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 8,
+"off": 3296,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 9,
+"off": 3680,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 10,
+"off": 4064,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 11,
+"off": 4448,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 12,
+"off": 9408,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 13,
+"off": 9632,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 14,
+"off": 9856,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 15,
+"off": 10080,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 16,
+"off": 10304,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 17,
+"off": 10528,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 18,
+"off": 10752,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 19,
+"off": 10976,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 20,
+"off": 11200,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 21,
+"off": 11424,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 22,
+"off": 11648,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 23,
+"off": 11872,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 24,
+"off": 12096,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 25,
+"off": 12320,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 26,
+"off": 12544,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 27,
+"off": 12768,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 28,
+"off": 12992,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 29,
+"off": 13216,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 30,
+"off": 13440,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 31,
+"off": 13664,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 32,
+"off": 13888,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 33,
+"off": 14112,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 34,
+"off": 14336,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 35,
+"off": 14560,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 36,
+"off": 14784,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 37,
+"off": 15008,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 38,
+"off": 15232,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 39,
+"off": 15456,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 40,
+"off": 15680,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 41,
+"off": 15904,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 42,
+"off": 16128,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 43,
+"off": 16352,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 44,
+"off": 16576,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 45,
+"off": 16800,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 46,
+"off": 17024,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 47,
+"off": 17248,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 48,
+"off": 17472,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 49,
+"off": 17696,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 50,
+"off": 17920,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 51,
+"off": 18144,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 52,
+"off": 18368,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 53,
+"off": 18592,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 54,
+"off": 18816,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 55,
+"off": 19040,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 56,
+"off": 19264,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 57,
+"off": 19488,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 58,
+"off": 19712,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 59,
+"off": 19936,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 60,
+"off": 20160,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 61,
+"off": 20384,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 62,
+"off": 20608,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 63,
+"off": 20832,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 64,
+"off": 21056,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 65,
+"off": 21280,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 66,
+"off": 21504,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 67,
+"off": 21728,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 68,
+"off": 21952,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 69,
+"off": 22176,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 70,
+"off": 22400,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 71,
+"off": 22624,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 72,
+"off": 22848,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 73,
+"off": 23072,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 74,
+"off": 23296,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 75,
+"off": 23520,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 76,
+"off": 23744,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 77,
+"off": 23968,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 78,
+"off": 24192,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 79,
+"off": 24416,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 80,
+"off": 24640,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 81,
+"off": 24864,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 82,
+"off": 25088,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 83,
+"off": 25312,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 84,
+"off": 25536,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 85,
+"off": 25760,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 86,
+"off": 25984,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 87,
+"off": 26208,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 88,
+"off": 26432,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 89,
+"off": 26656,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 90,
+"off": 26880,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 91,
+"off": 27104,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 92,
+"off": 27328,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 93,
+"off": 27552,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 94,
+"off": 27776,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 95,
+"off": 28000,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 96,
+"off": 28224,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 97,
+"off": 28448,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 98,
+"off": 28672,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 99,
+"off": 28896,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 100,
+"off": 29120,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 101,
+"off": 29344,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 102,
+"off": 29568,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 103,
+"off": 29792,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 104,
+"off": 30016,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 105,
+"off": 30240,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 106,
+"off": 30464,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 107,
+"off": 30688,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 108,
+"off": 30912,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 109,
+"off": 31136,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 110,
+"off": 31360,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 111,
+"off": 31584,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 112,
+"off": 31808,
+"w": 14,
+"h": 14
+},
+{
+"file": "Info/arc/bank105.arc",
+"idx": 113,
+"off": 37408,
+"w": 4,
+"h": 4
+},
+{
+"file": "Info/arc/bank106.arc",
+"idx": 0,
+"off": 512,
+"w": 4,
+"h": 4
+},
+{
+"file": "Info/arc/bank106.arc",
+"idx": 1,
+"off": 640,
+"w": 4,
+"h": 4
+},
+{
+"file": "Info/arc/bank106.arc",
+"idx": 2,
+"off": 768,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank106.arc",
+"idx": 3,
+"off": 1152,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank106.arc",
+"idx": 4,
+"off": 1536,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank106.arc",
+"idx": 5,
+"off": 1920,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank106.arc",
+"idx": 6,
+"off": 2304,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank106.arc",
+"idx": 7,
+"off": 2688,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank106.arc",
+"idx": 8,
+"off": 3072,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank106.arc",
+"idx": 9,
+"off": 3456,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank106.arc",
+"idx": 10,
+"off": 3840,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank106.arc",
+"idx": 11,
+"off": 4224,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank106.arc",
+"idx": 12,
+"off": 9184,
+"w": 48,
+"h": 24
+},
+{
+"file": "Info/arc/bank106.arc",
+"idx": 13,
+"off": 79520,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank106.arc",
+"idx": 14,
+"off": 79904,
+"w": 128,
+"h": 128
+},
+{
+"file": "Info/arc/bank108.arc",
+"idx": 0,
+"off": 384,
+"w": 4,
+"h": 4
+},
+{
+"file": "Info/arc/bank108.arc",
+"idx": 1,
+"off": 512,
+"w": 4,
+"h": 4
+},
+{
+"file": "Info/arc/bank108.arc",
+"idx": 2,
+"off": 640,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank108.arc",
+"idx": 3,
+"off": 2784,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank108.arc",
+"idx": 4,
+"off": 4928,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank108.arc",
+"idx": 5,
+"off": 7072,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank108.arc",
+"idx": 6,
+"off": 9216,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank108.arc",
+"idx": 7,
+"off": 11360,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank108.arc",
+"idx": 8,
+"off": 13504,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank108.arc",
+"idx": 9,
+"off": 84800,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank108.arc",
+"idx": 10,
+"off": 114400,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank108.arc",
+"idx": 11,
+"off": 144000,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank108.arc",
+"idx": 12,
+"off": 173600,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank108.arc",
+"idx": 13,
+"off": 203200,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank108.arc",
+"idx": 14,
+"off": 232800,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank108.arc",
+"idx": 15,
+"off": 262400,
+"w": 368,
+"h": 74
+},
+{
+"file": "Info/arc/bank108.arc",
+"idx": 16,
+"off": 277216,
+"w": 82,
+"h": 50
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 0,
+"off": 544,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 1,
+"off": 768,
+"w": 14,
+"h": 22
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 2,
+"off": 1056,
+"w": 14,
+"h": 22
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 3,
+"off": 1344,
+"w": 14,
+"h": 22
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 4,
+"off": 1632,
+"w": 14,
+"h": 22
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 5,
+"off": 1920,
+"w": 14,
+"h": 22
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 6,
+"off": 2208,
+"w": 14,
+"h": 22
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 7,
+"off": 2496,
+"w": 14,
+"h": 22
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 8,
+"off": 2784,
+"w": 14,
+"h": 22
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 9,
+"off": 3072,
+"w": 14,
+"h": 22
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 10,
+"off": 3360,
+"w": 14,
+"h": 22
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 11,
+"off": 3648,
+"w": 14,
+"h": 22
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 12,
+"off": 3936,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 13,
+"off": 4160,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 14,
+"off": 4384,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 15,
+"off": 4608,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 16,
+"off": 4832,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 17,
+"off": 5056,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 18,
+"off": 5280,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 19,
+"off": 5504,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 20,
+"off": 5728,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 21,
+"off": 5952,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 22,
+"off": 6176,
+"w": 12,
+"h": 14
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 23,
+"off": 6400,
+"w": 20,
+"h": 20
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 24,
+"off": 6784,
+"w": 20,
+"h": 20
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 25,
+"off": 7168,
+"w": 20,
+"h": 20
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 26,
+"off": 7552,
+"w": 20,
+"h": 20
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 27,
+"off": 7936,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 28,
+"off": 8160,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 29,
+"off": 8384,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 30,
+"off": 8608,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 31,
+"off": 8832,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 32,
+"off": 9056,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 33,
+"off": 9280,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 34,
+"off": 9504,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 35,
+"off": 9728,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 36,
+"off": 9952,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 37,
+"off": 10176,
+"w": 13,
+"h": 16
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 38,
+"off": 10400,
+"w": 32,
+"h": 17
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 39,
+"off": 10880,
+"w": 62,
+"h": 17
+},
+{
+"file": "Info/arc/bank110.arc",
+"idx": 40,
+"off": 11744,
+"w": 11,
+"h": 11
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 0,
+"off": 672,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 1,
+"off": 800,
+"w": 18,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 2,
+"off": 1184,
+"w": 18,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 3,
+"off": 1568,
+"w": 18,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 4,
+"off": 1952,
+"w": 18,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 5,
+"off": 2336,
+"w": 18,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 6,
+"off": 2720,
+"w": 18,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 7,
+"off": 3104,
+"w": 18,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 8,
+"off": 3488,
+"w": 18,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 9,
+"off": 3872,
+"w": 18,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 10,
+"off": 4256,
+"w": 18,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 11,
+"off": 28832,
+"w": 20,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 12,
+"off": 29216,
+"w": 20,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 13,
+"off": 29600,
+"w": 20,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 14,
+"off": 29984,
+"w": 20,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 15,
+"off": 30368,
+"w": 20,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 16,
+"off": 30752,
+"w": 20,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 17,
+"off": 31136,
+"w": 20,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 18,
+"off": 31520,
+"w": 20,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 19,
+"off": 31904,
+"w": 20,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 20,
+"off": 32288,
+"w": 20,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 21,
+"off": 54912,
+"w": 22,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 22,
+"off": 55296,
+"w": 22,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 23,
+"off": 55680,
+"w": 22,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 24,
+"off": 56064,
+"w": 22,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 25,
+"off": 56448,
+"w": 22,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 26,
+"off": 56832,
+"w": 22,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 27,
+"off": 57216,
+"w": 22,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 28,
+"off": 57600,
+"w": 22,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 29,
+"off": 57984,
+"w": 22,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 30,
+"off": 58368,
+"w": 22,
+"h": 24
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 31,
+"off": 58752,
+"w": 240,
+"h": 64
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 32,
+"off": 66528,
+"w": 240,
+"h": 64
+},
+{
+"file": "Info/arc/bank111.arc",
+"idx": 33,
+"off": 74304,
+"w": 240,
+"h": 64
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 0,
+"off": 896,
+"w": 4,
+"h": 4
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 1,
+"off": 1024,
+"w": 4,
+"h": 4
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 2,
+"off": 292352,
+"w": 48,
+"h": 24
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 3,
+"off": 293024,
+"w": 16,
+"h": 16
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 4,
+"off": 293248,
+"w": 16,
+"h": 16
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 5,
+"off": 293472,
+"w": 16,
+"h": 16
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 6,
+"off": 293696,
+"w": 16,
+"h": 16
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 7,
+"off": 293920,
+"w": 16,
+"h": 16
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 8,
+"off": 294144,
+"w": 16,
+"h": 16
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 9,
+"off": 294368,
+"w": 16,
+"h": 16
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 10,
+"off": 294592,
+"w": 16,
+"h": 16
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 11,
+"off": 294816,
+"w": 16,
+"h": 16
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 12,
+"off": 295040,
+"w": 16,
+"h": 16
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 13,
+"off": 295264,
+"w": 16,
+"h": 16
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 14,
+"off": 306688,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 15,
+"off": 308832,
+"w": 64,
+"h": 64
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 16,
+"off": 310976,
+"w": 308,
+"h": 24
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 17,
+"off": 339712,
+"w": 316,
+"h": 74
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 18,
+"off": 365472,
+"w": 316,
+"h": 74
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 19,
+"off": 378368,
+"w": 64,
+"h": 28
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 20,
+"off": 379488,
+"w": 64,
+"h": 28
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 21,
+"off": 380608,
+"w": 64,
+"h": 28
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 22,
+"off": 381728,
+"w": 64,
+"h": 28
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 23,
+"off": 382848,
+"w": 222,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 24,
+"off": 388320,
+"w": 136,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 25,
+"off": 391680,
+"w": 136,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 26,
+"off": 395040,
+"w": 136,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 27,
+"off": 398400,
+"w": 136,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 28,
+"off": 401760,
+"w": 136,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 29,
+"off": 405120,
+"w": 136,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 30,
+"off": 408480,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 31,
+"off": 411456,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 32,
+"off": 414432,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 33,
+"off": 417408,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 34,
+"off": 420384,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 35,
+"off": 423360,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 36,
+"off": 426336,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 37,
+"off": 429312,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 38,
+"off": 432288,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 39,
+"off": 435264,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 40,
+"off": 438240,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 41,
+"off": 441216,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 42,
+"off": 444192,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank113.arc",
+"idx": 43,
+"off": 447168,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 0,
+"off": 640,
+"w": 4,
+"h": 4
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 1,
+"off": 768,
+"w": 4,
+"h": 4
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 2,
+"off": 896,
+"w": 90,
+"h": 30
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 3,
+"off": 2528,
+"w": 90,
+"h": 30
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 4,
+"off": 4160,
+"w": 90,
+"h": 30
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 5,
+"off": 296992,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 6,
+"off": 297376,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 7,
+"off": 297760,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 8,
+"off": 298144,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 9,
+"off": 298528,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 10,
+"off": 298912,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 11,
+"off": 299296,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 12,
+"off": 299680,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 13,
+"off": 300064,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 14,
+"off": 300448,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 15,
+"off": 305408,
+"w": 24,
+"h": 28
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 16,
+"off": 305888,
+"w": 118,
+"h": 32
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 17,
+"off": 307904,
+"w": 118,
+"h": 32
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 18,
+"off": 309920,
+"w": 48,
+"h": 24
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 19,
+"off": 310592,
+"w": 28,
+"h": 28
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 20,
+"off": 322400,
+"w": 64,
+"h": 28
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 21,
+"off": 323520,
+"w": 64,
+"h": 28
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 22,
+"off": 324640,
+"w": 64,
+"h": 28
+},
+{
+"file": "Info/arc/bank114.arc",
+"idx": 23,
+"off": 325760,
+"w": 64,
+"h": 28
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 0,
+"off": 512,
+"w": 4,
+"h": 4
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 1,
+"off": 640,
+"w": 4,
+"h": 4
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 2,
+"off": 768,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 3,
+"off": 1152,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 4,
+"off": 1536,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 5,
+"off": 1920,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 6,
+"off": 2304,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 7,
+"off": 2688,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 8,
+"off": 3072,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 9,
+"off": 3456,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 10,
+"off": 3840,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 11,
+"off": 4224,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 12,
+"off": 9184,
+"w": 48,
+"h": 24
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 13,
+"off": 9856,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 14,
+"off": 29152,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 15,
+"off": 88704,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 16,
+"off": 88864,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 17,
+"off": 89024,
+"w": 8,
+"h": 8
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 18,
+"off": 89184,
+"w": 20,
+"h": 18
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 19,
+"off": 89568,
+"w": 128,
+"h": 128
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 20,
+"off": 97856,
+"w": 222,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 21,
+"off": 103328,
+"w": 128,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 22,
+"off": 106496,
+"w": 128,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 23,
+"off": 109664,
+"w": 128,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 24,
+"off": 112832,
+"w": 128,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 25,
+"off": 116000,
+"w": 128,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 26,
+"off": 119168,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 27,
+"off": 122144,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 28,
+"off": 125120,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 29,
+"off": 128096,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 30,
+"off": 131072,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 31,
+"off": 134048,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 32,
+"off": 137024,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 33,
+"off": 140000,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 34,
+"off": 142976,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 35,
+"off": 145952,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 36,
+"off": 148928,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 37,
+"off": 151904,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 38,
+"off": 154880,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/arc/bank118.arc",
+"idx": 39,
+"off": 157856,
+"w": 114,
+"h": 48
+},
+{
+"file": "Info/tpl/chr01_g.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr01_h.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr02_g.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr02_h.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr03_g.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr03_h.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr04_g.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr04_h.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr05_g.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr05_h.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr06_g.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr06_h.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr07_g.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr07_h.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr08_g.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr08_h.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr09_g.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr09_h.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr10_g.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr10_h.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr11_g.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr11_h.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr12_g.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr12_h.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr13_g.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr13_h.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr14_g.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr14_h.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr15_g.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "Info/tpl/chr15_h.pic.tpl",
+"idx": 0,
+"off": 0,
+"w": 300,
+"h": 360
+},
+{
+"file": "cardicon.ARC",
+"idx": 0,
+"off": 32,
+"w": 96,
+"h": 32
+},
+{
+"file": "cardicon.ARC",
+"idx": 1,
+"off": 6272,
+"w": 32,
+"h": 32
+},
+{
+"file": "cardicon.ARC",
+"idx": 2,
+"off": 8416,
+"w": 32,
+"h": 32
+},
+{
+"file": "cardicon.ARC",
+"idx": 3,
+"off": 10560,
+"w": 32,
+"h": 32
+},
+{
+"file": "cardicon.ARC",
+"idx": 4,
+"off": 12704,
+"w": 32,
+"h": 32
+}
+]

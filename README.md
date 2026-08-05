@@ -1,60 +1,227 @@
 # SD건담 가샤폰 워즈 한글 패치 (SD Gundam Gashapon Wars – Korean Translation)
 
-닌텐도 게임큐브용 **「SD건담 가샤폰 워즈」**(일본판, 게임 ID: **GGPJB2**)의 한국어 번역 패치입니다.
+닌텐도 게임큐브용 **「SD건담 가샤폰 워즈」**(일본판, 게임 ID **GGPJB2**)의 한국어 번역 패치입니다.
+**패치 파일 + 번역 원본 + 빌드 도구 일체**를 공개해, 누구나 직접 수정·재빌드할 수 있습니다.
 
-> ⚠️ 이 저장소에는 게임 이미지(ISO)가 포함되어 있지 않습니다. 합법적으로 소유한 원본 ISO에 아래 패치를 적용해서 사용하세요.
+> ⚠️ 이 저장소에는 게임 이미지(ISO)나 게임에서 추출한 데이터가 **일절 포함되어 있지 않습니다.**
+> 합법적으로 소유한 원본 ISO를 각자 준비하세요.
 
-## 적용 방법
+---
 
-1. **원본 ISO 준비** — 일본판 「SD Gundam Gashapon Wars」 (GGPJB2)
-   - 원본 ISO CRC32: `D5F67251`
-2. **패치 적용** — 최신 패치 `SDGundamGashaponWars_KR_v2.6.xdelta`
-   - Windows: [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher/releases) 로 원본 ISO + 패치 선택 → Apply
-   - 또는 커맨드라인: `xdelta3 -d -s "SD Gundam Gashapon Wars.iso" SDGundamGashaponWars_KR_v2.6.xdelta "SD Gundam Gashapon Wars (KR).iso"`
-3. **결과 확인** — v2.6 패치 후 ISO CRC32: `AA65CFA0`
-4. Dolphin 등 게임큐브 에뮬레이터로 실행
+# 1. 그냥 플레이하고 싶다면 (일반 사용자)
 
-## 번역 범위 (v2.6)
+1. **원본 ISO 준비** — 일본판 SD Gundam Gashapon Wars (GGPJB2), 원본 CRC32 `D5F67251`
+2. **최신 패치 내려받기** — [Releases](../../releases)에서 `SDGundamGashaponWars_KR_v2.9.xdelta`
+3. **패치 적용**
+   - Windows: [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher/releases)로 원본 ISO + 패치 선택 → Apply
+   - 커맨드라인:
+     ```bash
+     xdelta3 -d -s "SD Gundam Gashapon Wars.iso" SDGundamGashaponWars_KR_v2.9.xdelta "SD Gundam Gashapon Wars (KR).iso"
+     ```
+4. **결과 확인** — 패치 후 ISO CRC32 `4DD0BA24`
+5. Dolphin 등 게임큐브 에뮬레이터로 실행
+
+---
+
+# 2. 번역을 고치거나 직접 빌드하려면 (개발자)
+
+## 2-1. 준비물
+
+- **Python 3.9 이상**
+- 본인 소유의 원본 ISO
+- 패키지 설치:
+  ```bash
+  pip install -r src/requirements.txt
+  ```
+
+## 2-2. 전체 빌드 (4단계)
+
+```bash
+git clone https://github.com/snake7594/SD-Gundam-Gashapon-Wars-KR.git
+cd SD-Gundam-Gashapon-Wars-KR/src
+```
+
+**① 원본 ISO에서 게임 데이터 추출** (저작물이라 저장소에 없음 — 각자 추출)
+
+```bash
+python text_patch_work/00_extract_iso.py --iso "D:/경로/SD Gundam Gashapon Wars.iso"
+```
+→ `src/files/`(2,006개 리소스) + `src/sys/main.dol` 생성
+
+**② 한글 폰트 빌드**
+
+```bash
+python text_patch_work/06_build_font.py
+```
+→ `patched_main.dol`(한글 글리프 삽입) + `carrier_map.json`(음절→코드 매핑) 생성
+
+**③ 번역 주입 + ISO 빌드**
+
+```bash
+python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "D:/경로/SD Gundam Gashapon Wars.iso"
+```
+→ 번역이 주입된 ISO 완성
+
+**④ (선택) 배포용 xdelta 패치 만들기**
+
+```bash
+python -c "import pyxdelta; pyxdelta.run('원본.iso','패치본.iso','my_patch.xdelta')"
+```
+
+> ✅ **재현성 검증됨**: 위 절차대로 빈 클론에서 빌드하면 배포본 v2.9와 **바이트 단위로 동일**한
+> 결과가 나옵니다(patched_files 0 차이, `patched_main.dol` 동일).
+
+## 2-3. 번역 수정하기
+
+모든 번역은 **단 하나의 파일**에 모여 있습니다:
+
+### `src/text_patch_work/translation_master.json` (약 568 KB)
+
+이 파일의 `ko` 값을 고치고 위 **③번 명령**만 다시 실행하면 패치가 갱신됩니다.
+
+| 섹션 | 개수 | 내용 |
+|---|---:|---|
+| `dialogue` | 1,101 | 스토리·전투 대사 (`id → {jp, ko}`) |
+| `dol` (+`dol_extra`) | 821 | 실행파일 UI 문자열 |
+| `unit_names` | 175 | 유닛명 |
+| `gallery` | 163 | 도감 유닛 설명 |
+| `ab_mission` | 100 | 챌린지 미션(타이틀·조건·설명) |
+| `help` | 74 | 도움말 |
+| `images` | 56 | 라벨 이미지 텍스트 |
+| `disp_char` / `disp_terrain` | 21 / 30 | 캐릭터·지형 표시명 |
+| `field` | 43행 | 맵 선택 화면 |
+| `dol_exclude` | 260 | **번역 금지 목록**(내부 키) — 수정 금지 |
+
+자세한 설명: [`src/text_patch_work/README_MASTER.md`](src/text_patch_work/README_MASTER.md)
+
+### ⚠️ 반드시 지켜야 할 3가지
+
+1. **길이 제한** — 게임 파일 크기를 바꿀 수 없어 **동일 크기 제자리 치환** 방식입니다.
+   원본 슬롯보다 길면 잘리거나 적용되지 않습니다.
+2. **제어 토큰 유지** — 대사의 `@c7`(색상), `@b`(버튼), `\n`(줄바꿈) 등은 그대로 두세요.
+3. **내부 키는 절대 번역 금지** — 아래 "크래시 주의" 참고.
+
+### 새 한글 글자가 필요하면
+
+폰트는 정해진 음절 목록(현재 **810자**)만 담습니다. 목록에 없는 글자를 쓰면 빌드가 실패합니다.
+
+```bash
+# src/text_patch_work/syllables.json 에 글자 추가 후
+python text_patch_work/06_build_font.py          # 폰트 재빌드
+python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "원본.iso"   # 전체 재인코딩
+```
+
+---
+
+# 3. ⚠️ 크래시 주의 (가장 중요)
+
+이 프로젝트에서 실제로 겪은 **게임 진행 정지 버그의 원인**입니다. 반드시 읽어주세요.
+
+게임은 유닛·지형·맵을 **일본어 이름 문자열로 찾아서 로드**합니다.
+이 "참조 이름"을 한글로 바꾸면 게임이 리소스를 찾지 못해 **화면이 멈춥니다**
+(음악은 계속 나오지만 진행 불가 — 실제로 v2.5까지 미션 4에서 발생).
+
+**번역하면 안 되는 것:**
+- 유닛명 키 (`ガンダム`, `ザク`, `コア・ブースター` …)
+- 지형·맵 데이터명 (`山脈コスト`, `拠点コスト` …)
+- 유닛/무기/맵 데이터 파일 전반 (`pbmode_unit.vsc`, `ユニットデータ.vsc`, `*_units.vsc`, `Field/PbMode/**` …)
+- `dol_exclude` 목록의 문자열 (AI 명령어·내부 enum)
+
+**구분법:** 진짜 대사에는 항상 `@` 제어 토큰이나 문장부호가 있습니다.
+`@`도 문장부호도 없는 "맨 이름"은 참조입니다.
+이 규칙은 [`53_fix_spb_refs.py`](src/text_patch_work/53_fix_spb_refs.py)에 구현돼 있고, 빌드마다 자동 실행됩니다.
+
+전체 감사 결과: [`src/text_patch_work/UNTRANSLATED_AUDIT.md`](src/text_patch_work/UNTRANSLATED_AUDIT.md)
+
+---
+
+# 4. 번역 범위 (v2.9)
 
 **한글화 완료**
-- 📜 **스토리·튜토리얼 대사** 전량 (미션 시나리오, ~1,300줄)
-- 🖥️ **시스템 UI** — 확인/저장/일시정지 대화상자, 메모리카드 메시지 등
-- ⚔️ **전투 커맨드** — 맡긴다/끝장내라/돌격/가드 등
-- 📂 **메뉴·도움말** — 버튼 안내, 모드 설명, 미션 제목
-- 🗺️ **지형명** (평지·우주·대기권·콜로니 등)
-- 🧑 **등장인물 이름** (아무로·샤아·마류·키라·신 등)
-- 🖼️ **메뉴 라벨 이미지** — 모드 선택/싱글·멀티 플레이/옵션/진동/사운드 설정/메모리 카드 (텍스처 직접 한글화)
-- 🎚️ **룰 설정 라벨 이미지** — 지형(지상·수중·우주·공중), 시간/일수 설정, 난이도(약함~뉴타입·쉬움~엄청 어려움), 아이템 출현·기믹·아군 히트·가위바위보·COM 레벨·하이드·카드·기본값으로·클리어 타임·쓰러뜨린 적 수 등 (bank113/114/118)
-- 🏆 **미션 조건·기타 라벨 이미지** — 100% 유닛 생환/100% 점령/100% 거점 점령, 포격, 랜덤 맵 로고 (bank101/106/110/111/118)
-- 🔤 **본문 폰트를 나눔스퀘어 네오 Bold로 교체** — 가독성 향상, 우측 클립 수정
-  - ※ 대형 메뉴 타이틀 이미지(bank102 368×74)는 v2.1에서 시도했으나 인게임 표시 문제로 v2.6에서 원복했습니다.
+- 📜 **스토리·튜토리얼 대사** 전량 (~1,300줄)
+- 📖 **도감 유닛 설명 163종** — 유닛 해설문 전문
+- 🏅 **챌린지 미션 100종** — 타이틀·클리어 조건·설명
+- 🖥️ **시스템 UI** — 대화상자, 메모리카드 메시지 등
+- ⚔️ **전투 커맨드**, 📂 **메뉴·도움말**, 🗺️ **지형명**, 🧑 **등장인물 이름**
+- 🖼️ **메뉴 라벨 이미지** — 모드 선택/싱글·멀티 플레이/옵션/진동/사운드 설정/메모리 카드
+- 🎚️ **룰 설정 라벨 이미지 49종** — 지형·시간/일수·난이도·아이템 출현·COM 레벨 등
+- 🏆 **미션 조건 이미지** — 100% 유닛 생환/점령/거점 점령, 포격, 랜덤 맵 로고
+- 🔤 **본문 폰트: 나눔스퀘어 네오 Bold** (810 음절)
 
-**미번역 (구조적 한계)**
-- 🎨 일부 대형 로고·연출 그래픽(타이틀·랜덤 맵 등)은 **커스텀 스프라이트 포맷**이라 추가 작업 진행 중
-- 🤖 **유닛 이름**은 게임 내부 참조 키로 쓰여 부득이 일본어(가타카나) 유지
-- 📖 유닛 도감 상세 설명·카드 상세 등 일부 텍스트
+**미번역 (의도적 또는 기술적 한계)**
+- 🤖 **유닛명·맵/유닛 데이터** — 내부 참조 키라서 **의도적으로 일본어 유지** (위 크래시 주의 참고)
+- 🎨 **커스텀 스프라이트 그래픽** — 미션 타이틀 카드, 성공/실패, 타이틀 로고
+  (`@Texture`가 아닌 OAM 아틀라스 포맷이라 리플로우 엔진 필요)
+- 🔠 **대형 버블 헤더 이미지**(bank108/113 일부) — 글자 획이 통짜로 뭉쳐 판독 불가
+- 🗣️ **화자명 플레이트** — 압축 `chr*.arc` 내부 스프라이트
 
-## 참고
-- 폰트가 없는 한글은 게임 한자 글리프 셀을 재활용해 표시합니다. 이 때문에 아직 번역되지 않은 일부 한자 텍스트가 엉뚱한 글자로 보일 수 있습니다.
+---
+
+# 5. 기술 메모
+
+### 캐리어-한자 폰트 방식
+게임은 Shift-JIS만 지원해 한글 코드가 없습니다. 그래서 **한자 글리프 셀에 한글을 그려 넣고**,
+한글 음절을 그 한자의 SJIS 코드로 인코딩합니다.
+- 부작용: 번역되지 않은 일본어 한자 중 재활용된 글자는 엉뚱한 한글로 보일 수 있습니다.
+- 폰트는 나눔스퀘어 TTF에서 직접 렌더링합니다(`06_build_font.py`).
+
+### 주요 포맷
+| 포맷 | 설명 |
+|---|---|
+| **SPB** | 대사 스크립트. `SPAR` 매직 + `04 00` 텍스트 명령(u16 길이 + SJIS) |
+| **vsc** | CSV형 설정/데이터 테이블(간이 압축). 메뉴·도감·유닛·맵 데이터 |
+| **@Texture** | GameCube 텍스처(C4/C8, RGB5A3 팔레트, 8×8 타일). 라벨 이미지 |
+| **main.dol** | 실행파일. UI 문자열 + 폰트 시트 내장 |
+
+모든 주입은 **동일 크기 제자리 치환**이라 ISO 크기·FST가 바뀌지 않습니다.
+
+### 저장소 구조
+```
+src/
+├── requirements.txt
+├── fonts/                          # 나눔스퀘어 네오 Bold
+├── text_patch_work/
+│   ├── translation_master.json     # ★ 모든 번역 (여기만 고치면 됨)
+│   ├── 00_extract_iso.py           # ① ISO → files/, sys/
+│   ├── 06_build_font.py            # ② 한글 폰트 빌드
+│   ├── BUILD_FROM_MASTER.py        # ③ 번역 주입 + ISO 빌드
+│   ├── make_master.py              # (관리용) 개별 데이터 → 마스터
+│   ├── README_MASTER.md            # 마스터 JSON 사용법
+│   ├── UNTRANSLATED_AUDIT.md       # 미번역 감사 + 크래시 안전 분류
+│   ├── 07/33/43/46/51/52/53/91_*   # 도메인별 주입기
+│   ├── 12_build_iso.py             # FST 제자리 ISO 빌더
+│   └── 01~50_*.py                  # 추출·분석·검증 도구 일체
+├── image_work/
+│   ├── image_labels.json           # 라벨 이미지 텍스트
+│   ├── tex_lib.py                  # @Texture 디코더/인코더
+│   ├── 60/61/62_*.py               # 라벨 이미지 재작화
+│   └── 70~74_*.py                  # 텍스처 추출·큐레이션
+└── kanji_dokuon_auto_patch_tool/   # 폰트 셀·한자 독음 도구
+```
+`files/`, `sys/`, `patched_files/`, `*.dol`, `*.iso`는 게임 저작물이라 `.gitignore`로 제외됩니다.
+
+---
+
+# 6. 버전 기록
+
+| 버전 | 내용 |
+|---|---|
+| **v2.9** | 도감 설명 163종 + 챌린지 미션 100종, 폰트 810음절 확장, 번역 마스터 JSON 통합 |
+| v2.8 | 시나리오 오프닝 대사가 일본어로 나오던 문제 수정 |
+| v2.6 | ⭐ **미션 진행 정지 수정** — 리소스 참조명 오번역이 원인 |
+| v2.2 | 대형 타이틀 이미지 원복 |
+| v2.0 | 미션 조건·포격·랜덤맵 이미지 |
+| v1.9 | 룰 설정 라벨 이미지 49종 |
+| v1.8 | 나눔스퀘어 폰트로 교체 |
+| v1.1 | 부팅 크래시 수정 |
+
+---
+
+## 라이선스 / 안내
+- 번역 텍스트와 빌드 도구는 자유롭게 활용하셔도 됩니다.
+- 게임 데이터·ISO는 포함하지 않으며 배포하지 않습니다. 원본은 각자 합법적으로 준비하세요.
+- 폰트: 나눔스퀘어 네오 (네이버)
 - 버그·오역 제보 환영합니다.
 
 ---
 *비영리 팬 번역. 게임의 모든 권리는 원저작권자에게 있습니다.*
-
----
-
-## 저장소 구성 (소스 · 번역 데이터 포함)
-
-이 저장소에는 패치 제작에 사용한 **전체 파이프라인 소스와 번역 데이터**가 포함되어 있습니다.
-(게임 원본 ISO·추출 파일 등 저작물은 포함하지 않습니다.)
-
-- `src/text_patch_work/` — 추출→번역→인코딩→주입 전 과정 스크립트(`01`~`48`, `spb_lib.py`, `vsc_lib.py`)와
-  번역 데이터(`ko_final.json` 대사, `dol_ko.json`/`dol_inject_all.json` 시스템 UI, `help_final.json` 도움말,
-  `disp_map.json` 캐릭터·지형명, `unit_name_map.json`, `carrier_map.json` 폰트 매핑 등), 용어집·번역지침.
-  - 각 단계 설명: `src/text_patch_work/BUILD_README.md`
-- `src/kanji_dokuon_auto_patch_tool/` — 한자→한글 독음 폰트 자동 패치 도구.
-- `SDGundamGashaponWars_KR_v1.0.xdelta` — 배포용 패치(릴리즈 첨부와 동일).
-
-### 재현 방법(개발자용)
-1. 본인이 소유한 원본 ISO에서 게임 파일을 추출해 `files/`, `sys/` 로 배치.
-2. `src/text_patch_work/BUILD_README.md` 의 실행 순서대로 스크립트 실행.

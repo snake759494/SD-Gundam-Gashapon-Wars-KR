@@ -1,0 +1,227 @@
+[
+ {
+  "row": 4,
+  "jp_title": "『ちいさな攻防戦』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "ちびユニットで敵を倒せ！",
+  "title_budget": 33,
+  "cond_budget": 14,
+  "desc_budget": 38
+ },
+ {
+  "row": 8,
+  "jp_title": "『ＭＳ部隊を叩け！』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵を全滅させろ！",
+  "title_budget": 39,
+  "cond_budget": 14,
+  "desc_budget": 34
+ },
+ {
+  "row": 12,
+  "jp_title": "『ガシャポン・ファイト（１）』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵チームを撃破せよ！",
+  "title_budget": 30,
+  "cond_budget": 14,
+  "desc_budget": 39
+ },
+ {
+  "row": 16,
+  "jp_title": "『ビグ・ザムを倒せ！』",
+  "jp_cond": "ビグ・ザムを撃破せよ",
+  "jp_desc": "ビグ・ザムを撃破せよ！",
+  "title_budget": 29,
+  "cond_budget": 32,
+  "desc_budget": 34
+ },
+ {
+  "row": 20,
+  "jp_title": "『最強のスナイパー』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "砲撃ユニットのみのバトルロイヤル",
+  "title_budget": 33,
+  "cond_budget": 14,
+  "desc_budget": 43
+ },
+ {
+  "row": 24,
+  "jp_title": "『ホワイトベースを守れ！』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "むらがる敵からホワイトベースを守れ！",
+  "title_budget": 33,
+  "cond_budget": 14,
+  "desc_budget": 50
+ },
+ {
+  "row": 28,
+  "jp_title": "『エンデュミオンの鷹』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "ジン部隊を全滅させろ！",
+  "title_budget": 29,
+  "cond_budget": 14,
+  "desc_budget": 45
+ },
+ {
+  "row": 32,
+  "jp_title": "『ガンダムチーム対決』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "ガンダム同士のチーム対決！",
+  "title_budget": 33,
+  "cond_budget": 14,
+  "desc_budget": 49
+ },
+ {
+  "row": 36,
+  "jp_title": "『ジェリド ＶＳ カミーユ』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "カミーユを倒せ！",
+  "title_budget": 26,
+  "cond_budget": 14,
+  "desc_budget": 23
+ },
+ {
+  "row": 40,
+  "jp_title": "『ガンダムタッグバトル』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "２対２のガンダム対決！",
+  "title_budget": 24,
+  "cond_budget": 14,
+  "desc_budget": 40
+ },
+ {
+  "row": 44,
+  "jp_title": "『シロッコ ＶＳ カミーユ』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "カミーユを倒せ！",
+  "title_budget": 26,
+  "cond_budget": 14,
+  "desc_budget": 23
+ },
+ {
+  "row": 48,
+  "jp_title": "『大艦隊戦』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵艦隊を撃破せよ！",
+  "title_budget": 40,
+  "cond_budget": 14,
+  "desc_budget": 45
+ },
+ {
+  "row": 52,
+  "jp_title": "『一発勝負（３）』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "先に攻撃を当てたほうが勝ち！",
+  "title_budget": 40,
+  "cond_budget": 14,
+  "desc_budget": 56
+ },
+ {
+  "row": 56,
+  "jp_title": "『ガンダムチームバトル』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "ガンダムＶＳガンダムのチーム戦！",
+  "title_budget": 24,
+  "cond_budget": 14,
+  "desc_budget": 39
+ },
+ {
+  "row": 60,
+  "jp_title": "『最強の戦闘機は？』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "航空機ユニットによるバトルロイヤル",
+  "title_budget": 49,
+  "cond_budget": 14,
+  "desc_budget": 50
+ },
+ {
+  "row": 64,
+  "jp_title": "『ビグ・ザム バトル』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "ビグ・ザムだけのバトルロイヤル",
+  "title_budget": 21,
+  "cond_budget": 14,
+  "desc_budget": 30
+ },
+ {
+  "row": 68,
+  "jp_title": "『突撃！ ジム小隊』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "ジム部隊で敵を倒せ！",
+  "title_budget": 43,
+  "cond_budget": 14,
+  "desc_budget": 43
+ },
+ {
+  "row": 72,
+  "jp_title": "『ＺＺ ＶＳ ＳＥＥＤチーム』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵チームを撃破せよ！",
+  "title_budget": 28,
+  "cond_budget": 14,
+  "desc_budget": 39
+ },
+ {
+  "row": 76,
+  "jp_title": "『ハロ！ハロ！』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "ハロ、イキマース！",
+  "title_budget": 16,
+  "cond_budget": 14,
+  "desc_budget": 18
+ },
+ {
+  "row": 80,
+  "jp_title": "『クルーゼ ＶＳ キラ』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "キラを倒せ！",
+  "title_budget": 22,
+  "cond_budget": 14,
+  "desc_budget": 19
+ },
+ {
+  "row": 84,
+  "jp_title": "『SDガンダムクイズ』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵を攻撃してクイズに答える",
+  "title_budget": 20,
+  "cond_budget": 14,
+  "desc_budget": 51
+ },
+ {
+  "row": 88,
+  "jp_title": "『終末の光』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵を全滅させろ！",
+  "title_budget": 34,
+  "cond_budget": 14,
+  "desc_budget": 34
+ },
+ {
+  "row": 92,
+  "jp_title": "『ＳＥＥＤ ＶＳ デスティニー』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵チームを撃破せよ！",
+  "title_budget": 30,
+  "cond_budget": 14,
+  "desc_budget": 39
+ },
+ {
+  "row": 96,
+  "jp_title": "『ドム ＶＳ ドム』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "新旧ドム対決！",
+  "title_budget": 18,
+  "cond_budget": 14,
+  "desc_budget": 38
+ },
+ {
+  "row": 100,
+  "jp_title": "『ガシャポン・ナイツ』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵を全滅させろ！",
+  "title_budget": 22,
+  "cond_budget": 14,
+  "desc_budget": 34
+ }
+]

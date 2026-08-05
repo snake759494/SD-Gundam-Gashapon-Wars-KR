@@ -1,0 +1,4 @@
+# 한글패치 빌드에 필요한 파이썬 패키지
+# 설치: pip install -r requirements.txt
+Pillow>=9.0          # 이미지 라벨 재작화(@Texture C4 디코드/인코드), 폰트 글리프 렌더
+pyxdelta>=0.2        # 배포용 xdelta 패치 생성 (빌드 자체에는 불필요)

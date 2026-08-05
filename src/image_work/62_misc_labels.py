@@ -4,7 +4,7 @@
  - bank101/bank110: ほうげき(砲撃) -> 포격 (흰색, full)
  - bank106/bank118: ランダムマップ 플라크 로고 -> 랜덤/맵 (흰 플라크·격자 배경 보존, 남색 2줄)
 원본 팔레트 유지, 동일 크기 제자리 재인코딩."""
-import sys, io, os, argparse
+import sys, io, os, json, argparse
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -18,17 +18,10 @@ ap.add_argument('--apply', action='store_true')
 ap.add_argument('--preview', action='store_true')
 args = ap.parse_args()
 
-# full 재작화 라벨: file -> {off: korean}
-FULL = {
- 'Info/arc/bank111.arc': {0xE580: '100% 유닛 생환', 0x103E0: '100% 점령', 0x12240: '100% 거점 점령'},
- 'Info/arc/bank101.arc': {0x2AA0: '포격'},
- 'Info/arc/bank110.arc': {0x2A80: '포격'},
-}
-# 플라크(배경 보존, 2줄) 라벨
-PLAQUE = {
- 'Info/arc/bank118.arc': {0x15DE0: ('랜덤', '맵')},
- 'Info/arc/bank106.arc': {0x13820: ('랜덤', '맵')},
-}
+# full/plaque 라벨: image_labels.json(마스터 소스)에서 로드.
+_IL = json.load(open(os.path.join(HERE, 'image_labels.json'), encoding='utf-8'))
+FULL = {rel: {int(o, 16): v for o, v in d.items()} for rel, d in _IL['misc_full'].items()}
+PLAQUE = {rel: {int(o, 16): tuple(v) for o, v in d.items()} for rel, d in _IL['misc_plaque'].items()}
 
 
 PATCHED = os.path.join(HERE, '..', 'text_patch_work', 'patched_files')

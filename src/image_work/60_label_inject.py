@@ -14,16 +14,9 @@ FONTBD = os.path.join(HERE, '..', 'fonts', 'NanumSquareNeocBd.ttf')
 DARK = (33, 33, 33, 255)
 WHITE = (255, 255, 255, 255)
 
-# 라벨: offset -> 한글(위)
-LABELS = {
-    0xAC6A0: '모드 선택',
-    0xAD880: '싱글 플레이',
-    0xAEA60: '멀티 플레이',
-    0xAFC40: '옵션',
-    0xB0E20: '진동',
-    0xB2000: '사운드 설정',
-    0xB31E0: '메모리 카드',
-}
+# 라벨: offset -> 한글(위). image_labels.json(마스터 소스)에서 로드.
+_IL = json.load(open(os.path.join(HERE, 'image_labels.json'), encoding='utf-8'))
+LABELS = {int(k, 16): v for k, v in _IL['bank102_pills']['labels'].items()}
 
 def find_gap(img):
     px = img.load(); h = img.height; w = img.width

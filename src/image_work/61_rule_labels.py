@@ -18,39 +18,10 @@ ap.add_argument('--apply', action='store_true')
 ap.add_argument('--preview', action='store_true')
 args = ap.parse_args()
 
-# off -> (korean, mode)
-SPEC = {
- 'Info/arc/bank113.arc': {
-    0x5C600: ('지상', 'terrain'), 0x5CA60: ('수중', 'terrain'),
-    0x5CEC0: ('우주', 'terrain'), 0x5D320: ('공중', 'terrain'),
-    0x5D780: ('기본값으로', 'full'), 0x5ECE0: ('시간 설정', 'full'),
-    0x5FA00: ('아이템 출현', 'full'), 0x60720: ('기믹', 'full'),
-    0x61440: ('아군 히트', 'full'), 0x62160: ('가위바위보', 'full'),
-    0x62E80: ('COM 레벨', 'full'),
-    0x652E0: ('약함', 'keeptop'), 0x65E80: ('보통', 'keeptop'),
-    0x66A20: ('강함', 'keeptop'), 0x675C0: ('엄청 강함', 'keeptop'),
-    0x68160: ('뉴타입', 'keeptop'),
-    0x68D00: ('없음', 'full'),
-    0x698A0: ('15초', 'full'), 0x6A440: ('30초', 'full'),
-    0x6AFE0: ('45초', 'full'), 0x6BB80: ('60초', 'full'),
-    0x6C720: ('75초', 'full'), 0x6D2C0: ('90초', 'full'),
- },
- 'Info/arc/bank114.arc': {
-    0x380: ('쉬움', 'full'), 0x9E0: ('어려움', 'full'), 0x1040: ('엄청 어려움', 'full'),
-    0x4AAE0: ('클리어 타임', 'full'), 0x4B2C0: ('쓰러뜨린 적 수', 'full'),
-    0x4EB60: ('지상', 'terrain'), 0x4EFC0: ('수중', 'terrain'),
-    0x4F420: ('우주', 'terrain'), 0x4F880: ('공중', 'terrain'),
- },
- 'Info/arc/bank118.arc': {
-    0x17E40: ('기본값으로', 'full'), 0x193A0: ('일수', 'full'),
-    0x1A000: ('시간 제한', 'full'), 0x1AC60: ('하이드', 'full'),
-    0x1B8C0: ('카드', 'full'), 0x1E8C0: ('없음', 'full'),
-    0x1F460: ('5일', 'full'), 0x20000: ('10일', 'full'), 0x20BA0: ('15일', 'full'),
-    0x21740: ('20일', 'full'), 0x222E0: ('25일', 'full'), 0x22E80: ('30일', 'full'),
-    0x23A20: ('30초', 'full'), 0x245C0: ('60초', 'full'), 0x25160: ('90초', 'full'),
-    0x25D00: ('120초', 'full'), 0x268A0: ('150초', 'full'),
- },
-}
+# off -> (korean, mode). image_labels.json(마스터 소스)에서 로드.
+_IL = json.load(open(os.path.join(HERE, 'image_labels.json'), encoding='utf-8'))
+SPEC = {rel: {int(o, 16): tuple(v) for o, v in d.items()}
+        for rel, d in _IL['rule_labels'].items()}
 
 
 def luma(c):

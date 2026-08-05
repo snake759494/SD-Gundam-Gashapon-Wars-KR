@@ -1,0 +1,632 @@
+[
+ {
+  "status": "translated",
+  "file": "Info/arc/bank101.arc",
+  "off": "0x2AA0",
+  "w": 62,
+  "h": 17
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0x309A0",
+  "w": 316,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0x36E40",
+  "w": 316,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0x3D2E0",
+  "w": 316,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0x43780",
+  "w": 316,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0x4A3A0",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0x51740",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0x58AE0",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0x5FE80",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0x67220",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0x6E5C0",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0x75960",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0x7CD00",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0x840A0",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0x8B440",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0x927E0",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0x99B80",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0xA0F20",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0xAC6A0",
+  "w": 160,
+  "h": 52
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0xAD880",
+  "w": 160,
+  "h": 52
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0xAEA60",
+  "w": 160,
+  "h": 52
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0xAFC40",
+  "w": 160,
+  "h": 52
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0xB0E20",
+  "w": 160,
+  "h": 52
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0xB2000",
+  "w": 160,
+  "h": 52
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank102.arc",
+  "off": "0xB31E0",
+  "w": 160,
+  "h": 52
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank106.arc",
+  "off": "0x13820",
+  "w": 128,
+  "h": 128
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank108.arc",
+  "off": "0x14B40",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank108.arc",
+  "off": "0x1BEE0",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank108.arc",
+  "off": "0x23280",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank108.arc",
+  "off": "0x2A620",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank108.arc",
+  "off": "0x319C0",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank108.arc",
+  "off": "0x38D60",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank108.arc",
+  "off": "0x40100",
+  "w": 368,
+  "h": 74
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank110.arc",
+  "off": "0x2A80",
+  "w": 62,
+  "h": 17
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank111.arc",
+  "off": "0xE580",
+  "w": 240,
+  "h": 64
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank111.arc",
+  "off": "0x103E0",
+  "w": 240,
+  "h": 64
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank111.arc",
+  "off": "0x12240",
+  "w": 240,
+  "h": 64
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x4BEC0",
+  "w": 308,
+  "h": 24
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x52F00",
+  "w": 316,
+  "h": 74
+ },
+ {
+  "status": "untranslated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x593A0",
+  "w": 316,
+  "h": 74
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x5C600",
+  "w": 64,
+  "h": 28
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x5CA60",
+  "w": 64,
+  "h": 28
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x5CEC0",
+  "w": 64,
+  "h": 28
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x5D320",
+  "w": 64,
+  "h": 28
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x5D780",
+  "w": 222,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x5ECE0",
+  "w": 136,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x5FA00",
+  "w": 136,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x60720",
+  "w": 136,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x61440",
+  "w": 136,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x62160",
+  "w": 136,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x62E80",
+  "w": 136,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x652E0",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x65E80",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x66A20",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x675C0",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x68160",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x68D00",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x698A0",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x6A440",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x6AFE0",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x6BB80",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x6C720",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank113.arc",
+  "off": "0x6D2C0",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank114.arc",
+  "off": "0x380",
+  "w": 90,
+  "h": 30
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank114.arc",
+  "off": "0x9E0",
+  "w": 90,
+  "h": 30
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank114.arc",
+  "off": "0x1040",
+  "w": 90,
+  "h": 30
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank114.arc",
+  "off": "0x4AAE0",
+  "w": 118,
+  "h": 32
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank114.arc",
+  "off": "0x4B2C0",
+  "w": 118,
+  "h": 32
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank114.arc",
+  "off": "0x4EB60",
+  "w": 64,
+  "h": 28
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank114.arc",
+  "off": "0x4EFC0",
+  "w": 64,
+  "h": 28
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank114.arc",
+  "off": "0x4F420",
+  "w": 64,
+  "h": 28
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank114.arc",
+  "off": "0x4F880",
+  "w": 64,
+  "h": 28
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x15DE0",
+  "w": 128,
+  "h": 128
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x17E40",
+  "w": 222,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x193A0",
+  "w": 128,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x1A000",
+  "w": 128,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x1AC60",
+  "w": 128,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x1B8C0",
+  "w": 128,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x1E8C0",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x1F460",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x20000",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x20BA0",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x21740",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x222E0",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x22E80",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x23A20",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x245C0",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x25160",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x25D00",
+  "w": 114,
+  "h": 48
+ },
+ {
+  "status": "translated",
+  "file": "Info/arc/bank118.arc",
+  "off": "0x268A0",
+  "w": 114,
+  "h": 48
+ }
+]

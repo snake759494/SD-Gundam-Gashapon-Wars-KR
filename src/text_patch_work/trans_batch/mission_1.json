@@ -1,0 +1,227 @@
+[
+ {
+  "row": 2,
+  "jp_title": "『マゼラ・アタック隊を倒せ！』",
+  "jp_cond": "マゼラ・アタック隊を撃破せよ",
+  "jp_desc": "マゼラ・アタック隊を撃破せよ！",
+  "title_budget": 44,
+  "cond_budget": 40,
+  "desc_budget": 49
+ },
+ {
+  "row": 6,
+  "jp_title": "『サイコガンダムを倒せ！』",
+  "jp_cond": "サイコガンダムを撃破せよ",
+  "jp_desc": "サイコガンダムを撃破せよ！",
+  "title_budget": 33,
+  "cond_budget": 36,
+  "desc_budget": 38
+ },
+ {
+  "row": 10,
+  "jp_title": "『ガンダムＭｋ－Ⅱを倒せ！』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "ガンダムＭｋ－Ⅱを撃破せよ！",
+  "title_budget": 35,
+  "cond_budget": 14,
+  "desc_budget": 40
+ },
+ {
+  "row": 14,
+  "jp_title": "『キラ ＶＳ アスラン』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "アスランを倒せ！",
+  "title_budget": 22,
+  "cond_budget": 14,
+  "desc_budget": 23
+ },
+ {
+  "row": 18,
+  "jp_title": "『エターナルを守れ！』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵の攻撃から、エターナルを守れ！",
+  "title_budget": 29,
+  "cond_budget": 14,
+  "desc_budget": 57
+ },
+ {
+  "row": 22,
+  "jp_title": "『カミーユ ＶＳ シロッコ』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "次々に出てくる、敵を撃破せよ！",
+  "title_budget": 26,
+  "cond_budget": 14,
+  "desc_budget": 65
+ },
+ {
+  "row": 26,
+  "jp_title": "『突撃！ザク隊』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "ザク部隊で敵を倒せ！",
+  "title_budget": 34,
+  "cond_budget": 14,
+  "desc_budget": 46
+ },
+ {
+  "row": 30,
+  "jp_title": "『ガシャポン・ロイヤル（１）』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "最終的に生き残れば勝ち！",
+  "title_budget": 30,
+  "cond_budget": 14,
+  "desc_budget": 58
+ },
+ {
+  "row": 34,
+  "jp_title": "『ガンダムを倒せ！』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵はガンダム！",
+  "title_budget": 27,
+  "cond_budget": 14,
+  "desc_budget": 21
+ },
+ {
+  "row": 38,
+  "jp_title": "『Ｚ ＶＳ ＺＺチーム』",
+  "jp_cond": "敵チームを撃破せよ",
+  "jp_desc": "チームでバトル！敵チームを撃破せよ！",
+  "title_budget": 22,
+  "cond_budget": 30,
+  "desc_budget": 55
+ },
+ {
+  "row": 42,
+  "jp_title": "『Ｚ ＶＳ デスティニーチーム』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵チームを撃破せよ！",
+  "title_budget": 30,
+  "cond_budget": 14,
+  "desc_budget": 39
+ },
+ {
+  "row": 46,
+  "jp_title": "『市街地の決戦』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵を全滅させろ！",
+  "title_budget": 44,
+  "cond_budget": 14,
+  "desc_budget": 34
+ },
+ {
+  "row": 50,
+  "jp_title": "『マリュー ＶＳ ナタル』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "ドミニオンを撃て！",
+  "title_budget": 24,
+  "cond_budget": 14,
+  "desc_budget": 23
+ },
+ {
+  "row": 54,
+  "jp_title": "『光る宇宙』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "ホワイトベース隊を撃破せよ！",
+  "title_budget": 29,
+  "cond_budget": 14,
+  "desc_budget": 47
+ },
+ {
+  "row": 58,
+  "jp_title": "『Ｚ ＶＳ ００９３チーム』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵チームを撃破せよ！",
+  "title_budget": 26,
+  "cond_budget": 14,
+  "desc_budget": 39
+ },
+ {
+  "row": 62,
+  "jp_title": "『変形ユニット軍団来襲』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "変形ＭＳ軍団を迎え撃て！",
+  "title_budget": 59,
+  "cond_budget": 14,
+  "desc_budget": 58
+ },
+ {
+  "row": 66,
+  "jp_title": "『００７９ ＶＳ ００９３チーム』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵チームを撃破せよ！",
+  "title_budget": 32,
+  "cond_budget": 14,
+  "desc_budget": 39
+ },
+ {
+  "row": 70,
+  "jp_title": "『ガシャポン・ロイヤル（３）』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "最終的に生き残れば勝ち！",
+  "title_budget": 30,
+  "cond_budget": 14,
+  "desc_budget": 58
+ },
+ {
+  "row": 74,
+  "jp_title": "『巨大ユニット対決』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "巨大ＭＳのみの大バトル！",
+  "title_budget": 42,
+  "cond_budget": 14,
+  "desc_budget": 42
+ },
+ {
+  "row": 78,
+  "jp_title": "『ガンダムを倒せ！（２）』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵はガンダム！",
+  "title_budget": 33,
+  "cond_budget": 14,
+  "desc_budget": 21
+ },
+ {
+  "row": 82,
+  "jp_title": "『キュベレイ隊を倒せ！』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "キュベレイ隊を撃破せよ！",
+  "title_budget": 38,
+  "cond_budget": 14,
+  "desc_budget": 43
+ },
+ {
+  "row": 86,
+  "jp_title": "『ファントムペイン』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵を撃破せよ！",
+  "title_budget": 20,
+  "cond_budget": 14,
+  "desc_budget": 33
+ },
+ {
+  "row": 90,
+  "jp_title": "『ガシャポン・ロイヤル（４）』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "最終的に生き残れば勝ち！",
+  "title_budget": 30,
+  "cond_budget": 14,
+  "desc_budget": 58
+ },
+ {
+  "row": 94,
+  "jp_title": "『デスティニーチームを倒せ！』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "敵チームを撃破せよ！",
+  "title_budget": 37,
+  "cond_budget": 14,
+  "desc_budget": 39
+ },
+ {
+  "row": 98,
+  "jp_title": "『格闘王は誰だ？』",
+  "jp_cond": "敵を全滅させろ",
+  "jp_desc": "射撃禁止！格闘のみの対決！",
+  "title_budget": 40,
+  "cond_budget": 14,
+  "desc_budget": 71
+ }
+]
