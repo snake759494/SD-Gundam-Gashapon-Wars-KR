@@ -20,7 +20,7 @@
 |---|---|---|
 | 번역 완료 (라벨/버튼) | **73** | 패치 반영됨 (한글) |
 | 미번역 @Texture | **17** | 아래 B 참조 |
-| 미번역 커스텀 스프라이트(.dat) | **20** | 별도 디코더 필요 (아래 C) |
+| 보류 커스텀 스프라이트(.dat) | **4** | 로고 3종 + 원본 영문 연출 1종 (아래 C) |
 
 ---
 
@@ -53,17 +53,19 @@
 
 ---
 
-## C. 미번역 — 커스텀 스프라이트(.dat), @Texture 아님  ⛔ (디코더 필요)
+## C. 커스텀 스프라이트(.dat) — v2.11 처리/보류 현황
 
-I4(4bpp) OAM-아틀라스 스프라이트. `@Texture`가 아니라 별도 포맷이며, 글자가 타일로
-흩어져 배치돼 **OAM 리플로우 엔진**이 있어야 한글로 교체 가능.
+`.dat` 전체가 같은 포맷은 아니다. 미션 연출 파일은 HAL HSD/DAT 컨테이너 안의
+고정 레이아웃 CI4 텍스처로 확인했으며, OAM/포인터를 건드리지 않고 원시 이미지 버퍼만
+동일 길이로 재인코딩할 수 있다. `75_custom_dat_sprites.py`가 이 작업을 자동화한다.
 
 | 파일 | 내용 |
 |---|---|
-| `Info/dat/sub_t01.dat` ~ `sub_t14.dat` (14) | 미션 타이틀 카드(각 화 제목) |
-| `Info/dat/m_seikou.dat` | ミッション成功 (성공) |
-| `Info/dat/m_sippai.dat` | ミッション失敗 (실패) |
-| `Info/dat/battle_start.dat` | バトルスタート |
+| `Info/dat/sub_t01.dat` ~ `sub_t14.dat` (14) | 미션 제목 카드 → **v2.11 한글화** |
+| `Info/dat/m_seikou.dat` | ミッション成功 → **미션 성공** |
+| `Info/dat/m_sippai.dat` | ミッション失敗 → **미션 실패** |
+| `Info/dat/sub_t01.dat` ~ `sub_t14.dat`의 버튼 텍스처 | つぎへ → **다음** |
+| `Info/dat/battle_start.dat` | `BATTLE`/`START` 원본 영문, 추가 번역 불필요 |
 | `files/ban_rogo.dat` | 반다이/타이틀 로고 |
 | `files/demo_title.dat` | 데모 타이틀 로고 |
 | `files/sim_title.dat` | 시뮬레이션 타이틀 로고 |
@@ -79,4 +81,5 @@ I4(4bpp) OAM-아틀라스 스프라이트. `@Texture`가 아니라 별도 포맷
 python image_work/70_extract_all_full.py   # 전체 611 @Texture 추출
 python image_work/71_curate_jp_text.py     # 일본어 텍스트만 큐레이션
 python image_work/72_jp_text_sheets.py     # 통합 컨택트시트 2장
+python image_work/75_custom_dat_sprites.py --apply  # HAL DAT 미션 연출 패치
 ```
