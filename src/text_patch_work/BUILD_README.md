@@ -1,4 +1,4 @@
-# SD건담 가샤폰 워즈 (GGPJB2) — 대사 한글 패치 파이프라인
+# SD건담 가샤폰 워즈 (GGPJB2) — 한글 패치 파이프라인
 
 게임 내 스토리/튜토리얼 **대사(SPB)** 를 한국어로 번역·주입한 파이프라인.
 결과물: `../SD Gundam Gashapon Wars (KR text).iso` (원본과 크기 동일, 제자리 패치).
@@ -25,8 +25,8 @@ python 03_make_batches.py     # 고유 1101개 -> 20 배치
 python 04_merge_validate.py   # 병합/검증/줄바꿈정규화/음절집계 -> ko_final.json, syllables.json
 (overflow: 08 -> 3 agents -> 09)   # 예산 초과 88개 압축 재번역
 python 06_build_font.py       # 캐리어 폰트 -> patched_main.dol, carrier_map.json
-python 07_encode_inject.py --apply   # 동일크기 주입 -> patched_files/
-python 11_verify_all.py       # 라운드트립 1313/1313
+python BUILD_FROM_MASTER.py          # 마스터에서 전체 도메인 재생성·주입
+python 11_verify_all.py       # 대사 크기·번역 검증(내부 키 12종은 의도적 예외)
 python 12_build_iso.py --apply  # FST 오프셋 제자리 패치 -> KR text ISO
 python 13_verify_iso.py       # ISO에서 직접 읽어 최종 검증
 ```
@@ -35,9 +35,10 @@ python 13_verify_iso.py       # ISO에서 직접 읽어 최종 검증
 - 번역: 고유 1101개 전량, 토큰/후리가나 문제 0.
 - 음절: 668종 (956셀에 여유).
 - 주입: 1313개 대사, 오버플로 0, 전 파일 크기 동일.
-- 라운드트립: 1313/1313 일치. ISO 최종 검증 통과.
+- `BUILD_FROM_MASTER.py`는 DOL·VSC·SPB·라벨 이미지·bank102 대형 타이틀까지 재생성한다.
+- 내부 참조명 12종은 안전성 때문에 일본어를 유지하며 라운드트립 감사에서 별도 보고한다.
 
 ## 범위/한계
-- **번역 대상 = SPB 대사만.** 메뉴/도움말(.vsc, 바이트역순+XOR0xFF), 유닛명 등은 미번역.
+- SPB 대사·메뉴/도움말 VSC·표시명·시스템 DOL·라벨 이미지까지 마스터에서 주입한다.
 - 미번역 화면에서 '희귀 한자'가 캐리어와 겹치면 엉뚱한 한글로 보일 수 있음(흔한 한자는 독음 표시).
 - 확장 시: 같은 캐리어 방식으로 .vsc/유닛명도 번역 가능.
