@@ -50,18 +50,22 @@
 
 ---
 
-## F. 타이틀·로고·연출 (별도 포맷, 추가 작업 필요)
-아래는 **@Texture가 아닌 커스텀 스프라이트 포맷**([파일크기][데이터크기][엔트리수] 헤더 + OAM + 원시 텍스처)이라 디코더를 별도로 만들어야 합니다.
-- `ban_rogo.dat` — 배너 로고(SD건담 가샤폰 워즈)
-- `demo_title.dat`, `sim_title.dat` — 타이틀 화면
-- `Info/dat/m_seikou.dat`(성공), `m_sippai.dat`(실패), `battle_start.dat`(배틀 스타트), `sub_t01~14.dat`(자막)
+## F. 타이틀·로고·연출 — HAL DAT 처리 현황
+미션 연출 `.dat` 중 `sub_t*`, `m_seikou`, `m_sippai`는 HAL HSD/DAT 컨테이너의
+고정 CI4 텍스처 버퍼를 사용한다. v2.11에서 `75_custom_dat_sprites.py`로 원시
+텍스처 길이와 팔레트를 보존한 채 제목·결과·다음 버튼을 재작화했다.
+- `Info/dat/sub_t01.dat` ~ `sub_t14.dat` — 미션 제목 14종 + `다음` (v2.11 처리)
+- `Info/dat/m_seikou.dat`, `m_sippai.dat` — 성공/실패 (v2.11 처리)
+- `Info/dat/battle_start.dat` — `BATTLE`/`START` 원본 영문
+- `ban_rogo.dat`, `demo_title.dat`, `sim_title.dat` — 로고/타이틀 그래픽, 원본 유지
 
 ## G. 번역 불필요
 - `Info/tpl/chr01~15_*.pic.tpl` — 캐릭터 초상화(300×360, 텍스트 없음)
 
 ---
 
-## 작업 방식(예정)
+## 작업 방식
 1. @Texture 라벨(A~D): 디코드→PNG→한글 로고 다시 그리기→같은 C4 포맷으로 재인코딩→arc 제자리 주입(동일 크기 or arc 재빌드).
    - 폰트 셀 재활용과 달리 **이미지를 직접 편집**해야 하므로, 팔레트·타일 배치를 보존한 재인코더가 필요.
-2. 커스텀 스프라이트(F): OAM/텍스처 포맷 크랙 후 동일 방식.
+2. HAL DAT 연출: 고정 CI4 image buffer를 검증하고 동일 길이로 재인코딩해 주입
+   (`75_custom_dat_sprites.py`). 압축 `chr*.arc`와 로고 OAM은 별도 보류.

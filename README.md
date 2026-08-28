@@ -11,14 +11,14 @@
 # 1. 그냥 플레이하고 싶다면 (일반 사용자)
 
 1. **원본 ISO 준비** — 일본판 SD Gundam Gashapon Wars (GGPJB2), 원본 CRC32 `D5F67251`
-2. **최신 패치 내려받기** — [Releases](../../releases)에서 `SDGundamGashaponWars_KR_v2.10.xdelta`
+2. **최신 패치 내려받기** — [Releases](../../releases)에서 `SDGundamGashaponWars_KR_v2.11.xdelta`
 3. **패치 적용**
    - Windows: [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher/releases)로 원본 ISO + 패치 선택 → Apply
    - 커맨드라인:
      ```bash
-     xdelta3 -d -s "SD Gundam Gashapon Wars.iso" SDGundamGashaponWars_KR_v2.10.xdelta "SD Gundam Gashapon Wars (KR).iso"
+     xdelta3 -d -s "SD Gundam Gashapon Wars.iso" SDGundamGashaponWars_KR_v2.11.xdelta "SD Gundam Gashapon Wars (KR).iso"
      ```
-4. **결과 확인** — 패치 후 ISO CRC32 `A5529A54`
+4. **결과 확인** — 패치 후 ISO CRC32 `6D6CD38D` (SHA-256 `E4BE521878FD7BE631673D8D101A69FE55041D6C050542B644F106598B74D116`)
 5. Dolphin 등 게임큐브 에뮬레이터로 실행
 
 ---
@@ -68,7 +68,7 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "D:/경로/SD Gundam
 python -c "import pyxdelta; pyxdelta.run('원본.iso','패치본.iso','my_patch.xdelta')"
 ```
 
-> ✅ **재현성 검증됨**: 위 절차대로 빈 클론에서 빌드하면 배포본 v2.10과 **바이트 단위로 동일**한
+> ✅ **재현성 검증됨**: 위 절차대로 빈 클론에서 빌드하면 배포본 v2.11과 **바이트 단위로 동일**한
 > 결과가 나옵니다(patched_files 0 차이, `patched_main.dol` 동일).
 
 ## 2-3. 번역 수정하기
@@ -135,7 +135,7 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "원본.iso"   # 전
 
 ---
 
-# 4. 번역 범위 (v2.10)
+# 4. 번역 범위 (v2.11)
 
 **한글화 완료**
 - 📜 **스토리·튜토리얼 대사** 전량 (~1,300줄)
@@ -145,17 +145,17 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "원본.iso"   # 전
 - ⚔️ **전투 커맨드**, 📂 **메뉴·도움말**, 🗺️ **지형명**, 🧑 **등장인물 이름**
 - 🖼️ **메뉴 라벨 이미지** — 모드 선택/싱글·멀티 플레이/옵션/진동/사운드 설정/메모리 카드
 - 🖼️ **대형 메뉴 타이틀 10종** — 모드 선택/싱글·멀티 플레이/옵션/시나리오 게임/도움말/사운드/진동/메모리 카드
+- 🎬 **미션 연출 카드** — 시나리오 미션 제목 14종, `미션 성공`/`미션 실패`, `다음` 버튼
 - 🎚️ **룰 설정 라벨 이미지 49종** — 지형·시간/일수·난이도·아이템 출현·COM 레벨 등
 - 🏆 **미션 조건 이미지** — 100% 유닛 생환/점령/거점 점령, 포격, 랜덤 맵 로고
 - 🔤 **본문 폰트: 나눔스퀘어 네오 Bold** (810 음절)
 
 **미번역 (의도적 또는 기술적 한계)**
 - 🤖 **유닛명·맵/유닛 데이터** — 내부 참조 키라서 **의도적으로 일본어 유지** (위 크래시 주의 참고)
-- 🎨 **커스텀 스프라이트 그래픽** — 미션 타이틀 카드, 성공/실패, 타이틀 로고
-  (`@Texture`가 아닌 OAM 아틀라스 포맷이라 리플로우 엔진 필요)
+- 🎨 **일부 커스텀 스프라이트 그래픽** — 반다이/타이틀 로고는 원본 유지
 - 🔠 **대형 버블 헤더 이미지**(bank108/113 일부) — 글자 획이 통짜로 뭉쳐 판독 불가
 - 🗣️ **화자명 플레이트** — 압축 `chr*.arc` 내부 스프라이트
-- 🧩 **커스텀 연출 스프라이트** — 미션 타이틀·성공/실패·배틀 커맨드 휠은 별도 OAM 포맷이라 원본 키/배치 검증 없이 변경하지 않음
+- 🧩 **커스텀 연출 스프라이트** — 배틀 커맨드 휠과 화자명 플레이트는 별도 압축/OAM 포맷이라 원본 키·배치 검증 없이 변경하지 않음
 
 ---
 
@@ -208,6 +208,7 @@ src/
 
 | 버전 | 내용 |
 |---|---|
+| **v2.11** | GitHub 이슈 #1·#2 추가 반영 — HAL DAT 미션 제목 14종·성공/실패·다음 버튼을 동일 크기 CI4로 재작화하고 빌드 파이프라인에 연결 |
 | **v2.10** | GitHub 이슈 #1·#2 반영 — 미션 안내 줄바꿈/오역 수정, 공통 버튼·도움말 문자열 보강, 대형 메뉴 타이틀 10종 빌드 연결 |
 | **v2.9** | 도감 설명 163종 + 챌린지 미션 100종, 폰트 810음절 확장, 번역 마스터 JSON 통합 |
 | v2.8 | 시나리오 오프닝 대사가 일본어로 나오던 문제 수정 |
