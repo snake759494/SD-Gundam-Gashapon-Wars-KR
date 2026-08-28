@@ -62,6 +62,7 @@ run('43_dol_inject.py', HERE)
 run('60_label_inject.py', IMG)
 run('61_rule_labels.py', IMG)
 run('62_misc_labels.py', IMG)
+run('63_menu_titles.py', IMG)                  # bank102 대형 메뉴 타이틀
 print('[2] 완료: patched_files/ + patched_main.dol 재생성')
 
 # 3) ISO

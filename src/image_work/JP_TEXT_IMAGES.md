@@ -4,7 +4,7 @@
 들어있는 이미지만** 별도로 추렸습니다.
 
 - 큐레이션 폴더: `image_work/jp_text_images/{translated, untranslated}/`
-- 통합 시트: `jp_text_translated_sheet.png` (63개), `jp_text_untranslated_sheet.png` (27개)
+- 통합 시트: `jp_text_translated_sheet.png` (73개), `jp_text_untranslated_sheet.png` (17개)
 - 원자료: `jp_text_inventory.json`
 - 판별 기준(그라운드 트루스): 원본 `files/` ↔ 패치본 `text_patch_work/patched_files/` 의
   `@Texture` 블록 바이트를 비교해 **실제로 바뀐 것 = 번역완료**, 텍스트인데 안 바뀐 것 = 미번역.
@@ -18,8 +18,8 @@
 
 | 구분 | @Texture | 상태 |
 |---|---|---|
-| 번역 완료 (라벨/버튼) | **63** | 패치 반영됨 (한글) |
-| 미번역 @Texture | **27** | 아래 B 참조 |
+| 번역 완료 (라벨/버튼) | **73** | 패치 반영됨 (한글) |
+| 미번역 @Texture | **17** | 아래 B 참조 |
 | 미번역 커스텀 스프라이트(.dat) | **20** | 별도 디코더 필요 (아래 C) |
 
 ---
@@ -47,7 +47,7 @@
 
 | 뱅크 | 개수 | 내용 | 미처리 사유 |
 |---|---|---|---|
-| bank102 | 17 | 대형 흰색 말풍선 타이틀(모드/모드설명 등) | 게임 내 표시 문제로 v2.2에서 되돌림(63번 스크립트 데이터는 보존). 렌더링 방식 재확인 필요 |
+| bank102 | 7 | 용도 미확정 대형 흰색 헤더 | 메뉴 타이틀 10종은 v2.10에서 `63_menu_titles.py`로 번역 |
 | bank108 | 7 | 대형 흰색 헤더 라벨(1개는 `???` 잠금 placeholder) | 화면 표시 위치·용도 미확정 |
 | bank113 | 3 | 룰 화면 배너(VS/글로우 마스크 계열) | 텍스트+장식 합성이라 단순 교체 부적합 |
 
