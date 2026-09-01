@@ -72,7 +72,7 @@ MISSION_SUCCESS = {
     "height": 182,
     "palette_offset": 0x8D00,
     "palette_count": 16,
-    "text": "미션 성공",
+    "text": "미션 클리어",
 }
 MISSION_FAILURE = {
     "rel": "Info/dat/m_sippai.dat",
