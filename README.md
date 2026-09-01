@@ -18,7 +18,7 @@
      ```bash
      xdelta3 -d -s "SD Gundam Gashapon Wars.iso" SDGundamGashaponWars_KR_v2.12.xdelta "SD Gundam Gashapon Wars (KR).iso"
      ```
-4. **결과 확인** — 패치 후 ISO CRC32 `FE3A4A1C` (SHA-256 `D6DEE80774DF8162ABEF7D0A899CF54C462C19C54A5CF3EACBE4814A42B06E06`)
+4. **결과 확인** — 패치 후 ISO CRC32 `709C1A37` (SHA-256 `78DBC1C1853F1BF981669910BFE521BD98231A7F6FB53480193EDF2452390CCA`)
 5. Dolphin 등 게임큐브 에뮬레이터로 실행
 
 ---
