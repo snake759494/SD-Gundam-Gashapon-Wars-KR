@@ -23,7 +23,7 @@ FONT = os.path.join(HERE, "..", "fonts", "NanumSquareNeocBd.ttf")
 
 sys.path.insert(0, HERE)
 import tex_lib as TX
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFont
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--apply", action="store_true", help="patched_files에 바이너리 패치 저장")
@@ -150,9 +150,13 @@ BUBBLE = (66, 132, 115, 255)
 
 
 def draw_help(image):
-    original = image.copy()
     image = image.copy()
-    draw = ImageDraw.Draw(image)
+    # Pillow의 RGBA ImageDraw는 안티앨리어싱 글자 가장자리를 부분 알파로
+    # 남긴다. 이 값을 그대로 C8 팔레트에 양자화하면 투명 팔레트 색이
+    # 선택되어 게임에서 글자 가장자리가 톱니처럼 끊어진다. 먼저 투명
+    # 레이어에 글자를 그리고 불투명한 말풍선/배경 위에 합성한다.
+    text_layer = Image.new("RGBA", image.size, (0, 0, 0, 0))
+    text_draw = ImageDraw.Draw(text_layer)
     for shift in (0, 167):
         for text, box, clear_box in HELP_TEXT:
             left, top, right, bottom = box
@@ -165,10 +169,16 @@ def draw_help(image):
                     if a and max(r, g, b) - min(r, g, b) <= 16:
                         image.putpixel((x, y), BUBBLE)
             box = (left + shift, top, right + shift, bottom)
-            font, pos = fit_font(draw, text, box, max_size=14, min_size=6, stroke=1)
-            draw.text(pos, text, font=font, fill=(255, 255, 255, 255),
-                      stroke_width=1, stroke_fill=(33, 33, 33, 255))
-    return image
+            font, pos = fit_font(text_draw, text, box, max_size=14, min_size=6, stroke=1)
+            text_draw.text(pos, text, font=font, fill=(255, 255, 255, 255),
+                           stroke_width=1, stroke_fill=(33, 33, 33, 255))
+    # 글리프 영역 밖의 완전 투명 픽셀에는 텍스트를 쓰지 않는다. 이 마스크를
+    # 적용하면 C8 팔레트의 투명 흰색(인덱스 248~254)이 한글 가장자리에
+    # 들어가지 않고, 실제 표시되는 픽셀은 모두 불투명 배경 위에 합성된다.
+    visible = image.getchannel("A").point(lambda a: 255 if a else 0)
+    text_alpha = ImageChops.multiply(text_layer.getchannel("A"), visible)
+    text_layer.putalpha(text_alpha)
+    return Image.alpha_composite(image, text_layer)
 
 
 def encode_c8_overlay(raw, original, image, palette, width, height):
@@ -185,8 +195,13 @@ def encode_c8_overlay(raw, original, image, palette, width, height):
             if before[x, y] == after[x, y]:
                 continue
             color = after[x, y]
+            if color[3] != 255:
+                raise ValueError("C8 변경 픽셀에 부분 알파가 남았습니다: %s" % (color,))
             if color not in cache:
                 cache[color] = TX._nearest(palette, color)
+                if palette[cache[color]][3] != 255:
+                    raise ValueError("C8 변경 픽셀이 투명 팔레트로 매핑됐습니다: %s -> %d" %
+                                     (color, cache[color]))
             tile_offset = ((y // 8) * tiles_w + (x // 8)) * 64
             out[tile_offset + (y % 8) * 8 + (x % 8)] = cache[color]
     return bytes(out)
