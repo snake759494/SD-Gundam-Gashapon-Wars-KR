@@ -85,7 +85,7 @@ def encode_c4(img, pal, w, h):
 
 
 def encode_c8(img, pal, w, h):
-    """PIL RGBA 이미지를 C8(8bpp,8x8타일) 바이트로 인코딩한다."""
+    """PIL RGBA 이미지를 C8(8bpp,8x4타일) 바이트로 인코딩한다."""
     img = img.convert('RGBA')
     px = img.load()
     cache = {}
@@ -101,11 +101,13 @@ def encode_c8(img, pal, w, h):
     def align(n, a):
         return (n + a - 1) // a * a
 
-    pw, ph = align(w, 8), align(h, 8)
+    # GameCube C8은 8x4 texel tile(32 bytes)이다. C4의 8x8 tile과
+    # 혼동하면 4행 경계마다 다음 타일의 데이터가 섞여 줄이 밀린다.
+    pw, ph = align(w, 8), align(h, 4)
     out = bytearray()
-    for ty in range(0, ph, 8):
+    for ty in range(0, ph, 4):
         for tx in range(0, pw, 8):
-            for y in range(8):
+            for y in range(4):
                 for x in range(8):
                     out.append(idx(tx + x, ty + y))
     return bytes(out)
@@ -254,7 +256,7 @@ def decode(data, off):
     px = img.load()
     raw = data[hd['img_off']: hd['img_off'] + hd['imgsize']]
     bpp4 = (palcnt == 16)
-    # 8x8 타일
+    # C4는 8x8, C8은 8x4 texel tile이다.
     p = 0
     def align(n, a): return (n + a - 1) // a * a
     pw = align(w, 8); ph = align(h, 8)
@@ -269,10 +271,12 @@ def decode(data, off):
                                 X, Y = tx + dx, ty + y
                                 if X < w and Y < h:
                                     px[X, Y] = pal[nib]
-        else:  # C8
-            for ty in range(0, ph, 8):
+        else:  # C8: 8x4 tile, 32 bytes
+            pw = align(w, 8)
+            ph = align(h, 4)
+            for ty in range(0, ph, 4):
                 for tx in range(0, pw, 8):
-                    for y in range(8):
+                    for y in range(4):
                         for x in range(8):
                             idx = raw[p]; p += 1
                             X, Y = tx + x, ty + y
