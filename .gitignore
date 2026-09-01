@@ -20,6 +20,7 @@ font_preview/
 patched_preview/
 auto_patch_work/
 font_candidates/
+src/image_work/out/
 __pycache__/
 *.pyc
 

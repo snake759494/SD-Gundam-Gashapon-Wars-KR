@@ -11,14 +11,14 @@
 # 1. 그냥 플레이하고 싶다면 (일반 사용자)
 
 1. **원본 ISO 준비** — 일본판 SD Gundam Gashapon Wars (GGPJB2), 원본 CRC32 `D5F67251`
-2. **최신 패치 내려받기** — [Releases](../../releases)에서 `SDGundamGashaponWars_KR_v2.14.xdelta`
+2. **최신 패치 내려받기** — [Releases](../../releases)에서 `SDGundamGashaponWars_KR_v2.15.xdelta`
 3. **패치 적용**
    - Windows: [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher/releases)로 원본 ISO + 패치 선택 → Apply
    - 커맨드라인:
      ```bash
-     xdelta3 -d -s "SD Gundam Gashapon Wars.iso" SDGundamGashaponWars_KR_v2.14.xdelta "SD Gundam Gashapon Wars (KR).iso"
+     xdelta3 -d -s "SD Gundam Gashapon Wars.iso" SDGundamGashaponWars_KR_v2.15.xdelta "SD Gundam Gashapon Wars (KR).iso"
      ```
-4. **결과 확인** — 패치 후 ISO CRC32 `B6976122` (SHA-256 `1D25F210B82239D9AE0AEEB52FB26C004E3CF6FF8A9A3B801E1ACF0F042AF5DB`)
+4. **결과 확인** — 패치 후 ISO CRC32 `EF05268E` (SHA-256 `5C12B59243467D4F8612A287D4567CFCCC9954343187FA12BB12792904AC37A1`)
 5. Dolphin 등 게임큐브 에뮬레이터로 실행
 
 ---
@@ -68,7 +68,7 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "D:/경로/SD Gundam
 python -c "import pyxdelta; pyxdelta.run('원본.iso','패치본.iso','my_patch.xdelta')"
 ```
 
-> ✅ **재현성 검증됨**: 위 절차대로 빈 클론에서 빌드하면 배포본 v2.14와 **바이트 단위로 동일**한
+> ✅ **재현성 검증됨**: 위 절차대로 빈 클론에서 빌드하면 배포본 v2.15와 **바이트 단위로 동일**한
 > 결과가 나옵니다(patched_files 0 차이, `patched_main.dol` 동일).
 
 ## 2-3. 번역 수정하기
@@ -135,7 +135,7 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "원본.iso"   # 전
 
 ---
 
-# 4. 번역 범위 (v2.14)
+# 4. 번역 범위 (v2.15)
 
 **한글화 완료**
 - 📜 **스토리·튜토리얼 대사** 전량 (~1,300줄)
@@ -147,7 +147,7 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "원본.iso"   # 전
 - 🖼️ **대형 메뉴 타이틀 10종** — 모드 선택/싱글·멀티 플레이/옵션/시나리오 게임/도움말/사운드/진동/메모리 카드
 - 🎬 **미션 연출 카드** — 시나리오 미션 제목 14종, `미션 클리어`/`미션 실패`, `다음` 버튼
 - 🖼️ **타이틀 로고** — `demo_title.dat`의 `SD 건담 가샤폰 워즈` 이미지
-- 🎮 **전투 조작설명 이미지** — `con_img.tpl` 및 Effect ARC 복제본 3개의 C8 라벨 7종(원본 도식·투명도 보존, 한글 가장자리 부분 알파 제거)
+- 🎮 **전투 조작설명 이미지** — `con_img.tpl` 및 Effect ARC 복제본 3개의 C8(8×4 타일) 라벨 7종(원본 도식·투명도 보존, 한글 가장자리 부분 알파 제거)
 - 🎚️ **룰 설정 라벨 이미지 49종** — 지형·시간/일수·난이도·아이템 출현·COM 레벨 등
 - 🏆 **미션 조건 이미지** — 100% 유닛 생환/점령/거점 점령, 포격, 랜덤 맵 로고
 - 🔤 **본문 폰트: 나눔스퀘어 네오 Bold** (810 음절)
@@ -174,7 +174,7 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "원본.iso"   # 전
 |---|---|
 | **SPB** | 대사 스크립트. `SPAR` 매직 + `04 00` 텍스트 명령(u16 길이 + SJIS) |
 | **vsc** | CSV형 설정/데이터 테이블(간이 압축). 메뉴·도감·유닛·맵 데이터 |
-| **@Texture** | GameCube 텍스처(C4/C8, RGB5A3 팔레트, 8×8 타일). 라벨 이미지 |
+| **@Texture** | GameCube 텍스처(C4 8×8 / C8 8×4 타일, RGB5A3 팔레트). 라벨 이미지 |
 | **main.dol** | 실행파일. UI 문자열 + 폰트 시트 내장 |
 
 모든 주입은 **동일 크기 제자리 치환**이라 ISO 크기·FST가 바뀌지 않습니다.
@@ -210,6 +210,7 @@ src/
 
 | 버전 | 내용 |
 |---|---|
+| **v2.15** | GitHub 이슈 #2 후속 — C8을 잘못된 8×8이 아닌 표준 8×4 타일로 디코드·인코드해 전투 조작설명 이미지의 가로 분할과 짝수 줄 수평 밀림을 수정하고, 후리가나를 포함한 원문 라벨을 제거한 뒤 한글 7종을 재작화 |
 | **v2.14** | 전투 조작설명 C8 인코딩의 부분 알파 누출을 수정해 투명 팔레트가 한글 가장자리에 들어가지 않도록 하고, 원본 도식·캐릭터·연결선 보존 검증을 다시 수행 |
 | **v2.13** | 전투 조작설명 C8 이미지의 일본어 글리프만 제거·한글 오버레이하고 도식·캐릭터·연결선 원본 바이트를 보존 |
 | **v2.12** | GitHub 이슈 #5 반영 — 타이틀 로고·모드 선택 대형 타이틀·전투 조작설명 복제본·미션 화자명 슬롯을 한글화하고 미션 결과 문구를 교정 |
