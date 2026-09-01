@@ -49,6 +49,7 @@ def run(script, cwd, apply=True, extra=()):
 print('[2] 주입 실행')
 # SPB 대사
 run('07_encode_inject.py', HERE)
+run('54_spb_speaker_names.py', HERE)
 run('53_fix_spb_refs.py', HERE, apply=False)   # 참조 되돌림(플래그 없음)
 # vsc (46 표시명/지형 -> 52 화자plate col0/2 가 pbmode_character 최종본)
 run('46_disp_inject.py', HERE)
@@ -64,6 +65,7 @@ run('61_rule_labels.py', IMG)
 run('62_misc_labels.py', IMG)
 run('63_menu_titles.py', IMG)                  # bank102 대형 메뉴 타이틀
 run('75_custom_dat_sprites.py', IMG)           # HAL DAT 미션 제목/결과 화면
+run('76_custom_ui_assets.py', IMG)              # 타이틀 로고/전투 조작설명 이미지
 print('[2] 완료: patched_files/ + patched_main.dol 재생성')
 
 # 3) ISO

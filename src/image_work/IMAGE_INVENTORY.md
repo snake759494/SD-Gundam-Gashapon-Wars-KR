@@ -55,17 +55,29 @@
 고정 CI4 텍스처 버퍼를 사용한다. v2.11에서 `75_custom_dat_sprites.py`로 원시
 텍스처 길이와 팔레트를 보존한 채 제목·결과·다음 버튼을 재작화했다.
 - `Info/dat/sub_t01.dat` ~ `sub_t14.dat` — 미션 제목 14종 + `다음` (v2.11 처리)
-- `Info/dat/m_seikou.dat`, `m_sippai.dat` — 성공/실패 (v2.11 처리)
+- `Info/dat/m_seikou.dat`, `m_sippai.dat` — `미션 클리어`/`미션 실패` (v2.12 처리)
 - `Info/dat/battle_start.dat` — `BATTLE`/`START` 원본 영문
-- `ban_rogo.dat`, `demo_title.dat`, `sim_title.dat` — 로고/타이틀 그래픽, 원본 유지
+- `demo_title.dat` — 타이틀 로고 `SD 건담 가샤폰 워즈` (RGB5A3, v2.12 처리)
+- `ban_rogo.dat`, `sim_title.dat` — 반다이/시뮬레이션 영문 로고, 원본 유지
 
-## G. 번역 불필요
+## G. v2.12 검수 이슈 반영
+
+- `Info/arc/bank102.arc` — 대형 메뉴 타이틀 10종을 C4 하이라이트와 CMP 색상
+  레이어 한 쌍으로 재작화해 선택 상태에서도 일본어 잔상과 글자 잘림이 없도록 처리.
+- `Info/tpl/con_img.tpl` 및 `Effect/Arc/bank0.arc`~`bank2.arc` — 334×182 C8
+  전투 조작설명 도식의 `ガード`/`とくべつ`/`格闘攻撃` 등 7개 라벨을 한글화.
+  세 Effect 복제본도 함께 갱신해 모드별 리소스 선택 차이를 반영.
+- `Spb/mission/M00_01.SPB` — 별도 화자명 명령 슬롯의 `シン`을 동일 길이
+  캐리어 코드 `신`으로 치환. 내부 유닛/리소스 키는 변경하지 않음.
+
+## H. 번역 불필요
 - `Info/tpl/chr01~15_*.pic.tpl` — 캐릭터 초상화(300×360, 텍스트 없음)
 
 ---
 
 ## 작업 방식
 1. @Texture 라벨(A~D): 디코드→PNG→한글 로고 다시 그리기→같은 C4 포맷으로 재인코딩→arc 제자리 주입(동일 크기 or arc 재빌드).
-   - 폰트 셀 재활용과 달리 **이미지를 직접 편집**해야 하므로, 팔레트·타일 배치를 보존한 재인코더가 필요.
+   - 폰트 셀 재활용과 달리 이미지를 직접 편집해야 하므로, 팔레트·타일 배치를 보존한 재인코더가 필요.
 2. HAL DAT 연출: 고정 CI4 image buffer를 검증하고 동일 길이로 재인코딩해 주입
-   (`75_custom_dat_sprites.py`). 압축 `chr*.arc`와 로고 OAM은 별도 보류.
+   (`75_custom_dat_sprites.py`, `76_custom_ui_assets.py`). 압축 `chr*.arc`의 초상화와
+   `ban_rogo.dat`는 원본 구조·용도상 별도 보류.

@@ -84,6 +84,163 @@ def encode_c4(img, pal, w, h):
     return bytes(out)
 
 
+def encode_c8(img, pal, w, h):
+    """PIL RGBA 이미지를 C8(8bpp,8x8타일) 바이트로 인코딩한다."""
+    img = img.convert('RGBA')
+    px = img.load()
+    cache = {}
+
+    def idx(x, y):
+        if x >= w or y >= h:
+            return 0
+        c = px[x, y]
+        if c not in cache:
+            cache[c] = _nearest(pal, c)
+        return cache[c]
+
+    def align(n, a):
+        return (n + a - 1) // a * a
+
+    pw, ph = align(w, 8), align(h, 8)
+    out = bytearray()
+    for ty in range(0, ph, 8):
+        for tx in range(0, pw, 8):
+            for y in range(8):
+                for x in range(8):
+                    out.append(idx(tx + x, ty + y))
+    return bytes(out)
+
+
+def cmp_size(width, height):
+    """GameCube CMP/CMPR 이미지의 8x8 매크로블록 기준 바이트 수."""
+    return ((width + 7) // 8 * 8) * ((height + 7) // 8 * 8) // 2
+
+
+def _rgb565(v):
+    r = (v >> 11) & 0x1F
+    g = (v >> 5) & 0x3F
+    b = v & 0x1F
+    return (r << 3 | r >> 2, g << 2 | g >> 4, b << 3 | b >> 2)
+
+
+def decode_cmp_raw(raw, w, h):
+    """GameCube CMP raw image를 PIL RGBA로 디코드한다."""
+    if len(raw) < cmp_size(w, h):
+        raise ValueError("CMP raw 데이터가 짧습니다")
+    pw = (w + 7) // 8 * 8
+    img = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+    px = img.load()
+    for y in range(h):
+        for x in range(w):
+            x0 = x & 3
+            x1 = (x >> 2) & 1
+            x2 = x >> 3
+            y0 = y & 3
+            y1 = (y >> 2) & 1
+            y2 = y >> 3
+            off = 8 * x1 + 16 * y1 + 32 * x2 + 4 * pw * y2
+            c0v = (raw[off] << 8) | raw[off + 1]
+            c1v = (raw[off + 2] << 8) | raw[off + 3]
+            c0 = _rgb565(c0v)
+            c1 = _rgb565(c1v)
+            mode = c0v > c1v
+            if mode:
+                c2 = tuple((2 * c0[i] + c1[i]) // 3 for i in range(3))
+                c3 = tuple((c0[i] + 2 * c1[i]) // 3 for i in range(3))
+            else:
+                c2 = tuple((c0[i] + c1[i]) // 2 for i in range(3))
+                c3 = (0, 0, 0)
+            bits = int.from_bytes(raw[off + 4:off + 8], 'big')
+            ix = x0 + 4 * y0
+            ci = (bits >> (30 - 2 * ix)) & 3
+            color = (c0, c1, c2, c3)[ci]
+            alpha = 0 if ci == 3 and not mode else 255
+            px[x, y] = color + (alpha,)
+    return img
+
+
+def encode_cmp(img, w, h):
+    """PIL RGBA 이미지를 GameCube CMP(DXT1)로 인코딩한다."""
+    img = img.convert('RGBA')
+    px = img.load()
+    pw, ph = (w + 7) // 8 * 8, (h + 7) // 8 * 8
+    out = bytearray(cmp_size(w, h))
+
+    def pack565(c):
+        r, g, b = c
+        return ((r >> 3) << 11) | ((g >> 2) << 5) | (b >> 3)
+
+    def unpack565(v):
+        return _rgb565(v)
+
+    def distance(a, b):
+        return sum((a[i] - b[i]) ** 2 for i in range(3))
+
+    def block_encode(colors):
+        opaque = [c[:3] for c in colors if c[3] >= 32]
+        has_alpha = len(opaque) != len(colors)
+        if not opaque:
+            # 3-color mode + index 3 gives an entirely transparent block.
+            return b'\x00\x00\xff\xff\xff\xff\xff\xff'
+
+        # Pick the two farthest source colors, as in the reference encoder.
+        best_pair = (opaque[0], opaque[0])
+        best_distance = -1
+        for i, a in enumerate(opaque):
+            for b in opaque[i + 1:]:
+                d = distance(a, b)
+                if d > best_distance:
+                    best_distance = d
+                    best_pair = (a, b)
+        c0v, c1v = pack565(best_pair[0]), pack565(best_pair[1])
+        if has_alpha:
+            if c0v > c1v:
+                c0v, c1v = c1v, c0v
+            if c0v == c1v:
+                c0v, c1v = 0, 0xFFFF
+        else:
+            if c0v <= c1v:
+                c0v, c1v = c1v, c0v
+            if c0v == c1v:
+                c0v, c1v = 0xFFFF, 0
+
+        c0, c1 = unpack565(c0v), unpack565(c1v)
+        if c0v > c1v:
+            palette = [c0, c1,
+                       tuple((2 * c0[i] + c1[i]) // 3 for i in range(3)),
+                       tuple((c0[i] + 2 * c1[i]) // 3 for i in range(3))]
+            usable = range(4)
+        else:
+            palette = [c0, c1,
+                       tuple((c0[i] + c1[i]) // 2 for i in range(3)),
+                       (0, 0, 0)]
+            usable = range(3)
+
+        bits = 0
+        for c in colors:
+            if c[3] < 32 and c0v <= c1v:
+                ci = 3
+            else:
+                ci = min(usable, key=lambda j: distance(c[:3], palette[j]))
+            bits = (bits << 2) | ci
+        return c0v.to_bytes(2, 'big') + c1v.to_bytes(2, 'big') + bits.to_bytes(4, 'big')
+
+    for ty in range(0, ph, 8):
+        for tx in range(0, pw, 8):
+            for sy in range(0, 8, 4):
+                for sx in range(0, 8, 4):
+                    x1 = sx // 4
+                    y1 = sy // 4
+                    off = 32 * (tx // 8) + 4 * pw * (ty // 8) + 8 * x1 + 16 * y1
+                    colors = []
+                    for yy in range(4):
+                        for xx in range(4):
+                            x, y = tx + sx + xx, ty + sy + yy
+                            colors.append(px[x, y] if x < w and y < h else (0, 0, 0, 0))
+                    out[off:off + 8] = block_encode(colors)
+    return bytes(out)
+
+
 def decode(data, off):
     """@Texture 블록 -> PIL RGBA Image (실패시 None)."""
     hd = parse_header(data, off)

@@ -20,7 +20,7 @@
 |---|---|---|
 | 번역 완료 (라벨/버튼) | **73** | 패치 반영됨 (한글) |
 | 미번역 @Texture | **17** | 아래 B 참조 |
-| 보류 커스텀 스프라이트(.dat) | **4** | 로고 3종 + 원본 영문 연출 1종 (아래 C) |
+| 보류 커스텀 스프라이트(.dat) | **2** | `ban_rogo.dat`/`sim_title.dat` (아래 C) |
 
 ---
 
@@ -41,19 +41,19 @@
 
 ---
 
-## B. 미번역 — @Texture 27개  ⛔
+## B. 미번역 — @Texture 17개  ⛔
 
 `jp_text_untranslated_sheet.png` 참조.
 
 | 뱅크 | 개수 | 내용 | 미처리 사유 |
 |---|---|---|---|
-| bank102 | 7 | 용도 미확정 대형 흰색 헤더 | 메뉴 타이틀 10종은 v2.10에서 `63_menu_titles.py`로 번역 |
+| bank102 | 7 | 용도 미확정 대형 흰색 헤더 | 판독된 메뉴 타이틀은 v2.12에서 C4/CMP 쌍으로 번역 |
 | bank108 | 7 | 대형 흰색 헤더 라벨(1개는 `???` 잠금 placeholder) | 화면 표시 위치·용도 미확정 |
 | bank113 | 3 | 룰 화면 배너(VS/글로우 마스크 계열) | 텍스트+장식 합성이라 단순 교체 부적합 |
 
 ---
 
-## C. 커스텀 스프라이트(.dat) — v2.11 처리/보류 현황
+## C. 커스텀 스프라이트(.dat) — v2.12 처리/보류 현황
 
 `.dat` 전체가 같은 포맷은 아니다. 미션 연출 파일은 HAL HSD/DAT 컨테이너 안의
 고정 레이아웃 CI4 텍스처로 확인했으며, OAM/포인터를 건드리지 않고 원시 이미지 버퍼만
@@ -62,16 +62,18 @@
 | 파일 | 내용 |
 |---|---|
 | `Info/dat/sub_t01.dat` ~ `sub_t14.dat` (14) | 미션 제목 카드 → **v2.11 한글화** |
-| `Info/dat/m_seikou.dat` | ミッション成功 → **미션 성공** |
+| `Info/dat/m_seikou.dat` | ミッション クリア → **미션 클리어** |
 | `Info/dat/m_sippai.dat` | ミッション失敗 → **미션 실패** |
 | `Info/dat/sub_t01.dat` ~ `sub_t14.dat`의 버튼 텍스처 | つぎへ → **다음** |
 | `Info/dat/battle_start.dat` | `BATTLE`/`START` 원본 영문, 추가 번역 불필요 |
-| `files/ban_rogo.dat` | 반다이/타이틀 로고 |
-| `files/demo_title.dat` | 데모 타이틀 로고 |
+| `files/demo_title.dat` | 데모 타이틀 로고 → **SD 건담 가샤폰 워즈** (v2.12) |
+| `Info/tpl/con_img.tpl`, `Effect/Arc/bank0~2.arc` | 전투 조작설명 C8 7개 라벨 → 한글 (v2.12) |
+| `files/ban_rogo.dat` | 반다이 로고, 원본 유지 |
 | `files/sim_title.dat` | 시뮬레이션 타이틀 로고 |
 
-> 이 외 화자명 플레이트(예: バルトフェルド)는 압축 `chr*.arc`(커스텀 LZ) 안의
-> 스프라이트로, arc 디코더가 있어야 접근 가능.
+> `シン` 화자명은 `chr*.arc` 이미지가 아니라 미션 SPB의 별도 고정 길이 화자명
+> 명령 슬롯이므로 v2.12에서 안전하게 캐리어 코드로 치환했다. `chr*.arc`는 캐릭터
+> 초상화 데이터라 내부 키·압축 포맷을 변경하지 않았다.
 
 ---
 
@@ -82,4 +84,5 @@ python image_work/70_extract_all_full.py   # 전체 611 @Texture 추출
 python image_work/71_curate_jp_text.py     # 일본어 텍스트만 큐레이션
 python image_work/72_jp_text_sheets.py     # 통합 컨택트시트 2장
 python image_work/75_custom_dat_sprites.py --apply  # HAL DAT 미션 연출 패치
+python image_work/76_custom_ui_assets.py --apply     # 타이틀/전투 조작설명 패치
 ```
