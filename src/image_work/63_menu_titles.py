@@ -48,8 +48,8 @@ WHITE = (255, 255, 255, 255)
 
 
 def read_base(rel):
-    pf = os.path.join(PATCHED, rel)
-    return open(pf if os.path.exists(pf) else os.path.join(BASE, rel), 'rb').read()
+    # 패치 결과를 다시 읽으면 재빌드 때 작화가 누적될 수 있으므로 항상 원본을 읽는다.
+    return open(os.path.join(BASE, rel), 'rb').read()
 
 
 def draw_white(text, w, ht, sw=3):
