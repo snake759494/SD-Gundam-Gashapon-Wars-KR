@@ -3,7 +3,7 @@
 
 둘 다 일반 @Texture 아카이브가 아니라 고정 레이아웃의 GameCube 리소스다.
 demo_title.dat의 RGB5A3 로고와 Info/tpl/con_img.tpl의 C8 컨트롤러 그림에서
-이미지 바이트만 교체하며, TPL/DAT 헤더와 파일 길이는 유지한다.
+일본어 글리프와 한글 오버레이 픽셀만 교체하며, 나머지 원본 raw·TPL/DAT 헤더·파일 길이는 유지한다.
 
 사용:
   python 76_custom_ui_assets.py --preview
@@ -137,36 +137,59 @@ HELP_ARC_RELS = [
     "Effect/Arc/bank2.arc",
 ]
 HELP_TEXT = [
-    # 원본 일본어의 실제 픽셀 범위를 덮되, 말풍선 외곽선은 건드리지 않는다.
-    ("가드", (4, 6, 53, 27)),
-    ("특수", (104, 6, 165, 27)),
-    ("격투 공격", (108, 57, 166, 80)),
-    ("이동", (0, 84, 56, 106)),
-    ("메인 공격", (14, 133, 84, 158)),
-    ("점프", (98, 159, 156, 181)),
-    ("태클", (128, 115, 166, 140)),
+    # (그리기 영역, 일본어만 지울 내부 글리프 영역)
+    ("가드", (4, 6, 53, 27), (5, 7, 52, 24)),
+    ("특수", (104, 6, 165, 27), (104, 7, 160, 24)),
+    ("격투 공격", (108, 57, 166, 80), (108, 57, 166, 78)),
+    ("이동", (0, 84, 56, 106), (0, 84, 42, 104)),
+    ("메인 공격", (14, 133, 84, 158), (18, 133, 84, 156)),
+    ("점프", (98, 159, 156, 181), (98, 159, 136, 178)),
+    ("태클", (128, 115, 166, 140), (128, 116, 160, 138)),
 ]
 BUBBLE = (66, 132, 115, 255)
 
 
 def draw_help(image):
+    original = image.copy()
     image = image.copy()
     draw = ImageDraw.Draw(image)
     for shift in (0, 167):
-        for text, box in HELP_TEXT:
+        for text, box, clear_box in HELP_TEXT:
             left, top, right, bottom = box
-            box = (left + shift, top, right + shift, bottom)
+            cl, ct, cr, cb = clear_box
             # 일본어 글자는 흰색/회색/검정 계열이다. 해당 픽셀만 말풍선 색으로
-            # 지워 둥근 테두리와 연결선이 사각형으로 끊기지 않게 한다.
-            for y in range(top, bottom):
-                for x in range(left + shift, right + shift):
+            # 지운다. 글리프 내부 영역만 검사해 말풍선 외곽선·도식을 보존한다.
+            for y in range(ct, cb):
+                for x in range(cl + shift, cr + shift):
                     r, g, b, a = image.getpixel((x, y))
-                    if a and max(r, g, b) - min(r, g, b) <= 8:
+                    if a and max(r, g, b) - min(r, g, b) <= 16:
                         image.putpixel((x, y), BUBBLE)
+            box = (left + shift, top, right + shift, bottom)
             font, pos = fit_font(draw, text, box, max_size=14, min_size=6, stroke=1)
             draw.text(pos, text, font=font, fill=(255, 255, 255, 255),
                       stroke_width=1, stroke_fill=(33, 33, 33, 255))
     return image
+
+
+def encode_c8_overlay(raw, original, image, palette, width, height):
+    """C8 raw는 그대로 두고 원본과 달라진 글자 픽셀만 팔레트 인덱스로 교체한다."""
+    if len(raw) != ((width + 7) // 8 * 8) * ((height + 7) // 8 * 8):
+        raise ValueError("C8 raw 크기 불일치")
+    out = bytearray(raw)
+    before = original.load()
+    after = image.load()
+    tiles_w = (width + 7) // 8
+    cache = {}
+    for y in range(height):
+        for x in range(width):
+            if before[x, y] == after[x, y]:
+                continue
+            color = after[x, y]
+            if color not in cache:
+                cache[color] = TX._nearest(palette, color)
+            tile_offset = ((y // 8) * tiles_w + (x // 8)) * 64
+            out[tile_offset + (y % 8) * 8 + (x % 8)] = cache[color]
+    return bytes(out)
 
 
 def patch_help_arc(rel, preview_image=None):
@@ -187,9 +210,11 @@ def patch_help_arc(rel, preview_image=None):
     image = TX.decode(buf, off)
     if image is None:
         raise ValueError("도움말 C8 디코드 실패: %s @0x%X" % (rel, off))
+    original = image.copy()
     patched = draw_help(image)
     palette = TX.read_palette(buf, hd["pal_off"], hd["palcnt"])
-    raw = TX.encode_c8(patched, palette, hd["w"], hd["h"])
+    original_raw = bytes(buf[hd["img_off"]:hd["img_off"] + hd["imgsize"]])
+    raw = encode_c8_overlay(original_raw, original, patched, palette, hd["w"], hd["h"])
     if len(raw) != hd["imgsize"]:
         raise AssertionError("Effect 도움말 C8 길이 변경: %s" % rel)
     if preview_image is not None:
@@ -238,8 +263,9 @@ def main():
     if struct.unpack_from(">I", help_buf, 0x224)[0] != 9:
         raise ValueError("con_img.tpl이 C8 텍스처가 아닙니다")
     help_image, palette, help_size = decode_tpl_c8(help_buf, 334, 182, 0x20, 0x260)
+    help_raw = bytes(help_buf[0x260:0x260 + help_size])
     patched_help = draw_help(help_image)
-    new_help_raw = TX.encode_c8(patched_help, palette, 334, 182)
+    new_help_raw = encode_c8_overlay(help_raw, help_image, patched_help, palette, 334, 182)
     if len(new_help_raw) != help_size:
         raise AssertionError("전투 도움말 C8 길이 변경")
 
