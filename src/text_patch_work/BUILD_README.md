@@ -38,6 +38,7 @@ python 13_verify_iso.py       # ISO에서 직접 읽어 최종 검증
 - `BUILD_FROM_MASTER.py`는 DOL·VSC·SPB·라벨 이미지·bank102 대형 타이틀·HAL DAT 미션 연출까지 재생성한다.
 - `54_spb_speaker_names.py`는 미션 SPB의 별도 고정 길이 화자명 슬롯을 패치하고,
   `76_custom_ui_assets.py`는 타이틀 로고와 전투 조작설명(C8) 복제본까지 재생성한다.
+- 커스텀 이미지 패처는 매 실행 시 `src/files/` 원본에서 시작하므로 반복 빌드에도 작화가 누적되지 않는다.
 - 내부 참조명 12종은 안전성 때문에 일본어를 유지하며 라운드트립 감사에서 별도 보고한다.
 
 ## 범위/한계

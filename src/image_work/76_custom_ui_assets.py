@@ -32,8 +32,8 @@ args = ap.parse_args()
 
 
 def read_source(rel):
-    patched = os.path.join(PATCHED, rel)
-    source = patched if os.path.exists(patched) else os.path.join(BASE, rel)
+    # 항상 추출된 원본에서 시작해야 빌드를 여러 번 실행해도 작화가 누적되지 않는다.
+    source = os.path.join(BASE, rel)
     if not os.path.exists(source):
         raise FileNotFoundError(source)
     return source, bytearray(open(source, "rb").read())

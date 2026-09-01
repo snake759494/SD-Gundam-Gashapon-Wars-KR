@@ -101,8 +101,8 @@ def read_palette(data, offset, count):
 
 
 def read_base(rel):
-    patched = os.path.join(PATCHED, rel)
-    source = patched if os.path.exists(patched) else os.path.join(BASE, rel)
+    # 패치 결과를 다시 읽으면 재빌드 때 작화가 누적될 수 있으므로 항상 원본을 읽는다.
+    source = os.path.join(BASE, rel)
     if not os.path.exists(source):
         raise FileNotFoundError(source)
     return source, bytearray(open(source, "rb").read())
