@@ -22,10 +22,10 @@ LABEL_BANKS = ['bank101', 'bank102', 'bank106', 'bank108', 'bank110',
                'bank111', 'bank113', 'bank114', 'bank118']
 # 미번역이지만 일본어 텍스트가 확실한 텍스처(수동 확인) — 번역본에 없으면 여기로.
 UNTRANS_TEXT = {
-    'Info/arc/bank102.arc': [0x309A0, 0x36E40, 0x3D2E0, 0x43780, 0x4A3A0, 0x840A0, 0x8B440, 0x927E0,
-                             0x99B80, 0xA0F20, 0x51740, 0x58AE0, 0x5FE80, 0x67220, 0x6E5C0, 0x75960, 0x7CD00],
-    'Info/arc/bank108.arc': [0x14B40, 0x1BEE0, 0x23280, 0x2A620, 0x319C0, 0x38D60, 0x40100],
-    'Info/arc/bank113.arc': [0x4BEC0, 0x52F00, 0x593A0],
+    # bank102의 17쌍, bank108의 6쌍, bank113의 2쌍은
+    # 63_menu_titles.py가 원본과 다른 C4/CMP 이미지를 생성한다.
+    # bank108의 0x40100은 잠금 상태 물음표라 번역 대상이 아니다.
+    'Info/arc/bank108.arc': [0x40100],
 }
 
 def blocks(b):
