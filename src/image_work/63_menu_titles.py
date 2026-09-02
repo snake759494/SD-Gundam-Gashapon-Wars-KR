@@ -21,12 +21,17 @@ ap.add_argument('--preview', action='store_true')
 args = ap.parse_args()
 
 REL = 'Info/arc/bank102.arc'
-# 판독 확정 대형 타이틀만
+# bank102의 대형 타이틀. 앞의 10종은 메인 메뉴이고 뒤의 7종은
+# 싱글/멀티 선택 후 표시되는 세부 모드다. Issue #12 캡처에서 확인된
+# 일본어 잔상(특히 アクション対戦)을 포함해 모두 같은 C4/CMP 쌍으로 교체한다.
 TITLES = {
     0x309A0: '모드 선택', 0x36E40: '싱글 플레이', 0x3D2E0: '멀티 플레이',
     0x43780: '옵션', 0x4A3A0: '시나리오 게임', 0x840A0: '도움말',
     0x8B440: '사운드 플레이어', 0x927E0: '진동', 0x99B80: '사운드 설정',
     0xA0F20: '메모리 카드',
+    0x51740: '캡슐 워즈', 0x58AE0: '100문 배틀', 0x5FE80: '캡슐 편집',
+    0x67220: '맵 대전', 0x6E5C0: '액션 대전', 0x75960: '서바이벌',
+    0x7CD00: '배틀로얄',
 }
 MASKS = {
     0x309A0: 0x2D760, 0x36E40: 0x33C00, 0x3D2E0: 0x3A0A0,
@@ -48,8 +53,10 @@ WHITE = (255, 255, 255, 255)
 
 
 def read_base(rel):
-    # 패치 결과를 다시 읽으면 재빌드 때 작화가 누적될 수 있으므로 항상 원본을 읽는다.
-    return open(os.path.join(BASE, rel), 'rb').read()
+    # 60_label_inject.py가 먼저 만든 소형 헤더를 보존한다. 이 스크립트는
+    # 타이틀 영역을 매번 원본 작화로 다시 만들기 때문에 반복 실행해도 누적되지 않는다.
+    patched = os.path.join(PATCHED, rel)
+    return open(patched if os.path.exists(patched) else os.path.join(BASE, rel), 'rb').read()
 
 
 def draw_white(text, w, ht, sw=3):
