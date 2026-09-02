@@ -63,7 +63,8 @@ run('43_dol_inject.py', HERE)
 run('60_label_inject.py', IMG)
 run('61_rule_labels.py', IMG)
 run('62_misc_labels.py', IMG)
-run('63_menu_titles.py', IMG)                  # bank102 대형 메뉴 타이틀
+run('63_menu_titles.py', IMG)                  # 외부 C4/CMP 메뉴 타이틀(25쌍)
+run('64_nested_menu_titles.py', IMG)           # 중첩 U8/HSD 메뉴 타이틀(4쌍+1개)
 run('75_custom_dat_sprites.py', IMG)           # HAL DAT 미션 제목/결과 화면
 run('76_custom_ui_assets.py', IMG)              # 타이틀 로고/전투 조작설명 이미지
 print('[2] 완료: patched_files/ + patched_main.dol 재생성')

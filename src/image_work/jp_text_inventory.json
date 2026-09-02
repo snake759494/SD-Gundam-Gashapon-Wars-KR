@@ -182,42 +182,42 @@
   "h": 128
  },
  {
-  "status": "untranslated",
+  "status": "translated",
   "file": "Info/arc/bank108.arc",
   "off": "0x14B40",
   "w": 368,
   "h": 74
  },
  {
-  "status": "untranslated",
+  "status": "translated",
   "file": "Info/arc/bank108.arc",
   "off": "0x1BEE0",
   "w": 368,
   "h": 74
  },
  {
-  "status": "untranslated",
+  "status": "translated",
   "file": "Info/arc/bank108.arc",
   "off": "0x23280",
   "w": 368,
   "h": 74
  },
  {
-  "status": "untranslated",
+  "status": "translated",
   "file": "Info/arc/bank108.arc",
   "off": "0x2A620",
   "w": 368,
   "h": 74
  },
  {
-  "status": "untranslated",
+  "status": "translated",
   "file": "Info/arc/bank108.arc",
   "off": "0x319C0",
   "w": 368,
   "h": 74
  },
  {
-  "status": "untranslated",
+  "status": "translated",
   "file": "Info/arc/bank108.arc",
   "off": "0x38D60",
   "w": 368,
@@ -259,21 +259,14 @@
   "h": 64
  },
  {
-  "status": "untranslated",
-  "file": "Info/arc/bank113.arc",
-  "off": "0x4BEC0",
-  "w": 308,
-  "h": 24
- },
- {
-  "status": "untranslated",
+  "status": "translated",
   "file": "Info/arc/bank113.arc",
   "off": "0x52F00",
   "w": 316,
   "h": 74
  },
  {
-  "status": "untranslated",
+  "status": "translated",
   "file": "Info/arc/bank113.arc",
   "off": "0x593A0",
   "w": 316,
