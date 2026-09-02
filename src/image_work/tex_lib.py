@@ -48,8 +48,24 @@ def read_palette(data, pal_off, palcnt):
 
 
 def _nearest(pal, rgba):
-    # 알파 우선(투명/불투명 구분) 후 RGB 거리
+    # 완전 투명/불투명 픽셀은 먼저 같은 알파 계열로 제한한다.
+    #
+    # 기존의 RGB + 3*alpha 거리만 사용하면 (0,0,0,0)이 흰색 투명
+    # 팔레트 항목보다 어두운 반투명 회색 항목에 더 가까워질 수 있다.
+    # 그 결과 새로 그린 이미지의 빈 영역 전체가 회색 사각형으로
+    # 인코딩되어 메뉴 헤더와 하이라이트 뒤에 잔상이 생겼다.
     r, g, b, a = rgba
+    if a <= 0:
+        transparent = [i for i, c in enumerate(pal) if c[3] <= 0]
+        if transparent:
+            return min(transparent, key=lambda i: sum((pal[i][j] - rgba[j]) ** 2
+                                                       for j in range(3)))
+    elif a >= 255:
+        opaque = [i for i, c in enumerate(pal) if c[3] >= 255]
+        if opaque:
+            return min(opaque, key=lambda i: sum((pal[i][j] - rgba[j]) ** 2
+                                                 for j in range(3)))
+
     best = 0; bestd = 1 << 30
     for i, (pr, pg, pb, pa) in enumerate(pal):
         d = (pr - r) ** 2 + (pg - g) ** 2 + (pb - b) ** 2 + 3 * (pa - a) ** 2

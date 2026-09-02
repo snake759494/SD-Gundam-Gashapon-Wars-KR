@@ -11,14 +11,14 @@
 # 1. 그냥 플레이하고 싶다면 (일반 사용자)
 
 1. **원본 ISO 준비** — 일본판 SD Gundam Gashapon Wars (GGPJB2), 원본 CRC32 `D5F67251`
-2. **최신 패치 내려받기** — [Releases](../../releases)에서 `SDGundamGashaponWars_KR_v2.17.xdelta`
+2. **최신 패치 내려받기** — [Releases](../../releases)에서 `SDGundamGashaponWars_KR_v2.18.xdelta`
 3. **패치 적용**
    - Windows: [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher/releases)로 원본 ISO + 패치 선택 → Apply
    - 커맨드라인:
      ```bash
-     xdelta3 -d -s "SD Gundam Gashapon Wars.iso" SDGundamGashaponWars_KR_v2.17.xdelta "SD Gundam Gashapon Wars (KR).iso"
+     xdelta3 -d -s "SD Gundam Gashapon Wars.iso" SDGundamGashaponWars_KR_v2.18.xdelta "SD Gundam Gashapon Wars (KR).iso"
      ```
-4. **결과 확인** — 패치 후 ISO CRC32 `194EA7BD` (SHA-256 `83710CD09A729FDA05484874CC9A62F8FC4763CF315260A54CCEFD0BB54DE410`)
+4. **결과 확인** — 패치 후 ISO CRC32 `2F097C5E` (SHA-256 `D75194E4D2944D8085629E77ABABA05E7D54D49A76F20DF71A5D013F645ECEE4`)
 5. Dolphin 등 게임큐브 에뮬레이터로 실행
 
 ---
@@ -68,7 +68,7 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "D:/경로/SD Gundam
 python -c "import pyxdelta; pyxdelta.run('원본.iso','패치본.iso','my_patch.xdelta')"
 ```
 
-> ✅ **재현성 검증됨**: 위 절차대로 빈 클론에서 빌드하면 배포본 v2.17과 **바이트 단위로 동일**한
+> ✅ **재현성 검증됨**: 위 절차대로 빈 클론에서 빌드하면 배포본 v2.18과 **바이트 단위로 동일**한
 > 결과가 나옵니다(patched_files 0 차이, `patched_main.dol` 동일).
 
 ## 2-3. 번역 수정하기
@@ -135,7 +135,7 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "원본.iso"   # 전
 
 ---
 
-# 4. 번역 범위 (v2.17)
+# 4. 번역 범위 (v2.18)
 
 **한글화 완료**
 - 📜 **스토리·튜토리얼 대사** 전량 (~1,300줄)
@@ -145,7 +145,7 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "원본.iso"   # 전
 - ⚔️ **전투 커맨드**, 📂 **메뉴·도움말**, 🗺️ **지형명**, 🧑 **등장인물 이름**
 - 🖼️ **메뉴 라벨 이미지** — 모드 선택/싱글·멀티 플레이/옵션/진동/사운드 설정/메모리 카드
 - 🖼️ **대형 메뉴 타이틀 25종** — bank102 17종 + 중복 bank108 6종 + 외부 bank113 대전 방식 2종을 C4 하이라이트/CMP 색상 레이어 쌍으로 처리
-- 🖼️ **중첩 메뉴 이미지 5종** — bank113 `usel_mode.dat`의 안내/대전 방식 4쌍과 bank101 `ce_menu_title.dat` 1개를 HSD 원본 크기 그대로 한글화
+- 🖼️ **중첩 메뉴 이미지** — bank113 `usel_mode.dat`의 안내/대전 방식 4쌍과 공통 `usel_base.dat` 안내 1쌍, bank101 `ce_menu_title.dat` 1개를 HSD 원본 크기 그대로 한글화
 - 🎯 **겹침 레이어 정렬** — 같은 메뉴 문구를 그리는 두 이미지에 공통 글꼴 크기·원점·바운딩을 적용해 위치와 크기를 일치
 - 🔊 **사운드 설정 표기** — `스테레오／모노`로 정리하고 `사운드 플레이어` 상단 표시 슬롯도 한글 캐리어 코드로 확인
 - 🎬 **미션 연출 카드** — 시나리오 미션 제목 14종, `미션 클리어`/`미션 실패`, `다음` 버튼
@@ -204,7 +204,7 @@ src/
 │   ├── tex_lib.py                  # @Texture 디코더/인코더
 │   ├── 60/61/62_*.py               # 라벨 이미지 재작화
 │   ├── 63_menu_titles.py           # 외부 C4/CMP 타이틀 25쌍
-│   ├── 64_nested_menu_titles.py    # 중첩 U8/HSD 타이틀 4쌍+1개
+│   ├── 64_nested_menu_titles.py    # 중첩 U8/HSD 타이틀 usel_mode 4쌍+usel_base 1쌍+1개
 │   └── 70~74_*.py                  # 텍스처 추출·큐레이션
 └── kanji_dokuon_auto_patch_tool/   # 폰트 셀·한자 독음 도구
 ```
@@ -216,6 +216,7 @@ src/
 
 | 버전 | 내용 |
 |---|---|
+| **v2.18** | GitHub Issue #16 재검수 — CMP 8×8/4×4 블록 왕복 회귀 검증을 추가하고, 완전 투명 C4 픽셀이 반투명 회색 팔레트로 양자화되던 공통 인코더 버그를 수정. 그레이 잔상·헤더 배경 오염을 제거하고, `usel_base.dat`에 남아 있던 멀티플레이 안내 중복 이미지까지 C4/CMP 쌍으로 패치. 사운드 설정 표시에서 `@c7`/`@c8` 제어 토큰을 제거해 `※테레오`/`※노`가 아닌 `스테레오／모노`로 고정 |
 | **v2.17** | GitHub Issue #14 재검수 — bank102의 잘못된 후반부 제목 매칭을 교정하고, bank102/bank108의 중복 메뉴와 bank113 외부·중첩 HSD 대전 방식 화면을 한글화. 두 레이어의 공통 위치·크기 정렬, 미번역 HSD 안내/캡슐 편집 제목, 사운드 플레이어 헤더, `스테레오／모노` 표기를 보강 |
 | **v2.16** | GitHub 이슈 #12 반영 — bank102 세부 모드 대형 타이틀 7종과 소형 메뉴 헤더 7종을 한글화하고, 빌드 순서에서 헤더가 원문으로 덮이던 문제와 사운드 설정 `모노랄` 오타를 수정 |
 | **v2.15** | GitHub 이슈 #2 후속 — C8을 잘못된 8×8이 아닌 표준 8×4 타일로 디코드·인코드해 전투 조작설명 이미지의 가로 분할과 짝수 줄 수평 밀림을 수정하고, 후리가나를 포함한 원문 라벨을 제거한 뒤 한글 7종을 재작화 |

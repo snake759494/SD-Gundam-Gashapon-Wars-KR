@@ -12,6 +12,7 @@ Issue #14의 대전 방식 선택 화면은 일반 ``@Texture`` 블록이 아니
 재현 가능하게 패치한다. 빌드에는 HSDLib 런타임이 필요하지 않다.
 """
 import argparse
+import hashlib
 import io
 import os
 import struct
@@ -200,14 +201,19 @@ def encode_hsd(img, spec, data):
 
 
 def validate_spec(data, spec):
-    w = u16(data, spec["struct_off"] + 4)
-    h = u16(data, spec["struct_off"] + 6)
-    fmt = u32(data, spec["struct_off"] + 8)
-    if (w, h, fmt) != (spec["w"], spec["h"], spec["fmt"]):
-        raise ValueError("HSD 구조 변경: %s, 실제 %sx%s/f%s" %
-                         (hex(spec["struct_off"]), w, h, fmt))
-    if len(data[spec["img_off"]:spec["img_off"] + spec["size"]]) != spec["size"]:
+    if spec.get("struct_off") is not None:
+        w = u16(data, spec["struct_off"] + 4)
+        h = u16(data, spec["struct_off"] + 6)
+        fmt = u32(data, spec["struct_off"] + 8)
+        if (w, h, fmt) != (spec["w"], spec["h"], spec["fmt"]):
+            raise ValueError("HSD 구조 변경: %s, 실제 %sx%s/f%s" %
+                             (hex(spec["struct_off"]), w, h, fmt))
+    if spec["img_off"] < 0 or spec["img_off"] + spec["size"] > len(data):
         raise ValueError("HSD 이미지 버퍼가 파일 밖입니다: %s" % hex(spec["img_off"]))
+    if spec.get("sha256"):
+        actual = hashlib.sha256(data[spec["img_off"]:spec["img_off"] + spec["size"]]).hexdigest()
+        if actual != spec["sha256"]:
+            raise ValueError("원본 이미지 버퍼가 예상과 다릅니다: %s" % hex(spec["img_off"]))
     if "pal_off" in spec:
         pal_bytes = spec["pal_count"] * 2
         if len(data[spec["pal_off"]:spec["pal_off"] + pal_bytes]) != pal_bytes:
@@ -226,6 +232,14 @@ def spec(struct_off, img_off, w, h, fmt, pal_off=None, pal_count=None):
     if pal_off is not None:
         out["pal_off"] = pal_off
         out["pal_count"] = pal_count
+    return out
+
+
+def raw_spec(img_off, w, h, fmt, pal_off=None, pal_count=None, sha256=None):
+    """HSD 이미지 구조체 없이 공유되는 제자리 raw 버퍼 사양."""
+    out = spec(None, img_off, w, h, fmt, pal_off, pal_count)
+    if sha256:
+        out["sha256"] = sha256
     return out
 
 
@@ -270,6 +284,26 @@ NESTED = {
             {"name": "캡슐 박스 편집",
              "image": spec(0x214, 0x920, 184, 26, 8, 0x1520, 16),
              "kind": "single"},
+        ],
+    },
+}
+
+# usel_base.dat에도 같은 대전 방식 안내 이미지가 공유 데이터로 한 벌
+# 존재한다. 이 영역은 별도 HSD 이미지 구조체가 아니라 공통 raw 버퍼로
+# 참조되므로, 원본 SHA-256과 크기를 함께 검증하고 두 레이어를 같이
+# 교체한다. 이 버퍼를 빼먹으면 일부 진입 경로에서 일본어 안내가 남는다.
+RAW_NESTED = {
+    "Info/arc/bank113.arc": {
+        "entry": "scen/usel_base.dat",
+        "pairs": [
+            {"name": "대전 형식을 선택하세요",
+             "mask": raw_spec(
+                 0x64E0, 424, 76, 8, 0xD040, 16,
+                 "385418126ae0c6847c3b0c2fab7a67cafec5a88f13e01249c33f6b8c7254be00"),
+             "color": raw_spec(
+                 0x22A0, 424, 76, 14, None, None,
+                 "40c852973b4bb09c17fb7eefc3be014fdd29dcd9b2f4c078c706b6afedcdbedb"),
+             "kind": "prompt"},
         ],
     },
 }
@@ -350,7 +384,7 @@ def save_preview(rows, filename):
 all_rows = []
 single_rows = []
 
-for rel, group in NESTED.items():
+for rel, group in list(NESTED.items()) + list(RAW_NESTED.items()):
     source_container = read_file(rel, prefer_patched=False)
     work_container = bytearray(read_file(rel, prefer_patched=True))
     entry_path = group["entry"]
