@@ -110,7 +110,8 @@
 1. **현재 패치는 크래시 안전.** 표시 텍스트만 번역했고, 데이터/키는 전부 일본어로 남겨둠.
    SPB 참조는 되돌림 완료.
 2. **미번역의 대부분은 "의도적"** — 게임 데이터·내부 키라서 **번역하면 안 됨**(크래시).
-3. 안전하게 추가 번역 가능한 표시 텍스트: **gallery 도감 설명 / ab_mission 미션 텍스트** 정도.
+3. 안전하게 추가 번역 가능한 표시 텍스트: **gallery 도감 설명 / ab_mission 미션 텍스트 /
+   Sound/volume.vsc의 BGM 제목·설명 열**.
 
 ---
 
@@ -131,7 +132,7 @@
 | 무기 데이터 | `Unit/AbMode/武器データ.vsc` | 스탯·탄종·번호(표시명은 아래 B 참조) |
 | 상성/보너스 | `Unit/AbMode/ab_bonus.vsc` | 유닛명 헤더(KEY) + 상성 수치표 |
 | 카드 데이터 | `Card/PbMode/*.vsc` | 카드 데이터·키 |
-| 사운드 | `Sound/volume.vsc`, `Kaw/capsule_box.vsc`, `Kaw/window.vsc` | SE/BGM 리스트·번호(비표시 내부설정) |
+| 사운드 | `Sound/volume.vsc`, `Kaw/capsule_box.vsc`, `Kaw/window.vsc` | `Sound/volume.vsc`의 번호·SE 키·볼륨은 유지하고 BGM 제목/설명 39행·헤더만 표시용으로 번역 |
 | 미션 데이터 | `Spb/ab_mission/ab_mission.vsc` **일부 열** | 파일럿/미션 번호, 시작유닛 키(표시열은 B 참조) |
 
 > ⚠ 이 목록은 "번역 누락"이 아니라 **일부러 남긴 것**입니다. 건드리면 안 됩니다.
@@ -146,6 +147,7 @@
 |---|---|---|---|
 | **도감 설명** | `Kaw/gallery.vsc` | **1210셀** (col1~8 유닛 설명문, 루비 포함) | col0 유닛명(170) = 조회 키, 유지 |
 | **챌린지 미션** | `Spb/ab_mission/ab_mission.vsc` | **300셀** (타이틀·클리어조건·설명) | col7 시작유닛(100) = 키, 유지 |
+| **사운드 플레이어** | `Sound/volume.vsc` | BGM 제목·설명 39행 + 헤더 | 번호·SE 키·볼륨 열 유지 |
 
 두 파일 모두 SPB 대사와 동일한 루비 `|漢字(かな)` 표기라, 캐리어 인코딩·동일크기 주입으로
 크래시 없이 번역 가능합니다. (도감 설명은 분량이 커 대사 재번역과 비슷한 작업량)
@@ -166,7 +168,10 @@
 - `sub_t01~14.dat` 미션 제목 카드와 `m_seikou.dat`/`m_sippai.dat`는 HAL DAT 내부의
   고정 CI4 텍스처를 v2.11~v2.12에서 처리 완료.
 - `demo_title.dat`와 전투 조작설명 C8 리소스는 v2.12에서 처리 완료.
-- `ban_rogo.dat`/`sim_title.dat` 로고와 배틀 커맨드 휠은 원본 유지.
+- `bank102/msel_base.dat` 공유 로고, `bank102·108·113/*_gtitle.dat` 중복 제목,
+  `bank108/cap_base.dat`·`bank119/osp_base.dat` 헤더는 v2.19에서 HSD 구조·팔레트·raw
+  범위를 검증해 한글 재작화했다. `ban_rogo.dat`와 영문만 담긴 `sim_title.dat` 로고,
+  배틀 커맨드 휠은 원본 유지.
 
 ---
 

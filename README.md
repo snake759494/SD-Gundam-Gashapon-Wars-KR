@@ -11,14 +11,14 @@
 # 1. 그냥 플레이하고 싶다면 (일반 사용자)
 
 1. **원본 ISO 준비** — 일본판 SD Gundam Gashapon Wars (GGPJB2), 원본 CRC32 `D5F67251`
-2. **최신 패치 내려받기** — [Releases](../../releases)에서 `SDGundamGashaponWars_KR_v2.18.xdelta`
+2. **최신 패치 내려받기** — [Releases](../../releases)에서 `SDGundamGashaponWars_KR_v2.19.xdelta`
 3. **패치 적용**
    - Windows: [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher/releases)로 원본 ISO + 패치 선택 → Apply
    - 커맨드라인:
      ```bash
-     xdelta3 -d -s "SD Gundam Gashapon Wars.iso" SDGundamGashaponWars_KR_v2.18.xdelta "SD Gundam Gashapon Wars (KR).iso"
+     xdelta3 -d -s "SD Gundam Gashapon Wars.iso" SDGundamGashaponWars_KR_v2.19.xdelta "SD Gundam Gashapon Wars (KR).iso"
      ```
-4. **결과 확인** — 패치 후 ISO CRC32 `2F097C5E` (SHA-256 `D75194E4D2944D8085629E77ABABA05E7D54D49A76F20DF71A5D013F645ECEE4`)
+4. **결과 확인** — 패치 후 ISO CRC32 `6843FFDC` (SHA-256 `5B796CD36FCD6A8F9647BD5999C1B44D0BD05F0336C45C5F6E1FA883465964F2`)
 5. Dolphin 등 게임큐브 에뮬레이터로 실행
 
 ---
@@ -68,7 +68,7 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "D:/경로/SD Gundam
 python -c "import pyxdelta; pyxdelta.run('원본.iso','패치본.iso','my_patch.xdelta')"
 ```
 
-> ✅ **재현성 검증됨**: 위 절차대로 빈 클론에서 빌드하면 배포본 v2.18과 **바이트 단위로 동일**한
+> ✅ **재현성 검증됨**: 위 절차대로 빈 클론에서 빌드하면 배포본 v2.19와 **바이트 단위로 동일**한
 > 결과가 나옵니다(patched_files 0 차이, `patched_main.dol` 동일).
 
 ## 2-3. 번역 수정하기
@@ -86,6 +86,7 @@ python -c "import pyxdelta; pyxdelta.run('원본.iso','패치본.iso','my_patch.
 | `unit_names` | 175 | 유닛명 |
 | `gallery` | 163 | 도감 유닛 설명 |
 | `ab_mission` | 100 | 챌린지 미션(타이틀·조건·설명) |
+| `sound_volume` | 39행 + 헤더 | 사운드 플레이어 BGM 곡목·출처 설명(번호/볼륨 키는 유지) |
 | `help` | 74 | 도움말 |
 | `images` | 56 | 라벨 이미지 텍스트 |
 | `disp_char` / `disp_terrain` | 21 / 30 | 캐릭터·지형 표시명 |
@@ -135,7 +136,7 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "원본.iso"   # 전
 
 ---
 
-# 4. 번역 범위 (v2.18)
+# 4. 번역 범위 (v2.19)
 
 **한글화 완료**
 - 📜 **스토리·튜토리얼 대사** 전량 (~1,300줄)
@@ -146,8 +147,10 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "원본.iso"   # 전
 - 🖼️ **메뉴 라벨 이미지** — 모드 선택/싱글·멀티 플레이/옵션/진동/사운드 설정/메모리 카드
 - 🖼️ **대형 메뉴 타이틀 25종** — bank102 17종 + 중복 bank108 6종 + 외부 bank113 대전 방식 2종을 C4 하이라이트/CMP 색상 레이어 쌍으로 처리
 - 🖼️ **중첩 메뉴 이미지** — bank113 `usel_mode.dat`의 안내/대전 방식 4쌍과 공통 `usel_base.dat` 안내 1쌍, bank101 `ce_menu_title.dat` 1개를 HSD 원본 크기 그대로 한글화
+- 🖼️ **중복 HSD UI 이미지** — bank102 `msel_base.dat` 공유 로고/모드 헤더, bank102·108·113 `*_gtitle.dat` 15쌍, bank108 캡슐 헤더, bank119 사운드 플레이어 헤더까지 누락된 장면 복제본을 한글화
 - 🎯 **겹침 레이어 정렬** — 같은 메뉴 문구를 그리는 두 이미지에 공통 글꼴 크기·원점·바운딩을 적용해 위치와 크기를 일치
-- 🔊 **사운드 설정 표기** — `스테레오／모노`로 정리하고 `사운드 플레이어` 상단 표시 슬롯도 한글 캐리어 코드로 확인
+- 🔊 **사운드 플레이어** — 전용 HSD 헤더와 공유 로고를 한글 재작화하고, BGM 제목·설명 39행 및 CSV 헤더를 한글화
+- 🔊 **사운드 설정 표기** — `스테레오／모노`로 정리하고 ASCII 공백·`@c7/@c8` 토큰으로 한글 코드가 홀수 경계로 밀리는 회귀를 차단
 - 🎬 **미션 연출 카드** — 시나리오 미션 제목 14종, `미션 클리어`/`미션 실패`, `다음` 버튼
 - 🖼️ **타이틀 로고** — `demo_title.dat`의 `SD 건담 가샤폰 워즈` 이미지
 - 🎮 **전투 조작설명 이미지** — `con_img.tpl` 및 Effect ARC 복제본 3개의 C8(8×4 타일) 라벨 7종(원본 도식·투명도 보존, 한글 가장자리 부분 알파 제거)
@@ -204,7 +207,9 @@ src/
 │   ├── tex_lib.py                  # @Texture 디코더/인코더
 │   ├── 60/61/62_*.py               # 라벨 이미지 재작화
 │   ├── 63_menu_titles.py           # 외부 C4/CMP 타이틀 25쌍
-│   ├── 64_nested_menu_titles.py    # 중첩 U8/HSD 타이틀 usel_mode 4쌍+usel_base 1쌍+1개
+│   ├── 64_nested_menu_titles.py    # 중첩 U8/HSD 기존 메뉴 타이틀
+│   ├── 77_nested_ui_assets.py      # 중복 HSD 헤더/로고/gtitle 재작화
+│   ├── 92_inject_sound_volume.py   # 사운드 플레이어 BGM 표시열 주입
 │   └── 70~74_*.py                  # 텍스처 추출·큐레이션
 └── kanji_dokuon_auto_patch_tool/   # 폰트 셀·한자 독음 도구
 ```
@@ -216,6 +221,7 @@ src/
 
 | 버전 | 내용 |
 |---|---|
+| **v2.19** | GitHub Issue #18 재검수 — `bank119/osp_base.dat` 사운드 플레이어 헤더, `bank102/msel_base.dat` 공유 로고, bank102·108·113의 중복 gtitle HSD 15쌍과 캡슐 헤더를 한글 재작화. `Sound/volume.vsc`의 헤더·BGM 제목·출처 설명 39행을 고정 길이로 주입하고, `스테레오／모노` DOL 문자열의 ASCII 공백/색상 토큰 재삽입과 홀수 바이트 캐리어 밀림을 자동 검증 |
 | **v2.18** | GitHub Issue #16 재검수 — CMP 8×8/4×4 블록 왕복 회귀 검증을 추가하고, 완전 투명 C4 픽셀이 반투명 회색 팔레트로 양자화되던 공통 인코더 버그를 수정. 그레이 잔상·헤더 배경 오염을 제거하고, `usel_base.dat`에 남아 있던 멀티플레이 안내 중복 이미지까지 C4/CMP 쌍으로 패치. 사운드 설정 표시에서 `@c7`/`@c8` 제어 토큰을 제거해 `※테레오`/`※노`가 아닌 `스테레오／모노`로 고정 |
 | **v2.17** | GitHub Issue #14 재검수 — bank102의 잘못된 후반부 제목 매칭을 교정하고, bank102/bank108의 중복 메뉴와 bank113 외부·중첩 HSD 대전 방식 화면을 한글화. 두 레이어의 공통 위치·크기 정렬, 미번역 HSD 안내/캡슐 편집 제목, 사운드 플레이어 헤더, `스테레오／모노` 표기를 보강 |
 | **v2.16** | GitHub 이슈 #12 반영 — bank102 세부 모드 대형 타이틀 7종과 소형 메뉴 헤더 7종을 한글화하고, 빌드 순서에서 헤더가 원문으로 덮이던 문제와 사운드 설정 `모노랄` 오타를 수정 |

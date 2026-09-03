@@ -5,7 +5,9 @@
 - 추출 도구: `image_work/tex_lib.py`(@Texture 디코더) + `extract_all.py`
 - 컨택트시트: `image_work/sheets/*.png` (파일별로 텍스처 미리보기)
 - 총 텍스처(라벨/로고 크기, ≥24×12): **143개** / 전체 @Texture 블록 971개
-- 별도 HSD 메뉴 그래픽: `bank113/scen/usel_mode.dat` 4쌍 + `bank101/scen/ce_menu_title.dat` 1개
+- 별도 HSD 메뉴 그래픽: 기존 `bank113/scen/usel_mode.dat` 4쌍 + `bank101/scen/ce_menu_title.dat` 1개와
+  Issue #18에서 확인한 `bank102/msel_base.dat`, `bank102·108·113/*_gtitle.dat`,
+  `bank108/cap_base.dat`, `bank119/osp_base.dat` 중복 리소스
 
 ---
 
@@ -47,6 +49,13 @@ Issue #14 캡처에서 계속 일본어로 남던 실제 선택 화면은 `bank1
 `bank101.arc/scen/ce_menu_title.dat`의 `カプセルボックス編集`도 `캡슐 박스 편집`으로
 처리했다.
 
+Issue #18에서는 같은 화면을 구성하는 HSD 복제본도 다시 추적했다. `msel_base.dat`의
+188×80 공유 로고와 모드 선택 헤더, `cap_base.dat`의 캡슐 워즈 헤더,
+`bank119.arc/scen/osp_base.dat`의 사운드 플레이어 헤더를 통째로 재작화했다.
+또한 `msel_gtitle.dat`·`cap_gtitle.dat`·`usel_gtitle.dat`의 C4/CMP 대형 제목
+15쌍(멀티 플레이 3개와 옵션 12개)을 같은 TextLayout으로 처리해 어느 진입 경로에서도
+일본어 제목이 남지 않게 했다.
+
 ## B. 룰 설정 라벨 — `Info/arc/bank113.arc`
 - **지형**: 地上/GROUND, 水中/WATER, 宇宙/SPACE, 空中/SKY (64×28)
 - タイム設定(시간 설정), アイテム出現(아이템 출현), ギミック(기믹), 味方ヒット(아군 히트), じゃんけん(가위바위보), COMレベル(COM 레벨)
@@ -82,7 +91,19 @@ Issue #14 캡처에서 계속 일본어로 남던 실제 선택 화면은 `bank1
 - `demo_title.dat` — 타이틀 로고 `SD 건담 가샤폰 워즈` (RGB5A3, v2.12 처리)
 - `ban_rogo.dat`, `sim_title.dat` — 반다이/시뮬레이션 영문 로고, 원본 유지
 
-## G. v2.12~v2.18 검수 이슈 반영
+## G. v2.12~v2.19 검수 이슈 반영
+
+- Issue #18의 사운드 플레이어 화면은 `bank119.arc/scen/osp_base.dat`의 162×52 CI4
+  헤더와 `bank102.arc/scen/msel_base.dat`의 188×80 CI8 공유 로고를 사용한다. 두 이미지의
+  원본 raw SHA-256·구조체·팔레트 범위를 검증한 뒤 한글/영문 2행 헤더와 로고를 재작화했다.
+  모드 선택·캡슐 워즈의 중복 160×52 헤더도 함께 교체했다.
+- `bank102.arc/scen/msel_gtitle.dat`, `bank108.arc/scen/cap_gtitle.dat`,
+  `bank113.arc/scen/usel_gtitle.dat`의 중복 C4/CMP 제목 5쌍씩(총 15쌍)을 추가했다.
+  CMP 색상 레이어의 8×8 매크로블록·C4 팔레트·파일 크기는 유지하고 두 레이어에 동일한
+  글꼴 크기와 원점을 공유시켰다.
+- `Sound/volume.vsc`는 내부 번호·SE 키·볼륨 열을 건드리지 않고 BGM 제목/설명 표시열
+  39행과 CSV 헤더만 바꿨다. `스테레오／모노` DOL 문자열은 ASCII 공백과 `@c7/@c8`가
+  한글 2바이트 캐리어를 홀수 경계로 밀지 않는지 별도 회귀 테스트로 고정했다.
 
 - `Info/arc/bank102.arc`·`bank108.arc` — 대형 메뉴 타이틀을 C4 하이라이트와 CMP
   색상 레이어 한 쌍으로 재작화했다. v2.17의 `63_menu_titles.py`는 쌍마다 공통

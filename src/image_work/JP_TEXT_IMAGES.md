@@ -8,9 +8,9 @@
 - 원자료: `jp_text_inventory.json`
 - 판별 기준(그라운드 트루스): 원본 `files/` ↔ 패치본 `text_patch_work/patched_files/` 의
   `@Texture` 블록 바이트를 비교해 **실제로 바뀐 것 = 번역완료**, 텍스트인데 안 바뀐 것 = 미번역.
-- 아래 @Texture 통계와 별도로, v2.18에서 중첩 U8/HSD 메뉴 이미지 4쌍과 공통
-  `usel_base.dat`의 중복 안내 1쌍, 캡슐 편집 제목 1개를 `64_nested_menu_titles.py`로
-  재작화했습니다.
+- 아래 @Texture 통계와 별도로, v2.19에서 중첩 U8/HSD 메뉴 이미지·공유 로고·사운드
+  플레이어 헤더·중복 gtitle 15쌍을 `64_nested_menu_titles.py`와
+  `77_nested_ui_assets.py`로 재작화했습니다.
 
 아이콘 뱅크(103/104/105/107/109/112/115~117: 숫자·기호·이펙트·초상), Effect/Arc(아이템·이펙트
 픽토그램), Info/tpl(캐릭터 초상), files/cardicon 등은 **텍스트가 없어 제외**했습니다.
@@ -55,7 +55,7 @@
 
 ---
 
-## C. 커스텀 스프라이트(.dat)·중첩 HSD — v2.12~v2.18 처리/보류 현황
+## C. 커스텀 스프라이트(.dat)·중첩 HSD — v2.12~v2.19 처리/보류 현황
 
 `.dat` 전체가 같은 포맷은 아니다. 미션 연출 파일은 HAL HSD/DAT 컨테이너 안의
 고정 레이아웃 CI4 텍스처로 확인했으며, OAM/포인터를 건드리지 않고 원시 이미지 버퍼만
@@ -73,6 +73,12 @@
 | `Info/arc/bank113.arc/scen/usel_mode.dat` | 대전 형식/필드 안내 2쌍 + 배틀 로얄/블루사이드 대전 2쌍 → 한글 (v2.17) |
 | `Info/arc/bank113.arc/scen/usel_base.dat` | 공통 멀티플레이 진입용 `대전 형식을 선택하세요` C4/CMP 중복 쌍 → 한글 (v2.18) |
 | `Info/arc/bank101.arc/scen/ce_menu_title.dat` | 캡슐 박스 편집 제목 1개 → 한글 (v2.17) |
+| `Info/arc/bank102.arc/scen/msel_base.dat` | 모드 선택 중복 헤더·모드/사운드 플레이어 공유 로고 → 한글 (v2.19) |
+| `Info/arc/bank102.arc/scen/msel_gtitle.dat` | 멀티 플레이·옵션 중복 C4/CMP 제목 5쌍 → 한글 (v2.19) |
+| `Info/arc/bank108.arc/scen/cap_base.dat` | 캡슐 워즈 중복 헤더 → 한글 (v2.19) |
+| `Info/arc/bank108.arc/scen/cap_gtitle.dat` | 멀티 플레이·옵션 중복 C4/CMP 제목 5쌍 → 한글 (v2.19) |
+| `Info/arc/bank113.arc/scen/usel_gtitle.dat` | 멀티 플레이·옵션 중복 C4/CMP 제목 5쌍 → 한글 (v2.19) |
+| `Info/arc/bank119.arc/scen/osp_base.dat` | 사운드 플레이어 헤더 → 한글 (v2.19) |
 | `files/ban_rogo.dat` | 반다이 로고, 원본 유지 |
 | `files/sim_title.dat` | 시뮬레이션 타이틀 로고 |
 
@@ -91,6 +97,11 @@
 > 기존 8×8 가정 때문에 생기던 가로 분할·짝수 줄 수평 이동을 제거하고, 원문 후리가나까지
 > 포함한 7개 라벨 영역을 한글로 다시 그렸다. 네 복제본의 라벨 밖 픽셀 변경은 0개다.
 
+> v2.19에서는 Issue #18의 실제 화면과 전용 `osp_*` HSD를 다시 대조했다. 모드 선택과
+> 사운드 플레이어가 공유하는 188×80 로고, 모드/캡슐/사운드 2행 헤더, 세 뱅크의
+> gtitle C4/CMP 중복 15쌍을 원본 SHA-256·구조체·팔레트 범위로 검증한 뒤 한글 재작화했다.
+> `Sound/volume.vsc`의 BGM 제목·출처 설명 표시열도 같은 릴리즈에서 고정 길이로 교체했다.
+>
 > v2.18에서는 Issue #16의 실제 화면과 원본 리소스를 다시 대조했다. v2.17에서 놓친
 > `usel_base.dat`의 공통 멀티플레이 안내 C4/CMP 중복 쌍을 원본 SHA-256과 함께 고정하고,
 > `tex_lib.py`의 완전 투명 C4 최근접 매핑을 수정했다. CMP 8×8 매크로블록과 4×4 서브블록
@@ -117,4 +128,6 @@ python image_work/63_menu_titles.py --apply --preview # C4/CMP 메뉴 타이틀 
 python image_work/64_nested_menu_titles.py --apply --preview # 중첩 U8/HSD 메뉴 타이틀 쌍
 python image_work/75_custom_dat_sprites.py --apply  # HAL DAT 미션 연출 패치
 python image_work/76_custom_ui_assets.py --apply     # 타이틀/전투 조작설명 패치
+python image_work/77_nested_ui_assets.py --apply     # 중복 HSD 헤더/로고/gtitle 패치
+python text_patch_work/92_inject_sound_volume.py --apply # 사운드 플레이어 곡목/설명 패치
 ```

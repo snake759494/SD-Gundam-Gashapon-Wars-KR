@@ -35,6 +35,18 @@ def enc(s):
             except UnicodeEncodeError: out += b'?'
     return bytes(out)
 
+
+def validate_sound_setup_payload(entry, payload):
+    """스테레오/모노 행의 한글 2바이트 경계가 다시 밀리지 않게 고정한다."""
+    if entry.get('jp') != 'サウンド　　　　　 @c7ステレオ@c7／@c8モノラル':
+        return
+    if entry.get('ko') != '사운드　　　　　스테레오／모노':
+        raise ValueError('사운드 설정 번역문에 ASCII 공백/특수 토큰이 재삽입됨')
+    if ' ' in entry['ko'] or '@c7' in entry['ko'] or '@c8' in entry['ko']:
+        raise ValueError('사운드 설정 번역문에 금지된 공백/색상 토큰이 있음')
+    if len(payload) % 2:
+        raise ValueError('사운드 설정 캐리어 경계가 홀수 바이트로 밀림')
+
 dol = bytearray(Path(os.path.join(HERE, 'patched_main.dol')).read_bytes())
 tex_ranges = []
 for tex in T.DEFAULT_KANJI_TEXTURES:
@@ -48,6 +60,7 @@ cand = []
 over = 0
 for e in entries:
     payload = enc(e['ko'])
+    validate_sound_setup_payload(e, payload)
     if len(payload) > e['budget']:
         over += 1; continue
     for occ in e['occ']:
