@@ -32,6 +32,7 @@ dump('dol_inject_all.json', M['dol'])
 dump('dol_extra.json', M['dol_extra'])
 dump('dol_exclude_keys.json', M['dol_exclude'])
 dump('image_labels.json', M['images'], IMG)
+dump('sound_volume.json', M['sound_volume'])
 print('[1] 도메인 데이터파일 재생성 완료')
 
 # 2) 주입 스크립트 실행(검증된 순서)
@@ -57,6 +58,7 @@ run('52_char_col0_safe.py', HERE)
 run('51_field_inject.py', HERE)
 run('33_vsc_inject.py', HERE)                  # help 적용, 유닛명 오버플로는 자동 skip
 run('91_inject_gallery_mission.py', HERE)      # 도감 설명 + 챌린지 미션
+run('92_inject_sound_volume.py', HERE)         # 사운드 플레이어 BGM 제목/설명
 # dol (patched_main.dol 제자리 재적용, 멱등)
 run('43_dol_inject.py', HERE)
 # 이미지 라벨
@@ -67,6 +69,7 @@ run('63_menu_titles.py', IMG)                  # 외부 C4/CMP 메뉴 타이틀(
 run('64_nested_menu_titles.py', IMG)           # 중첩 U8/HSD 메뉴 타이틀(4쌍+1개)
 run('75_custom_dat_sprites.py', IMG)           # HAL DAT 미션 제목/결과 화면
 run('76_custom_ui_assets.py', IMG)              # 타이틀 로고/전투 조작설명 이미지
+run('77_nested_ui_assets.py', IMG)              # 중복 HSD 헤더/로고/gtitle 이미지
 print('[2] 완료: patched_files/ + patched_main.dol 재생성')
 
 # 3) ISO

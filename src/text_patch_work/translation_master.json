@@ -13,7 +13,8 @@
    "dol_exclude": "번역 제외할 jp 문자열 목록(AI enum·키 등).",
    "images": "라벨 이미지 텍스트(뱅크 offset->한글). 렌더 재작화.",
    "gallery": "도감 유닛 설명 (row->{jp,ko}). ko만 수정, 8줄×18자로 자동 줄바꿈.",
-   "ab_mission": "챌린지 미션 (row->{title,cond,desc}). 표시열만, 시작유닛 키는 유지."
+   "ab_mission": "챌린지 미션 (row->{title,cond,desc}). 표시열만, 시작유닛 키는 유지.",
+   "sound_volume": "사운드 플레이어 BGM 제목/설명 (번호->{jp_title,title,jp_desc,desc}). 표시열만 교체."
   },
   "build": "python text_patch_work/BUILD_FROM_MASTER.py --apply"
  },
@@ -6927,7 +6928,7 @@
   },
   {
    "jp": "サウンド　　　　　 @c7ステレオ@c7／@c8モノラル",
-   "ko": "사운드　　　　　 스테레오／모노",
+   "ko": "사운드　　　　　스테레오／모노",
    "occ": [
     {
      "off": 2967028,
@@ -17243,6 +17244,250 @@
    "cond": "적을 전멸시켜라",
    "jp_desc": "敵を全滅させろ！",
    "desc": "적을 전멸시켜라!"
+  }
+ },
+ "sound_volume": {
+  "_header": {
+   "jp_number": "番号",
+   "number": "번호",
+   "jp_title": "ＢＧＭリスト",
+   "title": "BGM 목록",
+   "jp_desc": "説明",
+   "desc": "설명"
+  },
+  "0": {
+   "jp_title": "未使用",
+   "title": "미사용",
+   "jp_desc": "",
+   "desc": ""
+  },
+  "1": {
+   "jp_title": "Welcome to SD-Gundam",
+   "title": "Welcome to SD-Gundam",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "2": {
+   "jp_title": "mode select",
+   "title": "mode select",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "3": {
+   "jp_title": "mission complete",
+   "title": "mission complete",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "4": {
+   "jp_title": "result",
+   "title": "result",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "5": {
+   "jp_title": "option",
+   "title": "option",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "6": {
+   "jp_title": "|窮地(きゅうち)に|立(た)つガンダム",
+   "title": "위기에 선 건담",
+   "jp_desc": "　|機動戦士(きどうせんし)ガンダムより",
+   "desc": "기동전사 건담에서"
+  },
+  "7": {
+   "jp_title": "|颯爽(さっそう)たるシャア",
+   "title": "질풍의 샤아",
+   "jp_desc": "　|機動戦士(きどうせんし)ガンダムより",
+   "desc": "기동전사 건담에서"
+  },
+  "8": {
+   "jp_title": "|戦(たたか)いへの|恐怖(きょうふ)",
+   "title": "전투의 공포",
+   "jp_desc": "　|機動戦士(きどうせんし)ガンダムより",
+   "desc": "기동전사 건담에서"
+  },
+  "9": {
+   "jp_title": "|血塗(ちぬ)られたザビ|家(け)",
+   "title": "피로 물든 자비 가문",
+   "jp_desc": "　|機動戦士(きどうせんし)ガンダムより",
+   "desc": "기동전사 건담에서"
+  },
+  "10": {
+   "jp_title": "|戦闘態勢(せんとうたいせい)",
+   "title": "전투 태세",
+   "jp_desc": "　|機動戦士(きどうせんし)ガンダムＳＥＥＤより",
+   "desc": "기동전사 건담 SEED에서"
+  },
+  "11": {
+   "jp_title": "|出撃準備(しゅつげきじゅんび)",
+   "title": "출격 준비",
+   "jp_desc": "　|機動戦士(きどうせんし)ガンダムＳＥＥＤより",
+   "desc": "기동전사 건담 SEED에서"
+  },
+  "12": {
+   "jp_title": "カウントダウン",
+   "title": "카운트다운",
+   "jp_desc": "　|機動戦士(きどうせんし)ガンダムＳＥＥＤより",
+   "desc": "기동전사 건담 SEED에서"
+  },
+  "13": {
+   "jp_title": "|徹底抗戦(てっていこうせん)",
+   "title": "철저 항전",
+   "jp_desc": "　|機動戦士(きどうせんし)ガンダムＳＥＥＤより",
+   "desc": "기동전사 건담 SEED에서"
+  },
+  "14": {
+   "jp_title": "|正義(せいぎ)と|自由(じゆう)",
+   "title": "정의와 자유",
+   "jp_desc": "　|機動戦士(きどうせんし)ガンダムＳＥＥＤより",
+   "desc": "기동전사 건담 SEED에서"
+  },
+  "15": {
+   "jp_title": "モビルスーツ",
+   "title": "모빌슈트",
+   "jp_desc": "　|機動戦士(きどうせんし)Ζガンダムより",
+   "desc": "기동전사 Z건담에서"
+  },
+  "16": {
+   "jp_title": "|大会戦(だいかいせん)",
+   "title": "대회전",
+   "jp_desc": "　|機動戦士(きどうせんし)Ζガンダムより",
+   "desc": "기동전사 Z건담에서"
+  },
+  "17": {
+   "jp_title": "|危機(きき)",
+   "title": "위기",
+   "jp_desc": "　|機動戦士(きどうせんし)Ζガンダムより",
+   "desc": "기동전사 Z건담에서"
+  },
+  "18": {
+   "jp_title": "|潜入(せんにゅう)",
+   "title": "잠입",
+   "jp_desc": "　|機動戦士(きどうせんし)Ζガンダムより",
+   "desc": "기동전사 Z건담에서"
+  },
+  "19": {
+   "jp_title": "|襲来(らいしゅう)",
+   "title": "습격",
+   "jp_desc": "　|機動戦士(きどうせんし)Ζガンダムより",
+   "desc": "기동전사 Z건담에서"
+  },
+  "20": {
+   "jp_title": "メインテーマ",
+   "title": "메인 테마",
+   "jp_desc": "　|逆襲(ぎゃくしゅう)のシャア",
+   "desc": "기동전사 건담 역습의 샤아에서"
+  },
+  "21": {
+   "jp_title": "戦闘勝利",
+   "title": "전투 승리",
+   "jp_desc": "",
+   "desc": ""
+  },
+  "22": {
+   "jp_title": "戦闘敗北",
+   "title": "전투 패배",
+   "jp_desc": "",
+   "desc": ""
+  },
+  "23": {
+   "jp_title": "|未来(みらい)への|誓(ちか)い",
+   "title": "미래를 향한 다짐",
+   "jp_desc": "　|機動戦士(きどうせんし)ガンダムＳＥＥＤより",
+   "desc": "기동전사 건담 SEED에서"
+  },
+  "24": {
+   "jp_title": "ENGAGE!",
+   "title": "ENGAGE!",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "25": {
+   "jp_title": "universal century",
+   "title": "universal century",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "26": {
+   "jp_title": "UNDER WATER",
+   "title": "UNDER WATER",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "27": {
+   "jp_title": "Cool destruction",
+   "title": "Cool destruction",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "28": {
+   "jp_title": "City conflict",
+   "title": "City conflict",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "29": {
+   "jp_title": "heat island",
+   "title": "heat island",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "30": {
+   "jp_title": "BASE ATTACK!",
+   "title": "BASE ATTACK!",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "31": {
+   "jp_title": "OPEN FIRE!",
+   "title": "OPEN FIRE!",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "32": {
+   "jp_title": "wander of nature",
+   "title": "wander of nature",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "33": {
+   "jp_title": "surprise!",
+   "title": "surprise!",
+   "jp_desc": "",
+   "desc": ""
+  },
+  "34": {
+   "jp_title": "WHITE ZONE",
+   "title": "WHITE ZONE",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "35": {
+   "jp_title": "map on the war.1",
+   "title": "map on the war.1",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "36": {
+   "jp_title": "map on the war.2",
+   "title": "map on the war.2",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "37": {
+   "jp_title": "GAME OVER",
+   "title": "GAME OVER",
+   "jp_desc": "　オリジナル",
+   "desc": "오리지널"
+  },
+  "38": {
+   "jp_title": "時間切れ",
+   "title": "시간 초과",
+   "jp_desc": "",
+   "desc": ""
   }
  }
 }
