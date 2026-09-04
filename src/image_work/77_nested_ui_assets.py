@@ -183,11 +183,38 @@ def draw_text(img, text, top, bottom, fill=WHITE, stroke=2):
                              stroke_width=stroke, stroke_fill=BLACK)
 
 
+def draw_header_row(img, text, top, bottom, stroke):
+    """원본 헤더의 두 행 경계를 맞춰 텍스트를 배치한다.
+
+    헤더 뒤에는 별도 HSD 배경 경계선이 고정되어 있다. 기존 공통
+    ``make_layout``는 행 높이만 보고 위쪽으로 붙였기 때문에 한글/영문
+    두 행의 실제 glyph bbox가 경계선과 겹쳤다. 원본의 bbox 여백(상단
+    2px, 하단 1px)에 맞춰 행별로 최대 크기를 계산한다.
+    """
+    draw = ImageDraw.Draw(img)
+    row_height = bottom - top
+    for size in range(min(96, row_height), 5, -1):
+        font = ImageFont.truetype(FONT, size)
+        box = draw.textbbox((0, 0), text, font=font, stroke_width=stroke)
+        tw, th = box[2] - box[0], box[3] - box[1]
+        if tw <= img.width - 2 and th <= row_height:
+            x = (img.width - tw) // 2 - box[0]
+            y = top + (row_height - th) // 2 - box[1]
+            draw.text((x, y), text, font=font, fill=WHITE,
+                      stroke_width=stroke, stroke_fill=BLACK)
+            return
+    raise ValueError("헤더 행이 이미지에 들어가지 않습니다: %s" % text)
+
+
 def draw_header(korean, english, w, h):
     """기존 일본어/영문 2행 헤더를 한글/영문 2행으로 통째로 재작화."""
     img = Image.new("RGBA", (w, h), (0, 0, 0, 0))
-    draw_text(img, korean, 0, h // 2, WHITE, stroke=2)
-    draw_text(img, english, h // 2 - 1, h, WHITE, stroke=1)
+    split = h // 2
+    # 52px 원본 헤더의 divider는 y=29~30 부근에 있다. 두 행 모두
+    # 같은 외곽선 폭을 사용해 영문 위로 배경의 흰 선이 비쳐 보이지
+    # 않도록 하고, 한글/영문 bbox를 각각 원본 행 안에 고정한다.
+    draw_header_row(img, korean, 1, split + 3, 2)
+    draw_header_row(img, english, split + 4, h, 2)
     return img
 
 

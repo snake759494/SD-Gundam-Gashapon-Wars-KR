@@ -116,6 +116,19 @@
 > `스테레오／모노`로 정리했고, 대전 방식의 영문 보조 표기는 의미를 유지해 깨끗하게
 > 재작화했다. bank108의 잠금 `???` 1개는 원문 상태를 유지한다.
 
+> v2.20에서는 Issue #21의 시나리오 전투 화면을 공용 HLH/HSD까지 확장해 전수 처리했습니다.
+> `bank100`의 48개 HLH 자산에서 지형·유닛·전투 필드·전투 명령·턴/페이즈·아이템·승패
+> 문구를 93개 고유 raw 버퍼 기준으로 재작화했고, `bank103` 시나리오 헤더와 `bank107`
+> 미션/VS 양쪽 표시도 중복본까지 함께 갱신했습니다. 미리보기는 `scenario_battle_hlh_preview.png`
+> 및 `scenario_ui_hsd_preview.png`입니다. HLH는 복원→HSD raw 교체→동일 슬롯 재압축→재복원
+> 왕복을 자동 검증하므로 전투 조작설명 때의 가로 분할/짝수 행 밀림과 같은 포맷 오류를
+> 새 경로에서 다시 만들지 않습니다.
+
+> Issue #20의 메뉴 선택 레이어와 사운드 플레이어 헤더도 함께 재검수했습니다. `싱글 플레이`
+> CMP는 원본의 민트 하이라이트와 외곽선을 사용하고, 사운드 헤더는 고정 divider와 분리된
+> 두 행 bbox를 사용합니다. 결과는 `menu_titles_all_layers_preview.png`와
+> `nested_ui_assets_preview.png`에서 확인할 수 있습니다.
+
 ---
 
 ## 재현 방법
@@ -129,5 +142,6 @@ python image_work/64_nested_menu_titles.py --apply --preview # 중첩 U8/HSD 메
 python image_work/75_custom_dat_sprites.py --apply  # HAL DAT 미션 연출 패치
 python image_work/76_custom_ui_assets.py --apply     # 타이틀/전투 조작설명 패치
 python image_work/77_nested_ui_assets.py --apply     # 중복 HSD 헤더/로고/gtitle 패치
+python image_work/78_scenario_battle_assets.py --apply --preview # 시나리오/전투 HLH·HSD 패치
 python text_patch_work/92_inject_sound_volume.py --apply # 사운드 플레이어 곡목/설명 패치
 ```

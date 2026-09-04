@@ -140,6 +140,35 @@ Issue #18에서는 같은 화면을 구성하는 HSD 복제본도 다시 추적�
 ## H. 번역 불필요
 - `Info/tpl/chr01~15_*.pic.tpl` — 캐릭터 초상화(300×360, 텍스트 없음)
 
+## I. v2.20 시나리오·전투 공용 이미지 전수 검수
+
+Issue #21의 미션 1 캡처를 시작점으로 시나리오 선택→대화→맵→전투 시작→전투 필드의
+**실제 진입 경로**를 원본 리소스와 대조했다. 공용 전투 화면은 일반 @Texture만이 아니라
+`Info/arc/bank100.arc`의 HLH 압축 HSD와 `bank103`·`bank107`의 중첩 HSD에도 같은 문구가
+복제되어 있었다. `78_scenario_battle_assets.py`는 다음을 한 번의 빌드에서 모두 처리한다.
+
+- bank100 HLH **48개 자산, 93개 고유 raw 이미지 버퍼**: 지형·유닛 표시, 전투 필드,
+  전투/공격/확인/취소, 메뉴·전투 맵·뒤로, BLUE/RED SIDE, DAY/PHASE START,
+  아이템·능력·승패·전투 준비 문구와 중복 버퍼
+- bank103 `scen/sce_mission.dat`: `シナリオゲーム / SCENARIO GAME` 2행 헤더
+- bank107 `scen/mission.dat`·`scen/vs.dat`: `MISSION`, COM/플레이어 양쪽 중복 표시
+- HLH는 먼저 복원한 뒤 HSD 구조체·팔레트·타일 순서를 유지한 채 raw만 교체하고, 원래
+  U8 엔트리 슬롯 크기로 재압축한다. C4/CI8/CMP raw 크기, HSD 포인터, arc 크기를
+  모두 검증한다.
+- Issue #20의 `bank102/msel_base.dat` 선택 상태 `싱글 플레이`는 원본 캡처의 민트 본문과
+  녹색 외곽선을 복원해 회색으로 보이던 CMP 레이어를 교정했다. `bank119/osp_base.dat`
+  사운드 플레이어 헤더는 일본어 원본과 같은 두 행의 glyph bbox를 유지해 고정 divider가
+  영문 행을 가로지르지 않도록 했다.
+
+시나리오 SPB도 전체 204개 파일을 다시 확인했다. 고정 화자명 명령의 두 형식(0E/0F)을
+모두 검사해 `マリュー` 34개, `シン` 2개, `セイラ・マス` 1개를 번역하고 슬롯 크기를
+보존했다. 유닛명·맵명처럼 게임 로더가 참조하는 키(`ゲルググ`, `ジム` 등)는 안전을 위해
+일본어로 유지하고 표시 열만 번역한다.
+
+검수용 PNG는 `out/scenario_battle_hlh_preview.png`와 `out/scenario_ui_hsd_preview.png`이며,
+중복 메뉴의 C4/CMP 레이어는 기존 `out/menu_titles_all_layers_preview.png`와
+`out/nested_ui_assets_preview.png`에서 함께 확인할 수 있다.
+
 ---
 
 ## 작업 방식

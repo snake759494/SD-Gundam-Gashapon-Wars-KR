@@ -70,6 +70,7 @@ run('64_nested_menu_titles.py', IMG)           # 중첩 U8/HSD 메뉴 타이틀(
 run('75_custom_dat_sprites.py', IMG)           # HAL DAT 미션 제목/결과 화면
 run('76_custom_ui_assets.py', IMG)              # 타이틀 로고/전투 조작설명 이미지
 run('77_nested_ui_assets.py', IMG)              # 중복 HSD 헤더/로고/gtitle 이미지
+run('78_scenario_battle_assets.py', IMG, extra=('--preview',))
 print('[2] 완료: patched_files/ + patched_main.dol 재생성')
 
 # 3) ISO

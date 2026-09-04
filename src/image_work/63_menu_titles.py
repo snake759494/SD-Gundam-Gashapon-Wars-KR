@@ -34,13 +34,14 @@ BLACK = (38, 38, 38, 255)
 LAYOUT_STROKE = 3
 
 
-def pair(c4, cmp, text, color, segments=None):
+def pair(c4, cmp, text, color, segments=None, outline=None):
     return {
         "c4": c4,
         "cmp": cmp,
         "text": text,
         "color": color,
         "segments": segments,
+        "outline": outline,
     }
 
 
@@ -50,7 +51,11 @@ def pair(c4, cmp, text, color, segments=None):
 RESOURCES = {
     "Info/arc/bank102.arc": [
         pair(0x309A0, 0x2D760, "모드 선택", (166, 151, 47, 255)),
-        pair(0x36E40, 0x33C00, "싱글 플레이", (10, 150, 125, 255)),
+        # 원본 선택 상태의 민트 하이라이트(8,130,99 계열 외곽선 +
+        # 107,255,206 계열 본문)를 보존한다. 어두운 단색 본문은
+        # CMP 레이어가 회색 블록처럼 보이게 만드는 Issue #20 회귀였다.
+        pair(0x36E40, 0x33C00, "싱글 플레이", (107, 255, 206, 255),
+             outline=(8, 130, 99, 255)),
         pair(0x3D2E0, 0x3A0A0, "멀티 플레이", (230, 135, 35, 255)),
         pair(0x43780, 0x40540, "옵션", (142, 92, 176, 255)),
         pair(0x4A3A0, 0x469E0, "시나리오 게임", (20, 150, 125, 255)),
@@ -148,21 +153,21 @@ def draw_white(text, w, h, layout):
     return img
 
 
-def draw_cmp(text, w, h, color, layout, segments=None):
+def draw_cmp(text, w, h, color, layout, segments=None, outline=BLACK):
     """CMP 색상 레이어. C4와 같은 font/position을 반드시 사용한다."""
     font, pos, _, _ = layout
     img = Image.new("RGBA", (w, h), WHITE)
     d = ImageDraw.Draw(img)
     if not segments:
         d.text(pos, text, font=font, fill=color, stroke_width=LAYOUT_STROKE,
-               stroke_fill=BLACK)
+               stroke_fill=outline)
         return img
 
     # segment를 각각 text()로 그리면 경계의 kerning/advance가 달라져
     # C4 하이라이트와 색상 레이어의 글자 위치가 미세하게 어긋날 수 있다.
     # 전체 문장을 한 번만 래스터화하고, 글자 내부만 색상별로 잘라 칠한다.
-    d.text(pos, text, font=font, fill=BLACK, stroke_width=LAYOUT_STROKE,
-           stroke_fill=BLACK)
+    d.text(pos, text, font=font, fill=outline, stroke_width=LAYOUT_STROKE,
+           stroke_fill=outline)
     fill_mask = Image.new("L", img.size, 0)
     ImageDraw.Draw(fill_mask).text(pos, text, font=font, fill=255)
     prefix = ""
@@ -236,7 +241,7 @@ for rel, pairs in RESOURCES.items():
         layout = make_layout(p["text"], c4["w"], c4["h"])
         c4_img = draw_white(p["text"], c4["w"], c4["h"], layout)
         cmp_img = draw_cmp(p["text"], cmp["w"], cmp["h"], p["color"], layout,
-                           p["segments"])
+                           p["segments"], p.get("outline") or BLACK)
         c4_raw = TX.encode_c4(c4_img, TX.read_palette(b, c4["pal_off"], c4["palcnt"]),
                               c4["w"], c4["h"])
         cmp_raw = TX.encode_cmp(cmp_img, cmp["w"], cmp["h"])
