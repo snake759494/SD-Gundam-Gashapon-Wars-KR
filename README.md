@@ -11,14 +11,14 @@
 # 1. 그냥 플레이하고 싶다면 (일반 사용자)
 
 1. **원본 ISO 준비** — 일본판 SD Gundam Gashapon Wars (GGPJB2), 원본 CRC32 `D5F67251`
-2. **최신 패치 내려받기** — [Releases](../../releases)에서 `SDGundamGashaponWars_KR_v2.20.xdelta`
+2. **최신 패치 내려받기** — [Releases](../../releases)에서 `SDGundamGashaponWars_KR_v2.21.xdelta`
 3. **패치 적용**
    - Windows: [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher/releases)로 원본 ISO + 패치 선택 → Apply
    - 커맨드라인:
      ```bash
-     xdelta3 -d -s "SD Gundam Gashapon Wars.iso" SDGundamGashaponWars_KR_v2.20.xdelta "SD Gundam Gashapon Wars (KR).iso"
+     xdelta3 -d -s "SD Gundam Gashapon Wars.iso" SDGundamGashaponWars_KR_v2.21.xdelta "SD Gundam Gashapon Wars (KR).iso"
      ```
-4. **결과 확인** — 패치 후 ISO CRC32 `3D7FBCA2` (SHA-256 `D542F8BFA90ACEB35EC1F27186EE09D852E2C529872AFC78256D3FA0EFC65943`)
+4. **결과 확인** — 패치 후 ISO CRC32 `80457BEF` (SHA-256 `F2A40A1D7644B270A3888598E26387F839B33C54494B54CC514FF518CAA996FB`)
 5. Dolphin 등 게임큐브 에뮬레이터로 실행
 
 ---
@@ -68,7 +68,7 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "D:/경로/SD Gundam
 python -c "import pyxdelta; pyxdelta.run('원본.iso','패치본.iso','my_patch.xdelta')"
 ```
 
-> ✅ **재현성 검증됨**: 위 절차대로 빈 클론에서 빌드하면 배포본 v2.20과 **바이트 단위로 동일**한
+> ✅ **재현성 검증됨**: 위 절차대로 빈 클론에서 빌드하면 배포본 v2.21과 **바이트 단위로 동일**한
 > 결과가 나옵니다(patched_files 0 차이, `patched_main.dol` 동일).
 
 ## 2-3. 번역 수정하기
@@ -118,12 +118,12 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "원본.iso"   # 전
 
 이 프로젝트에서 실제로 겪은 **게임 진행 정지 버그의 원인**입니다. 반드시 읽어주세요.
 
-게임은 유닛·지형·맵을 **일본어 이름 문자열로 찾아서 로드**합니다.
+게임은 유닛·지형·맵을 **이름 문자열로 찾아서 로드**합니다.
 이 "참조 이름"을 한글로 바꾸면 게임이 리소스를 찾지 못해 **화면이 멈춥니다**
 (음악은 계속 나오지만 진행 불가 — 실제로 v2.5까지 미션 4에서 발생).
 
 **번역하면 안 되는 것:**
-- 유닛명 키 (`ガンダム`, `ザク`, `コア・ブースター` …)
+- 유닛명 키 (`ガンダム`, `ザク`, `コア・ブースター` …). Issue #23의 `ゲルググ`·`ジム`만 `33_vsc_inject.py`가 모든 VSC 사본을 동시에 갱신합니다.
 - 지형·맵 데이터명 (`山脈コスト`, `拠点コスト` …)
 - 유닛/무기/맵 데이터 파일 전반 (`pbmode_unit.vsc`, `ユニットデータ.vsc`, `*_units.vsc`, `Field/PbMode/**` …)
 - `dol_exclude` 목록의 문자열 (AI 명령어·내부 enum)
@@ -136,7 +136,7 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "원본.iso"   # 전
 
 ---
 
-# 4. 번역 범위 (v2.20)
+# 4. 번역 범위 (v2.21)
 
 **한글화 완료**
 - 📜 **스토리·튜토리얼 대사** 전량 (~1,300줄)
@@ -153,6 +153,9 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "원본.iso"   # 전
 - 🔊 **사운드 설정 표기** — `스테레오／모노`로 정리하고 ASCII 공백·`@c7/@c8` 토큰으로 한글 코드가 홀수 경계로 밀리는 회귀를 차단
 - 🗺️ **시나리오·전투 공용 이미지** — bank100 HLH 48개 자산(93개 고유 raw 버퍼), bank103 시나리오 헤더, bank107 미션/VS 중복 HSD를 복원·재작화·동일 슬롯 재압축
 - 🗣️ **시나리오 화자명** — SPB 화자명 명령 0E/0F 형식을 모두 검사해 마류 34개·신 2개·세이라 마스 1개를 고정 길이 슬롯에 적용
+- 🗣️ **Issue #23 화자명·유닛명** — 0B 형식의 키라 16개를 추가로 처리하고, 시나리오/멀티플레이 VSC 전체에서 `ゲルググ`·`ジム` 키와 모든 맵·덱 참조를 같은 캐리어로 치환해 `겔구그`·`짐`으로 표시
+- 🖼️ **Issue #23 중복 경로** — `bank115` 시나리오 헤더, `bank113/114` 전투 준비 화면, `bank111` 미션 클리어 복제본, `bank111/120` 다음 버튼 복제본까지 원본 raw·팔레트·파일 크기를 검증해 함께 패치
+- 🔤 **원문 영문 보존** — `BATTLE FIELD`, `PRESS START`, `DAY`, `BLUE/RED SIDE`, `PHASE START`, `ATTACK!`, `OK/CANCEL`, `MISSION`, `COM/PLAYER` 등 원래 영어였던 그래픽 표기는 영어로 복원
 - ✂️ **미션 1 대사 잘림** — 실제 줄 경계에서 잘리던 두 안내 대사를 의미를 유지한 짧은 문장으로 재래핑하고 슬롯·줄바꿈 회귀 검사를 추가
 - 🎬 **미션 연출 카드** — 시나리오 미션 제목 14종, `미션 클리어`/`미션 실패`, `다음` 버튼
 - 🖼️ **타이틀 로고** — `demo_title.dat`의 `SD 건담 가샤폰 워즈` 이미지
@@ -162,7 +165,7 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "원본.iso"   # 전
 - 🔤 **본문 폰트: 나눔스퀘어 네오 Bold** (810 음절)
 
 **미번역 (의도적 또는 기술적 한계)**
-- 🤖 **유닛명·맵/유닛 데이터** — 내부 참조 키라서 **의도적으로 일본어 유지** (위 크래시 주의 참고)
+- 🤖 **기타 유닛명·맵/유닛 데이터** — 내부 참조 키라서 원문 유지. `ゲルググ`·`ジム`은 모든 VSC 사본과 참조를 함께 치환한 예외입니다.
 - 🎨 **일부 커스텀 스프라이트 그래픽** — 반다이·시뮬레이션 로고와 잠금 `???` placeholder는 원본 유지
 - 🔠 **대형 버블 헤더 이미지** — 확인된 bank102/108/113 타이틀은 처리했으며, 배틀 커맨드 휠 등 별도 OAM 스프라이트는 원본 유지
 - 🗣️ **캐릭터 초상화·내부 키** — 압축 `chr*.arc` 초상화와 유닛 참조 키는 원본 유지
@@ -226,6 +229,7 @@ src/
 
 | 버전 | 내용 |
 |---|---|
+| **v2.21** | GitHub Issue #23 재검수 — 0B SPB 화자명 `キラ` 16개, 시나리오/멀티플레이 VSC의 `ゲルググ`·`ジム` 키와 전체 참조를 `겔구그`·`짐`으로 일괄 패치. `bank115` 시나리오 헤더, `bank113/114` 전투 준비, `bank111` 미션 클리어, `bank111/120` 다음 버튼 중복본을 추가 처리하고 원래 영문 그래픽 표기를 복원. 결과 ISO CRC32 `80457BEF` |
 | **v2.20** | GitHub Issue #20·#21 재검수 — CMP/C4 메뉴 레이어와 사운드 `스테레오／모노` payload를 다시 검증하고, 미션 1 대사 잘림을 재래핑. `bank100` HLH 전투 공용 자산 48개(93개 고유 raw), `bank103` 시나리오 헤더, `bank107` 미션/VS 중복 HSD의 미번역 그래픽을 한글 재작화. SPB 0E/0F 화자명 37개 슬롯과 미검수 이전 시나리오까지 전수 확인. 결과 ISO CRC32 `3D7FBCA2` |
 | **v2.19** | GitHub Issue #18 재검수 — `bank119/osp_base.dat` 사운드 플레이어 헤더, `bank102/msel_base.dat` 공유 로고, bank102·108·113의 중복 gtitle HSD 15쌍과 캡슐 헤더를 한글 재작화. `Sound/volume.vsc`의 헤더·BGM 제목·출처 설명 39행을 고정 길이로 주입하고, `스테레오／모노` DOL 문자열의 ASCII 공백/색상 토큰 재삽입과 홀수 바이트 캐리어 밀림을 자동 검증 |
 | **v2.18** | GitHub Issue #16 재검수 — CMP 8×8/4×4 블록 왕복 회귀 검증을 추가하고, 완전 투명 C4 픽셀이 반투명 회색 팔레트로 양자화되던 공통 인코더 버그를 수정. 그레이 잔상·헤더 배경 오염을 제거하고, `usel_base.dat`에 남아 있던 멀티플레이 안내 중복 이미지까지 C4/CMP 쌍으로 패치. 사운드 설정 표시에서 `@c7`/`@c8` 제어 토큰을 제거해 `※테레오`/`※노`가 아닌 `스테레오／모노`로 고정 |

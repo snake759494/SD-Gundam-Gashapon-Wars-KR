@@ -169,6 +169,24 @@ Issue #21의 미션 1 캡처를 시작점으로 시나리오 선택→대화→�
 중복 메뉴의 C4/CMP 레이어는 기존 `out/menu_titles_all_layers_preview.png`와
 `out/nested_ui_assets_preview.png`에서 함께 확인할 수 있다.
 
+## J. v2.21 Issue #23 누락 이미지·중복 경로 재검수
+
+Issue #23의 시나리오 화면 캡처를 원본 raw와 다시 대조해, 기존 공용 자산 외에 다음
+중복 경로를 통합 빌드에 추가했다.
+
+- `Info/arc/bank115.arc/scen/sub_title.dat` — `시나리오 게임 / SCENARIO GAME` 헤더
+- `Info/arc/bank113.arc/scen/usel_start.dat`·`bank114.arc/scen/suv_start.dat` —
+  `PRESS START`와 `준비 OK!` 전투 준비 화면
+- `Info/arc/bank111.arc/scen/pb_m_cl.dat` — 중첩 `미션 클리어` 결과 카드
+- `Info/arc/bank111.arc/scen/rw_push_a.dat`·`bank120.arc/scen/rw_push_a.dat` —
+  중첩 `다음` 버튼
+
+각 DAT는 U8 엔트리 슬롯, HSD 구조체, raw 크기, C4 팔레트를 보존한다. bank111의
+두 중첩 파일처럼 같은 ARC 안에서 여러 DAT를 연속 수정하는 경우에도 원본 ARC를
+덮어쓰지 않고 누적 패치한 뒤 저장하도록 해 앞선 변경이 사라지지 않게 했다.
+전체 결과는 `out/scenario_battle_hlh_preview.png`, `out/scenario_ui_hsd_preview.png`,
+`out/custom_dat_sprites_preview.png`에서 확인한다.
+
 ---
 
 ## 작업 방식

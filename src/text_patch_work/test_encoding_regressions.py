@@ -70,8 +70,10 @@ class EncodingRegressionTests(unittest.TestCase):
     def test_all_fixed_speaker_name_command_forms_are_patched(self):
         cmap = load_carrier(HERE / "carrier_map.json")
         display_map = json.loads((HERE / "disp_map.json").read_text(encoding="utf-8"))["char"]
-        markers = (bytes.fromhex("0e0008001300"), bytes.fromhex("0f0008001300"))
-        expected = {"マリュー": 34, "シン": 2, "セイラ・マス": 1}
+        markers = (bytes.fromhex("0b0008001300"),
+                   bytes.fromhex("0e0008001300"),
+                   bytes.fromhex("0f0008001300"))
+        expected = {"キラ": 16, "マリュー": 34, "シン": 2, "セイラ・マス": 1}
         seen = {key: 0 for key in expected}
 
         def encode(text):

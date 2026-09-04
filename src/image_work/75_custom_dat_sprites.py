@@ -15,6 +15,7 @@ import io
 import os
 import struct
 import sys
+from pathlib import Path
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
@@ -84,6 +85,34 @@ MISSION_FAILURE = {
     "text": "미션 실패",
 }
 
+# The same UI textures are copied into scene-specific HSD files inside U8
+# archives. These copies are what the game uses after entering a scenario;
+# patching only Info/dat/* leaves the Japanese labels visible in-game.
+NESTED_SUCCESS = (
+    "Info/arc/bank111.arc",
+    "scen/pb_m_cl.dat",
+    {
+        "image_offset": 0x36C0,
+        "width": 240,
+        "height": 182,
+        "palette_offset": 0x8D00,
+        "palette_count": 16,
+        "text": "미션 클리어",
+    },
+)
+NESTED_NEXT = (
+    ("Info/arc/bank111.arc", "scen/rw_push_a.dat"),
+    ("Info/arc/bank120.arc", "scen/rw_push_a.dat"),
+)
+NESTED_NEXT_SPEC = {
+    "image_offset": 0x12E0,
+    "width": 42,
+    "height": 18,
+    "palette_offset": 0x1620,
+    "palette_count": 16,
+    "text": "다음",
+}
+
 
 def align(n, a):
     return (n + a - 1) // a * a
@@ -91,6 +120,45 @@ def align(n, a):
 
 def c4_size(width, height):
     return align(width, 8) * align(height, 8) // 2
+
+
+def u32(data, offset):
+    return struct.unpack_from(">I", data, offset)[0]
+
+
+def u8_entries(data):
+    """Return (path, offset, size) for files in a Nintendo U8 archive."""
+    if u32(data, 0) != 0x55AA382D:
+        raise ValueError("Nintendo U8 매직이 아닙니다")
+    root = u32(data, 4)
+    count = u32(data, root + 8)
+    string_base = root + count * 12
+    stack = []
+    result = []
+    for index in range(1, count):
+        node = root + index * 12
+        raw_name = u32(data, node)
+        kind = raw_name >> 24
+        name_offset = raw_name & 0xFFFFFF
+        end = data.index(b"\0", string_base + name_offset)
+        name = data[string_base + name_offset:end].decode("cp932", "replace")
+        first = u32(data, node + 4)
+        last = u32(data, node + 8)
+        while stack and index >= stack[-1][1]:
+            stack.pop()
+        if kind:
+            stack.append((name, last))
+        else:
+            result.append(("/".join(x[0] for x in stack + [(name, last)]),
+                           first, last))
+    return result
+
+
+def find_u8_entry(data, wanted):
+    for name, offset, size in u8_entries(data):
+        if name == wanted:
+            return offset, size
+    raise KeyError("U8 내부 파일을 찾지 못했습니다: " + wanted)
 
 
 def read_palette(data, offset, count):
@@ -140,6 +208,38 @@ def replace_c4(buf, spec, image):
         raise AssertionError("C4 크기 불일치: %d != %d" % (len(raw), expected))
     start = spec["image_offset"]
     buf[start:start + expected] = raw
+
+
+_nested_containers = {}
+
+
+def patch_nested(rel, inner, spec, image, expected_raw=None):
+    """Patch one fixed-layout HSD stored as a file in a U8 archive."""
+    # Several nested targets share one outer ARC. Keep one in-memory copy per
+    # ARC so a later target does not overwrite an earlier target with BASE.
+    work_container = _nested_containers.setdefault(
+        rel, bytearray(Path(BASE, rel).read_bytes())
+    )
+    source_container = bytes(work_container)
+    offset, size = find_u8_entry(source_container, inner)
+    source_hsd = source_container[offset:offset + size]
+    raw_size = c4_size(spec["width"], spec["height"])
+    if expected_raw is not None:
+        actual = source_hsd[spec["image_offset"]:
+                            spec["image_offset"] + raw_size]
+        if actual != expected_raw:
+            raise ValueError("중첩 HSD 원본 raw가 기준 파일과 다릅니다: " +
+                             rel + ":" + inner)
+    hsd = bytearray(source_hsd)
+    replace_c4(hsd, spec, image)
+    work_container[offset:offset + size] = hsd
+    if len(work_container) != len(source_container):
+        raise AssertionError("U8 컨테이너 크기 변경: " + rel)
+    if args.apply:
+        dst = Path(PATCHED, rel)
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        dst.write_bytes(work_container)
+    return image
 
 
 def make_preview(items):
@@ -204,6 +304,41 @@ def main():
             dst = os.path.join(PATCHED, spec["rel"])
             os.makedirs(os.path.dirname(dst), exist_ok=True)
             open(dst, "wb").write(buf)
+        changed += 1
+
+    # The mission-clear HSD is duplicated in bank111's scenario archive.
+    # Compare its source pixels with the standalone source before replacing
+    # them, so a future layout change fails loudly instead of patching noise.
+    standalone_success = Path(BASE, MISSION_SUCCESS["rel"]).read_bytes()
+    success_raw_size = c4_size(MISSION_SUCCESS["width"],
+                               MISSION_SUCCESS["height"])
+    success_raw = standalone_success[MISSION_SUCCESS["image_offset"]:
+                                     MISSION_SUCCESS["image_offset"] +
+                                     success_raw_size]
+    success_image = draw_centered(MISSION_SUCCESS["text"],
+                                  MISSION_SUCCESS["width"],
+                                  MISSION_SUCCESS["height"],
+                                  max_size=76, stroke_width=3)
+    rel, inner, nested_spec = NESTED_SUCCESS
+    patch_nested(rel, inner, nested_spec, success_image, success_raw)
+    if args.preview:
+        preview.append((rel + ":" + inner, success_image,
+                        MISSION_SUCCESS["text"]))
+    changed += 1
+
+    # Both multiplayer next-button HSDs are exact copies of SUB_NEXT's raw
+    # buffer, but use a different palette location in their compact layout.
+    standalone_subtitle = Path(BASE, "Info/dat/sub_t01.dat").read_bytes()
+    next_raw_size = c4_size(SUB_NEXT["width"], SUB_NEXT["height"])
+    next_raw = standalone_subtitle[SUB_NEXT["image_offset"]:
+                                   SUB_NEXT["image_offset"] + next_raw_size]
+    next_image = draw_centered("다음", NESTED_NEXT_SPEC["width"],
+                               NESTED_NEXT_SPEC["height"],
+                               max_size=15, stroke_width=1)
+    for rel, inner in NESTED_NEXT:
+        patch_nested(rel, inner, NESTED_NEXT_SPEC, next_image, next_raw)
+        if args.preview:
+            preview.append((rel + ":" + inner, next_image, "다음"))
         changed += 1
 
     if args.preview:

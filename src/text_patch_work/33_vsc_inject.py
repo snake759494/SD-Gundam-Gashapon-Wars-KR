@@ -50,8 +50,21 @@ for h in help_final:
 NAME_FILES = {}  # 유닛명은 내부 키라 미번역(가타카나 유지)
 HELP_FILES = ['Kaw/key_help.vsc', 'Kaw/game_help.vsc']
 
+# Issue #23에서 실제로 출력되는 유닛 키. 이번에 확인한 두 키만 모든
+# VSC 데이터/참조에서 같은 carrier payload로 치환하고, 나머지 내부 키는
+# 기존 안전 정책대로 일본어를 유지한다.
+UNIT_KEY_MAP = {
+    'ゲルググ': name_map['ゲルググ'],
+    'ジム': name_map['ジム'],
+}
+
 def process(rel):
-    raw = open(os.path.join(BASE, rel), 'rb').read()
+    # 앞 단계(도감/사운드/표시열)가 이미 만든 결과가 있으면 이어서 수정한다.
+    # BASE를 다시 읽으면 앞 단계의 변경이 사라진다.
+    patched_path = os.path.join(OUT, rel)
+    source_path = (patched_path if os.path.exists(patched_path)
+                   else os.path.join(BASE, rel))
+    raw = open(source_path, 'rb').read()
     plain = vsc_decode(raw)                       # bytes
     text = plain.decode('cp932')                  # str
     rows = [ln.split(',') for ln in text.split('\r\n')]
@@ -74,6 +87,22 @@ def process(rel):
                     if new != rows[ri][ci]:
                         rows[ri][ci] = new; changed += 1
 
+    # 내부 키와 그 키를 읽는 모든 VSC 참조를 동일한 carrier payload로
+    # 치환한다. 게르구그/짐은 원문과 번역명이 모두 2바이트 단위라
+    # 데이터 구조를 건드리지 않으며, 미확인 유닛 키는 번역하지 않는다.
+    unit_key_changed = 0
+    for row in rows:
+        for ci, cell in enumerate(row):
+            new_cell = cell
+            for jp, ko in sorted(UNIT_KEY_MAP.items(),
+                                 key=lambda item: len(item[0]), reverse=True):
+                count = new_cell.count(jp)
+                if count:
+                    new_cell = new_cell.replace(jp, ko)
+                    unit_key_changed += count
+            row[ci] = new_cell
+    changed += unit_key_changed
+
     # serialize to bytes with carrier encoding
     row_bytes = []
     for r in rows:
@@ -94,12 +123,19 @@ def process(rel):
     assert len(new_raw) == len(raw)
     return rel, changed, 0, new_raw
 
-for rel in list(NAME_FILES) + HELP_FILES:
+all_vsc = []
+for root, _dirs, files in os.walk(BASE):
+    for filename in files:
+        if filename.lower().endswith('.vsc'):
+            rel = os.path.relpath(os.path.join(root, filename), BASE)
+            all_vsc.append(rel.replace(os.sep, '/'))
+
+for rel in sorted(set(all_vsc) | set(NAME_FILES) | set(HELP_FILES)):
     rel_, changed, over, new_raw = process(rel)
     if over:
         print(f"  [OVERFLOW] {rel}: +{over} bytes (need shorten)")
     else:
-        print(f"  {rel}: {changed} cells changed, fits (pad ok)")
+        print(f"  {rel}: {changed} cells/keys changed, fits (pad ok)")
         if args.apply and new_raw is not None:
             dst = os.path.join(OUT, rel)
             os.makedirs(os.path.dirname(dst), exist_ok=True)

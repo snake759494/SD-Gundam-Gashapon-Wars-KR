@@ -56,9 +56,9 @@ run('53_fix_spb_refs.py', HERE, apply=False)   # 참조 되돌림(플래그 없�
 run('46_disp_inject.py', HERE)
 run('52_char_col0_safe.py', HERE)
 run('51_field_inject.py', HERE)
-run('33_vsc_inject.py', HERE)                  # help 적용, 유닛명 오버플로는 자동 skip
 run('91_inject_gallery_mission.py', HERE)      # 도감 설명 + 챌린지 미션
 run('92_inject_sound_volume.py', HERE)         # 사운드 플레이어 BGM 제목/설명
+run('33_vsc_inject.py', HERE)                  # 도움말 + Issue #23 유닛 키 일괄 적용
 # dol (patched_main.dol 제자리 재적용, 멱등)
 run('43_dol_inject.py', HERE)
 # 이미지 라벨

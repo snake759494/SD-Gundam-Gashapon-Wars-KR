@@ -129,6 +129,14 @@
 > 두 행 bbox를 사용합니다. 결과는 `menu_titles_all_layers_preview.png`와
 > `nested_ui_assets_preview.png`에서 확인할 수 있습니다.
 
+> v2.21에서는 Issue #23의 6개 시나리오 캡처를 기준으로 이미지 누락 경로를 다시 확인했습니다.
+> `bank115`의 시나리오 헤더, `bank113/114`의 전투 준비 화면, `bank111`의 미션 클리어
+> 중첩 DAT, `bank111/120`의 다음 버튼을 원본과 같은 위치·크기·팔레트로 재작화했습니다.
+> 이미 처리된 `bank100` HLH·`bank103/107` HSD와 함께 `scenario_battle_hlh_preview.png`,
+> `scenario_ui_hsd_preview.png`, `custom_dat_sprites_preview.png`에서 전체 결과를 확인할 수
+> 있습니다. C4/CMP 레이어는 같은 글꼴 객체와 원점을 공유하고, 원래 영어인 `BATTLE FIELD`,
+> `PRESS START`, `DAY`, `ATTACK!`, `OK/CANCEL`, `MISSION`, `COM/PLAYER`는 영어로 유지했습니다.
+
 ---
 
 ## 재현 방법

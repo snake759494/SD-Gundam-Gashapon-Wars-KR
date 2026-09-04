@@ -232,7 +232,7 @@ HLH_TARGETS = {
     ],
     "BS_FIELD": [
         T(2, 0x2A4, 0x0FC0, 54, 44, 8, 0x1840, 16, "기믹 있음"),
-        T(3, 0x350, 0x1500, 100, 16, 8, 0x1880, 16, "전투 필드"),
+        T(3, 0x350, 0x1500, 100, 16, 8, 0x1880, 16, "BATTLE FIELD"),
     ],
     "BS_INFO": [
         T(3, 0x990, 0x86E0, 112, 18, 8, 0x9180, 16, "건담"),
@@ -242,7 +242,7 @@ HLH_TARGETS = {
         T(14, 0x22C, 0x7BE0, 48, 18, 8, 0x8FC0, 16, "리더"),
     ],
     "BS_PCSR": [
-        T(3, 0x114, 0x2AA0, 64, 54, 8, 0x3A20, 15, "컴퓨터"),
+        T(3, 0x114, 0x2AA0, 64, 54, 8, 0x3A20, 15, "COM"),
     ],
     "BS_START": [
         T(3, 0x648, 0x4120, 80, 30, 8, 0x5920, 16, "준비 OK!"),
@@ -250,9 +250,9 @@ HLH_TARGETS = {
           "B 유닛 선택"),
         # The first image is the white/mask companion of PRESS START.
         T(8, 0x154, 0x2720, 126, 22, 8, 0x57A0, 8,
-          "START를 누르세요", stroke=0),
+          "PRESS START", stroke=0),
         T(9, 0x200, 0x2D20, 126, 22, 8, 0x57E0, 16,
-          "START를 누르세요"),
+          "PRESS START"),
     ],
     "BS_VS": [
         T(8, 0xC24, 0x12EC0, 448, 132, 8, 0x24280, 16,
@@ -272,7 +272,7 @@ HLH_TARGETS = {
     ],
     "IG_HP": [
         T(4, 0xD4, 0xEC0, 68, 12, 8, 0x1400, 16,
-          "잠금 Z"),
+          "LOCK Z"),
     ],
     "IG_PCSR": [
         T(3, 0x438, 0x2860, 64, 64, 8, 0x30E0, 16,
@@ -284,27 +284,27 @@ HLH_TARGETS = {
     ],
     "IG_TIME": [
         T(2, 0x6A4, 0xB580, 64, 24, 8, 0xBD60, 16,
-          "시간"),
+          "TIME"),
     ],
     "IG_TUP": [
         T(0, 0x54, 0x580, 480, 108, 8, 0x6E80, 16,
-          "시간 초과!", stroke=3),
+          "TIME UP!", stroke=3),
         T(1, 0x100, 0x580, 480, 108, 8, 0x6E80, 16,
-          "시간 초과!", stroke=3),
+          "TIME UP!", stroke=3),
     ],
     "IG_WIN": [
-        T(0, 0xB3C, 0x79C0, 200, 74, 8, 0xE840, 16, "블루"),
+        T(0, 0xB3C, 0x79C0, 200, 74, 8, 0xE840, 16, "BLUE"),
         T(1, 0xAC8, 0x6A00, 140, 52, 14, None, None,
-          "블루", fill=(255, 170, 90, 255)),
-        T(2, 0xCC4, 0xAF20, 280, 104, 8, 0xE8C0, 16, "승리!", stroke=3),
+          "BLUE", fill=(255, 170, 90, 255)),
+        T(2, 0xCC4, 0xAF20, 280, 104, 8, 0xE8C0, 16, "WIN!", stroke=3),
         T(3, 0xC50, 0x9920, 173, 64, 14, None, None,
-          "승리!", fill=(246, 145, 170, 255)),
-        T(5, 0x83C, 0x34C0, 200, 74, 8, 0xE800, 16, "레드"),
+          "WIN!", fill=(246, 145, 170, 255)),
+        T(5, 0x83C, 0x34C0, 200, 74, 8, 0xE800, 16, "RED"),
         T(6, 0x7C8, 0x2500, 140, 52, 14, None, None,
-          "레드", fill=(246, 125, 145, 255)),
-        T(7, 0x9C4, 0xAF20, 280, 104, 8, 0xE8C0, 16, "승리!", stroke=3),
+          "RED", fill=(246, 125, 145, 255)),
+        T(7, 0x9C4, 0xAF20, 280, 104, 8, 0xE8C0, 16, "WIN!", stroke=3),
         T(8, 0x950, 0x5400, 173, 64, 14, None, None,
-          "승리!", fill=(170, 160, 246, 255)),
+          "WIN!", fill=(170, 160, 246, 255)),
     ],
     "ITEM_N00": [
         T(0, 0x74, 0x3C0, 76, 40, 8, 0xA00, 16, "HP 회복 & +100"),
@@ -382,33 +382,33 @@ HLH_TARGETS = {
         T(9, 0x24C, 0x5380, 112, 18, 8, 0x5FC0, 16, "건담"),
     ],
     "PB_BF_AT": [
-        T(2, 0x594, 0x6520, 94, 32, 8, 0x6C20, 16, "공격!"),
+        T(2, 0x594, 0x6520, 94, 32, 8, 0x6C20, 16, "ATTACK!"),
         T(3, 0x520, 0x5F20, 94, 32, 14, None, None,
-          "공격!", fill=(75, 194, 242, 255)),
-        T(6, 0x2CC, 0x1CE0, 48, 32, 8, 0x6B60, 16, "확인"),
-        T(7, 0x36C, 0x1FE0, 86, 32, 8, 0x6BA0, 16, "취소"),
+          "ATTACK!", fill=(75, 194, 242, 255)),
+        T(6, 0x2CC, 0x1CE0, 48, 32, 8, 0x6B60, 16, "OK"),
+        T(7, 0x36C, 0x1FE0, 86, 32, 8, 0x6BA0, 16, "CANCEL"),
     ],
     "PB_C_INF": [
-        T(2, 0x94, 0x1860, 50, 16, 8, 0x2880, 16, "기지"),
-        T(3, 0x160, 0x1A20, 68, 16, 8, 0x28C0, 16, "전투!"),
+        T(2, 0x94, 0x1860, 50, 16, 8, 0x2880, 16, "BASE"),
+        T(3, 0x160, 0x1A20, 68, 16, 8, 0x28C0, 16, "BATTLE!"),
     ],
     "PB_I_A": [
-        T(8, 0x430, 0x7660, 86, 42, 8, 0xACE0, 16, "일차"),
+        T(8, 0x430, 0x7660, 86, 42, 8, 0xACE0, 16, "DAY"),
         T(10, 0x4FC, 0x7EA0, 120, 64, 8, 0xAD20, 16,
-          "블루 사이드"),
+          "BLUE SIDE"),
         T(11, 0x5C8, 0x8DA0, 120, 64, 8, 0xAD60, 16,
-          "레드 사이드"),
+          "RED SIDE"),
     ],
     "PB_I_P_A": [
-        T(3, 0x458, 0x2400, 48, 24, 8, 0x30A0, 16, "시가지"),
+        T(3, 0x458, 0x2400, 48, 24, 8, 0x30A0, 16, "평지"),
         T(6, 0x69C, 0x2D60, 60, 18, 8, 0x3160, 16, "특기 지형"),
     ],
     "PB_I_P_B": [
         T(4, 0x39C, 0x3140, 112, 18, 8, 0x3EE0, 16, "건담"),
     ],
     "PB_I_P_C": [
-        T(6, 0x5DC, 0x102E0, 72, 8, 8, 0x12720, 7, "유닛 정보"),
-        T(7, 0x6A8, 0x10400, 65, 7, 8, 0x12760, 8, "설명",
+        T(6, 0x5DC, 0x102E0, 72, 8, 8, 0x12720, 7, "UNIT DATA"),
+        T(7, 0x6A8, 0x10400, 65, 7, 8, 0x12760, 8, "COMMENT",
           stroke=0),
         T(9, 0x2944, 0x12380, 44, 11, 8, 0x12CA0, 8, "전환"),
         T(11, 0x228C, 0x11600, 62, 17, 8, 0x12B60, 16, "공격"),
@@ -418,7 +418,7 @@ HLH_TARGETS = {
         T(23, 0x1D2C, 0x10FA0, 44, 20, 8, 0x12A60, 16, "범용"),
         T(58, 0x990, 0x10FA0, 44, 20, 8, 0x12A60, 16, "범용"),
         T(34, 0xAE8, 0x10820, 91, 7, 8, 0x12820, 8,
-          "무기 정보", stroke=0),
+          "WEAPON DATA", stroke=0),
     ],
     "PB_P_BNS": [
         T(1, 0x448, 0x66C0, 130, 72, 8, 0x7AA0, 16, "점령!"),
@@ -428,18 +428,18 @@ HLH_TARGETS = {
     ],
     "PB_PSTRT": [
         T(1, 0x250, 0x8800, 240, 128, 8, 0x13E20, 16,
-          "블루 사이드"),
+          "BLUE SIDE"),
         T(2, 0x2FC, 0x8800, 240, 128, 8, 0x13E20, 16,
-          "블루 사이드"),
-        T(3, 0x41C, 0xC400, 200, 92, 8, 0x13E60, 16, "일차"),
+          "BLUE SIDE"),
+        T(3, 0x41C, 0xC400, 200, 92, 8, 0x13E60, 16, "DAY"),
         T(9, 0x708, 0x101C0, 240, 128, 8, 0x13EE0, 16,
-          "레드 사이드"),
+          "RED SIDE"),
         T(10, 0x7B4, 0x101C0, 240, 128, 8, 0x13EE0, 16,
-          "레드 사이드"),
+          "RED SIDE"),
         T(11, 0xF8, 0x8000, 256, 16, 8, 0x13DE0, 14,
-          "페이즈 시작", stroke=1),
+          "PHASE START", stroke=1),
         T(12, 0x1A4, 0x8000, 256, 16, 8, 0x13DE0, 14,
-          "페이즈 시작", stroke=1),
+          "PHASE START", stroke=1),
     ],
     "PB_SY_BT": [
         T(4, 0x4D4, 0xCE40, 52, 12, 8, 0xE0C0, 8, "메뉴"),
@@ -454,8 +454,8 @@ HLH_TARGETS = {
         T(2, 0x74, 0x760, 88, 36, 8, 0x12C0, 16, "이동"),
     ],
     "USEL_INF": [
-        T(2, 0x430, 0x4F40, 64, 54, 8, 0x5880, 15, "컴퓨터"),
-        T(4, 0x2B8, 0x43C0, 68, 32, 8, 0x5800, 8, "누르세요"),
+        T(2, 0x430, 0x4F40, 64, 54, 8, 0x5880, 15, "COM"),
+        T(4, 0x2B8, 0x43C0, 68, 32, 8, 0x5800, 8, "메뉴"),
     ],
 }
 
@@ -469,17 +469,48 @@ NORMAL_TARGETS = {
     },
     "Info/arc/bank107.arc": {
         "scen/mission.dat": [
-            T(1, 0x140, 0x60E0, 260, 64, 9, 0xB540, 256, "미션"),
+            T(1, 0x140, 0x60E0, 260, 64, 9, 0xB540, 256, "MISSION"),
         ],
         "scen/vs.dat": [
             T(19, 0x1608, 0x34000, 64, 54, 8, 0x3C060, 15,
-              "컴퓨터"),
+              "COM"),
             T(20, 0x14B0, 0x32F80, 148, 28, 8, 0x3BFE0, 16,
-              "플레이어"),
+              "PLAYER"),
             T(23, 0x1358, 0x34000, 64, 54, 8, 0x3C060, 15,
-              "컴퓨터"),
+              "COM"),
             T(24, 0x1200, 0x32F80, 148, 28, 8, 0x3BFE0, 16,
-              "플레이어"),
+              "PLAYER"),
+        ],
+    },
+    # The multiplayer mission header is a byte-identical copy of the
+    # single-player header, but lives in a different bank and is shown by a
+    # separate scene path.
+    "Info/arc/bank115.arc": {
+        "scen/sub_title.dat": [
+            T(2, 0x318, 0x1860, 160, 52, 8, 0x2AA0, 16,
+              "시나리오 게임"),
+        ],
+    },
+    # Multiplayer battle-entry scenes carry their own copies of the shared
+    # PRESS START/준비 OK! labels. Keep the original English label intact.
+    "Info/arc/bank113.arc": {
+        "scen/usel_start.dat": [
+            T(0, 0x0B4, 0x20A0, 126, 22, 8, 0x4A60, 8,
+              "PRESS START", stroke=0),
+            T(1, 0x160, 0x26A0, 126, 22, 8, 0x4AA0, 16,
+              "PRESS START"),
+            T(4, 0x410, 0x33E0, 80, 30, 8, 0x4B60, 16,
+              "준비 OK!"),
+        ],
+    },
+    "Info/arc/bank114.arc": {
+        "scen/suv_start.dat": [
+            T(0, 0x0B4, 0x20A0, 126, 22, 8, 0x4A60, 8,
+              "PRESS START", stroke=0),
+            T(1, 0x160, 0x26A0, 126, 22, 8, 0x4AA0, 16,
+              "PRESS START"),
+            T(4, 0x410, 0x33E0, 80, 30, 8, 0x4B60, 16,
+              "준비 OK!"),
         ],
     },
 }
@@ -487,6 +518,9 @@ NORMAL_TARGETS = {
 # The original scenario header is a two-line texture: Korean title above the
 # unchanged English subtitle. Keep both lines in the replacement image.
 NORMAL_TARGETS["Info/arc/bank103.arc"]["scen/sce_mission.dat"][0][
+    "secondary"
+] = "SCENARIO GAME"
+NORMAL_TARGETS["Info/arc/bank115.arc"]["scen/sub_title.dat"][0][
     "secondary"
 ] = "SCENARIO GAME"
 
