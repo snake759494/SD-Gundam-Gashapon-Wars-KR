@@ -1,5 +1,8 @@
 # SD건담 가샤폰 워즈 한글 패치 (SD Gundam Gashapon Wars – Korean Translation)
 
+2026-09-14 계정 이전: 현재 공식 배포 저장소는 [snake759494/SD-Gundam-Gashapon-Wars-KR](https://github.com/snake759494/SD-Gundam-Gashapon-Wars-KR)입니다.
+[최종 패치 v2.21 다운로드](https://github.com/snake759494/SD-Gundam-Gashapon-Wars-KR/releases/tag/v2.21) · [이전 및 검증 기록](MIGRATION_2026-09-14.md)
+
 닌텐도 게임큐브용 **「SD건담 가샤폰 워즈」**(일본판, 게임 ID **GGPJB2**)의 한국어 번역 패치입니다.
 **패치 파일 + 번역 원본 + 빌드 도구 일체**를 공개해, 누구나 직접 수정·재빌드할 수 있습니다.
 
@@ -37,7 +40,7 @@
 ## 2-2. 전체 빌드 (4단계)
 
 ```bash
-git clone https://github.com/snake7594/SD-Gundam-Gashapon-Wars-KR.git
+git clone https://github.com/snake759494/SD-Gundam-Gashapon-Wars-KR.git
 cd SD-Gundam-Gashapon-Wars-KR/src
 ```
 
