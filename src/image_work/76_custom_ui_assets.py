@@ -23,7 +23,7 @@ FONT = os.path.join(HERE, "..", "fonts", "NanumSquareNeocBd.ttf")
 
 sys.path.insert(0, HERE)
 import tex_lib as TX
-from PIL import Image, ImageChops, ImageDraw, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFont, ImageFilter
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--apply", action="store_true", help="patched_files에 바이너리 패치 저장")
@@ -152,14 +152,19 @@ HELP_TEXT = [
 # 별도 내부 영역으로 지운다. 말풍선 테두리와 연결선은 이 범위 밖에 둔다.
 HELP_FURIGANA_CLEAR = [
     (119, 129, 150, 136),  # こうげき
-    (263, 53, 333, 56),    # かくとうこうげき
-    (44, 80, 84, 83),      # いどう
+    (260, 51, 334, 57),    # かくとうこうげき
+    (40, 78, 86, 85),      # いどう
 ]
 BUBBLE = (66, 132, 115, 255)
 
 
 def draw_help(image):
     image = image.copy()
+    # Preserve the alpha silhouette and restore the outer white outline.
+    # The old rectangular clear mask painted over every nontransparent pixel,
+    # including the rounded border at the right edge of each label.
+    interior = image.getchannel("A").point(lambda a: 255 if a == 255 else 0)
+    interior = interior.filter(ImageFilter.MinFilter(3))
     # Pillow의 RGBA ImageDraw는 안티앨리어싱 글자 가장자리를 부분 알파로
     # 남긴다. 이 값을 그대로 C8 팔레트에 양자화하면 투명 팔레트 색이
     # 선택되어 게임에서 글자 가장자리가 톱니처럼 끊어진다. 먼저 투명
@@ -176,8 +181,12 @@ def draw_help(image):
                 # 일본어 글리프의 반투명 가장자리는 녹색으로 혼합되어
                 # 중성색 판정만으로는 남는다. 원본 말풍선 내부 전체를
                 # 말풍선 색으로 복원하되, 완전 투명 픽셀은 보존한다.
-                if a:
+                if interior.getpixel((x, y)):
                     image.putpixel((x, y), BUBBLE)
+                elif a == 255:
+                    # Furigana touches the contour in the source. Restore a
+                    # continuous white edge instead of leaving black JP dots.
+                    image.putpixel((x, y), (255,255,255,255))
 
     for _, _, clear_box in HELP_TEXT:
         clear_region(clear_box)
@@ -191,7 +200,7 @@ def draw_help(image):
     # 글리프 영역 밖의 완전 투명 픽셀에는 텍스트를 쓰지 않는다. 이 마스크를
     # 적용하면 C8 팔레트의 투명 흰색(인덱스 248~254)이 한글 가장자리에
     # 들어가지 않고, 실제 표시되는 픽셀은 모두 불투명 배경 위에 합성된다.
-    visible = image.getchannel("A").point(lambda a: 255 if a else 0)
+    visible = interior
     text_alpha = ImageChops.multiply(text_layer.getchannel("A"), visible)
     text_layer.putalpha(text_alpha)
     return Image.alpha_composite(image, text_layer)

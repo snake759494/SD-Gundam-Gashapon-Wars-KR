@@ -1,7 +1,7 @@
 # SD건담 가샤폰 워즈 한글 패치 (SD Gundam Gashapon Wars – Korean Translation)
 
 2026-09-14 계정 이전: 현재 공식 배포 저장소는 [snake759494/SD-Gundam-Gashapon-Wars-KR](https://github.com/snake759494/SD-Gundam-Gashapon-Wars-KR)입니다.
-[최종 패치 v2.21 다운로드](https://github.com/snake759494/SD-Gundam-Gashapon-Wars-KR/releases/tag/v2.21) · [이전 및 검증 기록](MIGRATION_2026-09-14.md)
+[최신 패치 v2.22 다운로드](https://github.com/snake759494/SD-Gundam-Gashapon-Wars-KR/releases/tag/v2.22) · [v2.22 수정·검증·이미지](release_notes_v2.22.md) · [이전 기록](MIGRATION_2026-09-14.md)
 
 닌텐도 게임큐브용 **「SD건담 가샤폰 워즈」**(일본판, 게임 ID **GGPJB2**)의 한국어 번역 패치입니다.
 **패치 파일 + 번역 원본 + 빌드 도구 일체**를 공개해, 누구나 직접 수정·재빌드할 수 있습니다.
@@ -14,14 +14,14 @@
 # 1. 그냥 플레이하고 싶다면 (일반 사용자)
 
 1. **원본 ISO 준비** — 일본판 SD Gundam Gashapon Wars (GGPJB2), 원본 CRC32 `D5F67251`
-2. **최신 패치 내려받기** — [Releases](../../releases)에서 `SDGundamGashaponWars_KR_v2.21.xdelta`
+2. **최신 패치 내려받기** — [Releases](../../releases)에서 `SDGundamGashaponWars_KR_v2.22.xdelta` (반드시 원본 ISO에 적용)
 3. **패치 적용**
    - Windows: [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher/releases)로 원본 ISO + 패치 선택 → Apply
    - 커맨드라인:
      ```bash
-     xdelta3 -d -s "SD Gundam Gashapon Wars.iso" SDGundamGashaponWars_KR_v2.21.xdelta "SD Gundam Gashapon Wars (KR).iso"
+     xdelta3 -d -s "SD Gundam Gashapon Wars.iso" SDGundamGashaponWars_KR_v2.22.xdelta "SD Gundam Gashapon Wars (KR).iso"
      ```
-4. **결과 확인** — 패치 후 ISO CRC32 `80457BEF` (SHA-256 `F2A40A1D7644B270A3888598E26387F839B33C54494B54CC514FF518CAA996FB`)
+4. **결과 확인** — 패치 후 ISO CRC32 `BF4B495B` (SHA-256 `6CEBE6F96383E5A9D89D060C35772AAA2F4C769A85D19FDF7BA011969489055E`)
 5. Dolphin 등 게임큐브 에뮬레이터로 실행
 
 ---
@@ -71,8 +71,8 @@ python text_patch_work/BUILD_FROM_MASTER.py --iso --src-iso "D:/경로/SD Gundam
 python -c "import pyxdelta; pyxdelta.run('원본.iso','패치본.iso','my_patch.xdelta')"
 ```
 
-> ✅ **재현성 검증됨**: 위 절차대로 빈 클론에서 빌드하면 배포본 v2.21과 **바이트 단위로 동일**한
-> 결과가 나옵니다(patched_files 0 차이, `patched_main.dol` 동일).
+> v2.22는 전체 리소스 재빌드, 회귀 검사 19개, xdelta 적용 결과의 SHA-256 일치를 확인했습니다.
+> 이번 검증에는 빈 클론 재빌드와 에뮬레이터 실제 플레이는 포함되지 않습니다.
 
 ## 2-3. 번역 수정하기
 
@@ -81,6 +81,8 @@ python -c "import pyxdelta; pyxdelta.run('원본.iso','패치본.iso','my_patch.
 ### `src/text_patch_work/translation_master.json` (약 568 KB)
 
 이 파일의 `ko` 값을 고치고 위 **③번 명령**만 다시 실행하면 패치가 갱신됩니다.
+실제 이미지 기반 유닛명·화자명·전투 명령은 `src/image_work/79_runtime_labels.py`에서 관리합니다.
+VSC의 원문 유닛 식별자는 화면 번역 대상이 아닌 내부 참조 키이므로 유지해야 합니다.
 
 | 섹션 | 개수 | 내용 |
 |---|---:|---|

@@ -612,7 +612,10 @@ def process_hlh(preview_rows):
 def process_normal(preview_rows):
     for rel, groups in NORMAL_TARGETS.items():
         source_container = (BASE / rel).read_bytes()
-        work_container = bytearray(source_container)
+        # Other stages already patched menus in the same ARC. Preserve them.
+        existing = PATCHED / rel
+        work_container = bytearray(existing.read_bytes() if existing.exists()
+                                   else source_container)
         file_count = 0
         image_count = 0
         for entry, items in groups.items():
