@@ -217,10 +217,11 @@ def patch_nested(rel, inner, spec, image, expected_raw=None):
     """Patch one fixed-layout HSD stored as a file in a U8 archive."""
     # Several nested targets share one outer ARC. Keep one in-memory copy per
     # ARC so a later target does not overwrite an earlier target with BASE.
+    source_container = Path(BASE, rel).read_bytes()
+    existing = Path(PATCHED, rel)
     work_container = _nested_containers.setdefault(
-        rel, bytearray(Path(BASE, rel).read_bytes())
+        rel, bytearray(existing.read_bytes() if existing.exists() else source_container)
     )
-    source_container = bytes(work_container)
     offset, size = find_u8_entry(source_container, inner)
     source_hsd = source_container[offset:offset + size]
     raw_size = c4_size(spec["width"], spec["height"])
@@ -230,7 +231,7 @@ def patch_nested(rel, inner, spec, image, expected_raw=None):
         if actual != expected_raw:
             raise ValueError("중첩 HSD 원본 raw가 기준 파일과 다릅니다: " +
                              rel + ":" + inner)
-    hsd = bytearray(source_hsd)
+    hsd = bytearray(work_container[offset:offset + size])
     replace_c4(hsd, spec, image)
     work_container[offset:offset + size] = hsd
     if len(work_container) != len(source_container):

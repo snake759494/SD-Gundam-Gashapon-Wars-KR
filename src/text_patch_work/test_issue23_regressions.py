@@ -57,21 +57,9 @@ def u8_file(data, wanted):
 
 
 class Issue23RegressionTests(unittest.TestCase):
-    def test_reported_unit_keys_are_closed_in_every_vsc_copy(self):
-        carriers = json.loads(
-            (HERE / "carrier_map.json").read_text(encoding="utf-8")
-        )
-
-        def encode(text):
-            return b"".join(
-                bytes.fromhex(carriers[ch])
-                if 0xAC00 <= ord(ch) <= 0xD7A3 else ch.encode("cp932")
-                for ch in text
-            )
-
-        for jp, ko in (("ゲルググ", "겔구그"), ("ジム", "짐")):
+    def test_reported_unit_lookup_keys_are_preserved_in_every_vsc_copy(self):
+        for jp in ("ゲルググ", "ジム"):
             jp_raw = jp.encode("cp932")
-            ko_raw = encode(ko)
             source_total = 0
             for source in BASE.rglob("*.vsc"):
                 source_plain = vsc_decode(source.read_bytes())
@@ -80,13 +68,18 @@ class Issue23RegressionTests(unittest.TestCase):
                     continue
                 source_total += source_count
                 target = PATCHED / source.relative_to(BASE)
-                self.assertTrue(target.exists(), source)
-                target_raw = target.read_bytes()
+                target_raw = target.read_bytes() if target.exists() else source.read_bytes()
                 self.assertEqual(len(target_raw), source.stat().st_size)
                 target_plain = vsc_decode(target_raw)
-                self.assertNotIn(jp_raw, target_plain,
-                                 str(source.relative_to(BASE)))
-                self.assertGreaterEqual(target_plain.count(ko_raw), source_count)
+                # v2.22 patches the actual DOL name textures. Resource keys
+                # remain Japanese; translating only VSC broke SPB lookups.
+                src_rows = [r.split(b',') for r in source_plain.split(b'\r\n')]
+                dst_rows = [r.split(b',') for r in target_plain.split(b'\r\n')]
+                for ri,row in enumerate(src_rows):
+                    for ci,cell in enumerate(row):
+                        if cell == jp_raw:
+                            self.assertEqual(dst_rows[ri][ci], cell,
+                                             (source,ri,ci))
             self.assertGreater(source_total, 0)
 
     def test_mission_clear_and_next_button_copies_match_patched_sources(self):

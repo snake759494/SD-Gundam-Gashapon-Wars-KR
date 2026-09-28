@@ -6,6 +6,7 @@
 전제: patched_main.dol(폰트 적용본)이 이미 존재해야 함(폰트빌드는 텍스트번역과 별개, 06_build_font).
 """
 import sys, io, os, json, subprocess, argparse
+from pathlib import Path
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 IMG = os.path.join(HERE, '..', 'image_work')
@@ -15,6 +16,8 @@ ap.add_argument('--iso', action='store_true', help='ISO까지 빌드')
 ap.add_argument('--src-iso', default=None, help='원본 ISO 경로(본인 사본). 생략 시 12_build_iso 기본값')
 ap.add_argument('--out-iso', default=None, help='출력 ISO 경로')
 args = ap.parse_args()
+if args.src_iso: args.src_iso = str(Path(args.src_iso).resolve())
+if args.out_iso: args.out_iso = str(Path(args.out_iso).resolve())
 
 M = json.load(open(os.path.join(HERE, 'translation_master.json'), encoding='utf-8'))
 
@@ -48,6 +51,13 @@ def run(script, cwd, apply=True, extra=()):
     print('  ✓ %s : %s' % (tag, last[-1] if last else 'ok'))
 
 print('[2] 주입 실행')
+# Rebuild VSC output from original resources, including files touched only by
+# v2.21's retired unit-key replacement. Otherwise a rebuild keeps stale keys.
+for source in (Path(HERE).parent / 'files').rglob('*.vsc'):
+    rel = source.relative_to(Path(HERE).parent / 'files')
+    target = Path(HERE) / 'patched_files' / rel
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_bytes(source.read_bytes())
 # SPB 대사
 run('07_encode_inject.py', HERE)
 run('54_spb_speaker_names.py', HERE)
@@ -58,7 +68,7 @@ run('52_char_col0_safe.py', HERE)
 run('51_field_inject.py', HERE)
 run('91_inject_gallery_mission.py', HERE)      # 도감 설명 + 챌린지 미션
 run('92_inject_sound_volume.py', HERE)         # 사운드 플레이어 BGM 제목/설명
-run('33_vsc_inject.py', HERE)                  # 도움말 + Issue #23 유닛 키 일괄 적용
+run('33_vsc_inject.py', HERE)                  # 도움말(유닛 참조 키는 원본 유지)
 # dol (patched_main.dol 제자리 재적용, 멱등)
 run('43_dol_inject.py', HERE)
 # 이미지 라벨
@@ -71,6 +81,7 @@ run('75_custom_dat_sprites.py', IMG)           # HAL DAT 미션 제목/결과 �
 run('76_custom_ui_assets.py', IMG)              # 타이틀 로고/전투 조작설명 이미지
 run('77_nested_ui_assets.py', IMG)              # 중복 HSD 헤더/로고/gtitle 이미지
 run('78_scenario_battle_assets.py', IMG, extra=('--preview',))
+run('79_runtime_labels.py', IMG)                # DOL 실제 유닛/메뉴 이미지 + 압축 화자명
 print('[2] 완료: patched_files/ + patched_main.dol 재생성')
 
 # 3) ISO
